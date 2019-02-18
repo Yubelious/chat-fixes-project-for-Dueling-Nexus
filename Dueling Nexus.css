@@ -1,0 +1,167 @@
+@-moz-document url-prefix("https://duelingnexus.com/game"), url-prefix("https://duelingnexus.com/editor") {
+body {
+    line-height: 1;
+}
+h4, .h4 {
+    font-size: 2vh;
+}
+h6, .h6 {
+    font-size: 1.5vh;
+}
+#game-container, #editor-container {
+    margin: 1vw
+}
+#card-column {
+    height: 100vh;
+    width: 24vw;
+    float: left;
+}
+#card-name {
+    font-size: 3vh;
+    text-align: center;
+    border: 1px dashed antiquewhite;
+}
+#card-picture {/*"%" represents what percentage of the #card-column this image file takes up.*/
+    width: 55%;
+}
+#card-picture-container {
+    margin: 0.5vw
+}
+#card-description-box {/*The cursor property is there for our Mac users, who's scrollbars are hidden unless in use. If you want a regular cursor, remove the "    cursor: s-resize;" line.*/
+    font-size: 2.5vh;
+    text-align: justify;
+    border: 1px dashed antiquewhite;
+    cursor: s-resize;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 20vh;
+}
+#card-if-monster, #card-if-spell, #card-if-trap {
+    font: bold 2.25vh sans-serif
+}
+#editor-decks-column, #game-siding-column {
+    height: 40vw;
+    width: 35.5vw;
+    padding: 0 0.25vw;
+}
+.game-avatar-area {/*This ensures that the left-most username doesn't enter the #card-column.*/
+    font-size: 1vw;
+    text-align: center;
+    word-break: break-all;
+    width: 81%;
+}
+#editor-deck-main-title, #editor-search-title, #siding-deck-main-title {
+	margin: 0 0 1vw 0
+}
+#editor-deck-extra-title, #editor-deck-side-title, #siding-deck-extra-title, #siding-deck-side-title {
+	margin: 0.5vw 0
+}
+#editor-main-deck, #siding-main-deck {
+    height: 20.1vw !important
+}
+#editor-extra-deck, #editor-side-deck, #siding-extra-deck, #siding-side-deck {
+    height: 5.1vw !important
+}
+#editor-search-column, #game-siding-column-2 {
+    height: 28.7vw;
+    width: 35.5vw;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+}
+#editor-search-column, #game-siding-column-2 .engine-text-box {
+    width: 35.5vw
+}
+#game-siding-column-2:after {
+    content: 'To side on desktop, right click a card(s) in the "side" area and it will automatically move to the "deck", then right click a card(s) in the "deck" and it will automatically move to the "side". If you are on Android, drag a card(s) to the bottom right corner with your finger. Note that you will note be able to complete siding until the cards you sided in are in the bottom right corner of the "deck", and there are the same number of cards in the "deck" after siding as before siding. When you are done, click the buttom below.';
+    font-size: 1.5vw;
+    color: antiquewhite;
+    font-family: arial, san-serif;
+    text-align: justify;
+    background: radial-gradient(rgba(150, 150, 150, 0.5), rgba(50, 50, 50, 0.5));
+    box-sizing: border-box;
+    height: 26.45vw;
+    width: 35.5vw;
+    padding: 1vw;
+    position: fixed;
+}
+/*Values in notes are the recommended changes for lower resolutions. However, they are only recommendations, so feel free to change this value to whatever suits your screen best.*/
+}
+
+@-moz-document url-prefix("https://duelingnexus.com/game") {
+#game-chat-area {/*This is the box that contains the chat to a confined space. It's the heart of this Stylish.*/
+    font-size: 2vh;
+    border: 1px dashed antiquewhite;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 20vh;
+    width: 24vw;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    bottom: 40px;
+    left: 1vw;
+}
+.engine-text-box {/*This is the smaller box where you type into.*/
+    font-size: 2vh;
+    border: 0.375vw double #F0F0F0;
+    box-sizing: border-box;
+    height: 4vh;
+    width: 21vw;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    bottom: 45px;
+    left: 1.5vw;
+}
+#game-column {
+    width: auto;
+}
+#game-siding-column {
+    height: 37.67vw;
+    width: 33.33vw;
+}
+#siding-deck-main-title  {
+	margin: 0 0 1vw 0;
+}
+#siding-deck-extra-title, #siding-deck-side-title {
+	margin: 0.5vw 0;
+}
+#game-siding-column-2 {
+    border: 1px dashed antiquewhite;
+    height: 37.67vw;
+    width: 37.67vw;
+}
+#game-siding-done {
+    height: 4vw;
+    width: 100%;
+    position: relative;
+    top: 5vw;
+}
+}
+
+@-moz-document url-prefix("https://duelingnexus.com/editor") {
+#editor-decks-column {
+    height: 37.67vw;
+    width: 33.33vw;
+}
+#editor-deck-main-title, #editor-search-title  {
+	margin: 0 0 1vw 0;
+}
+#editor-deck-extra-title, #editor-deck-side-title {
+	margin: 0.5vw 0;
+}
+#editor-main-deck {
+    height: 18vw !important;
+}
+#editor-extra-deck, #editor-side-deck {
+    height: 4.5vw !important;
+}
+#editor-search-column {
+    border: 1px dashed antiquewhite;
+    height: 37.67vw;
+    width: 37.67vw;
+}
+}
