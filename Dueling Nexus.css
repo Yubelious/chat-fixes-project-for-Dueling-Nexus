@@ -131,12 +131,8 @@ h6, .h6 {/*Small headers.*/
 #card-name {
     text-align: center
 }
-#card-picture {/*"%" represents what percentage of the #card-column this image file takes up while left alone.*/
+#card-picture {/*"%" represents what percentage of the #card-column this image file takes up.*/
     width: 50%
-}
-#card-picture:hover {/*"%" represents what percentage of the #card-column this image file takes up while hovered over.*/
-    z-index: 2;
-    width: 100%;
 }
 #card-picture-container {
     margin: 0.5vw
@@ -164,7 +160,6 @@ h6, .h6 {/*Small headers.*/
     overflow-x: hidden;
     overflow-y: scroll;
     height: 20vh;
-    z-index: 2;
 }
 /*MIDDLE COLUMN*/
 #game-container, #editor-container {
@@ -189,12 +184,10 @@ h6, .h6 {/*Small headers.*/
 }
 #editor-search-column, #game-siding-column-2 {
     height: 28.7vw;
+    width: 35.5vw;
     overflow: hidden;
     padding: 0;
     position: relative;
-}
-#editor-search-column, #game-siding-column-2 {
-    width: 35.5vw
 }
 /*ENGINE BUTTONS*/
 .engine-button {
@@ -205,7 +198,7 @@ h6, .h6 {/*Small headers.*/
     font-size: 1vw;
     padding: 0.25vw 1.25vw;
     min-height: 0;
-    min-width: 0;
+    min-width: 4.5vw;
 }
 .engine-button:active {
     -moz-transition-duration: 1s;
@@ -226,6 +219,9 @@ h6, .h6 {/*Small headers.*/
 .engine-window p, #game-chat-area, #game-chat-area .engine-text-box, #game-end-text, #game-end-title {
     margin: 0;
     padding: 0;
+}#game-to-spectator-button, #game-to-duelist-button, #game-deck-dropdown, .template-button, #game-rps-first, #game-rps-second, #game-end-button {
+    width: auto;
+    max-width: 28vw;
 }
 #game-chat-area {/*This is the box that contains the chat to a confined space. It's the heart of this Stylish.*/
     font-size: 2vh;
@@ -257,7 +253,7 @@ h6, .h6 {/*Small headers.*/
     width: 81%;
 }
 #game-column {
-    width: auto;
+    width: auto
 }
 #game-option-list {
     padding: 0.5vw
@@ -271,7 +267,8 @@ h6, .h6 {/*Small headers.*/
 #game-option-list .engine-button:before, #game-option-list .engine-button:after {
     content: "~";
     font-size: 0;
-}#game-alert-window, #game-end-window, #options-window, #game-results-container, #game-message-window, #game-waiting-menu, #game-selection-window, #game-yesno-window, #game-position-window, #game-option-window, #game-announce-window, #game-announce-card-window {/*This makes the windows transparent.*/
+}
+#game-alert-window, #game-end-window, #options-window, #game-results-container, #game-message-window, #game-waiting-menu, #game-selection-window, #game-yesno-window, #game-position-window, #game-option-window, #game-announce-window, #game-announce-card-window {/*This makes the windows transparent.*/
     background-color: rgba(0, 0, 0, 0.5)
 }
 #game-to-spectator-button, #game-to-duelist-button, #game-deck-dropdown, .template-button, #game-rps-first, #game-rps-second, #game-end-button{/*This prevents the button at the end of the game from taking 2 lines.*/
@@ -344,23 +341,12 @@ h6, .h6 {/*Small headers.*/
     text-align: center;
     margin: 0.6vw 0;
 }
-#game-siding-column {
-    height: 37.67vw;
-    width: 33.33vw;
-}
-#siding-deck-main-title  {
-	margin: 0 0 1vw 0;
-}
-#siding-deck-extra-title, #siding-deck-side-title {
-	margin: 0.5vw 0;
-}
 #game-siding-column-2 {
-    border: 1px dashed;
     height: 37.67vw;
     width: 37.67vw;
 }
 #game-siding-column-2:after {
-    content: 'To side on desktop, right click a card(s) in the "side" area and it will automatically move to the "deck", then right click a card(s) in the "deck" and it will automatically move to the "side". If you are on Android, drag a card(s) to the bottom right corner with your finger. Note that you will note be able to complete siding until the cards you sided in are in the bottom right corner of the "deck", and there are the same number of cards in the "deck" after siding as before siding. When you are done, click the buttom below.';
+    content: 'To side on desktop, right click a card(s) in the "side" area and it will automatically move to the "deck", then right click a card(s) in the "deck" and it will automatically move to the "side". If you are on Android, drag a card(s) to the bottom right corner with your finger. Note that you will not be able to complete siding until the cards you sided in are in the bottom right corner of the "deck", and there are the same number of cards in the "deck" after siding as before siding. When you are done, click the buttom below.';
     font-size: 1.5vw;
     font-family: arial, san-serif;
     text-align: justify;
@@ -370,31 +356,15 @@ h6, .h6 {/*Small headers.*/
     padding: 1vw;
     position: fixed;
 }
-#game-siding-done {
-    height: 4vw;
-    width: 100%;
-    position: relative;
-    top: 5vw;
+button#game-siding-done {
+    z-index: 2;
+    position: absolute;
+    bottom: 1vw;
+    left: 1vw;
 }
 }
 
 @-moz-document url-prefix("https://duelingnexus.com/editor") {
-#editor-decks-column {
-    height: 37.67vw;
-    width: 33.33vw;
-}
-#editor-deck-main-title, #editor-search-title  {
-	margin: 0 0 1vw 0
-}
-#editor-deck-extra-title, #editor-deck-side-title {
-	margin: 0.5vw 0
-}
-#editor-main-deck {
-    height: 18vw !important
-}
-#editor-extra-deck, #editor-side-deck {
-    height: 4.5vw !important
-}
 .editor-search-result {
     cursor: pointer;
     width: 50.3%;
@@ -421,7 +391,7 @@ h6, .h6 {/*Small headers.*/
     margin-left: 0px;
     position: absolute;
 }
-#downloadDeck {
+#downloadDeck {/*You may not have this button.*/
     margin-left: 5vw
 }
 #editor-menu-container {
