@@ -303,9 +303,16 @@ h6, .h6 {/*Small headers.*/
     padding: 5px;
     position: absolute;
 }
+#game-rps-first, #game-rps-second {
+    font-size: 3vw;
+    margin: 30vh 10vw;
+}
 /*GAME COLUMN*/
-#game-column {
+#game-column, #game-to-spectator-button, #game-to-duelist-button, #game-deck-dropdown, .template-button, #game-rps-first, #game-rps-second, #game-end-button {
     width: auto
+}
+#game-alert-window, #game-end-window, #options-window, #game-results-container, #game-message-window, #game-waiting-menu, #game-selection-window, #game-yesno-window, #game-position-window, #game-option-window, #game-announce-window, #game-announce-card-window {/*This makes the windows transparent.*/
+    background-color: rgba(0, 0, 0, 0.5)
 }
 #game-option-list {
     padding: 0.5vw
@@ -320,11 +327,8 @@ h6, .h6 {/*Small headers.*/
     content: "~";
     font-size: 0;
 }
-#game-alert-window, #game-end-window, #options-window, #game-results-container, #game-message-window, #game-waiting-menu, #game-selection-window, #game-yesno-window, #game-position-window, #game-option-window, #game-announce-window, #game-announce-card-window {/*This makes the windows transparent.*/
-    background-color: rgba(0, 0, 0, 0.5)
-}
-#game-to-spectator-button, #game-to-duelist-button, #game-deck-dropdown, .template-button, #game-rps-first, #game-rps-second, #game-end-button{
-    width: auto
+#game-yesno-yes-button, #game-yesno-no-button {
+    font-size: 2.5vw
 }
 #game-announce-window {/*DNx uses a lot of pop-up windows. This is one of them. The Game Announce Wincow is used for displaying lists ingame, such as types or attributes. Chances are you may not even know it exists.*/
     overflow-y: scroll;
@@ -346,7 +350,7 @@ h6, .h6 {/*Small headers.*/
     z-index: 7;
 }
 #game-action-menu .engine-button-default {
-    font-size: 2vw
+    font-size: 2.5vw
 }
 #game-end-window {
     position: fixed
