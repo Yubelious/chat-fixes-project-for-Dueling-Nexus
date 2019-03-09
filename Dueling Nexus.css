@@ -337,7 +337,7 @@ h6, .h6 {/*Small headers.*/
     font-size: 0;
 }
 #game-yesno-yes-button, #game-yesno-no-button {
-    font-size: 2.5vw
+    font-size: 3vw
 }
 #game-announce-window {/*DNx uses a lot of pop-up windows. This is one of them. The Game Announce Wincow is used for displaying lists ingame, such as types or attributes. Chances are you may not even know it exists.*/
     overflow-y: scroll;
