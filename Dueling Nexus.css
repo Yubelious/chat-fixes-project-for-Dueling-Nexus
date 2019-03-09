@@ -303,6 +303,15 @@ h6, .h6 {/*Small headers.*/
     padding: 5px;
     position: absolute;
 }
+/*RPS CONTAINER*/
+#game-rps-container {
+    margin-top: 25vh
+}
+#game-rps-container img{
+    height: 28.8vh;
+    width: 19.95vh;
+    padding: 1vw;
+}
 #game-rps-first, #game-rps-second {
     font-size: 3vw;
     margin: 30vh 10vw;
