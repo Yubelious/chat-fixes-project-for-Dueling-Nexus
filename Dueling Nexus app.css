@@ -1,9 +1,11 @@
+@-moz-document url-prefix("https://duelingnexus.com/") {
 body {
-    font: 1vw/1 san-serif
+    font: 2vh/1 san-serif
 }
 h2 {/*This is the main header for each of the tabs.*/
-    font: small-caps 4vh/1 sans-serif;
+    font: small-caps 3.5vh/1 sans-serif;
     text-transform: none;
+    margin: 1vw;
 }
 article:not(#duel-area-donations), #news-area {/*A uniform size for all articles, except donations. Also, relative positioning, for the absolute positioning to key off of.*/
     height: 47vw !important;
@@ -20,17 +22,36 @@ div#app {
 #duel-area hr {
     margin: 4%
 }
-/*BUTTONS AND OTHER CLICKY THINGS.*/
-#navbar-left, #navbar-right {
-    width: 23.5vw
+#duel-area-donations {
+    margin-right: 12vw
 }
+#socket-connection {/*This keeps the socket on top*/
+    font: 2.75vh/1 sans-serif;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    height: 3vh;
+    z-index: 2;
+    top: 12vh;
+}
+
+/*BUTTONS AND OTHER CLICKY THINGS.*/
 button, button:focus, .fake-button, .fake-button:focus, select {
-    font: 1.75vw/1 sans-serif !important;
+    font: 3vh/1 sans-serif !important;
     height: auto !important;
     width: auto !important;
 }
 button:focus {
     font-style: italic !important
+}
+
+#navbar-middle:not(#navbar-right) {
+    margin-right: 36vw
+}
+#navbar-left {/*There's no good way to make all these buttons fit.*/
+    display: none
+}
+#navbar-right {
+    margin-left: 60vw
 }
 #avatar-choice-in .fake-button {
     margin-top: .5vw;
@@ -48,7 +69,7 @@ button:focus {
 }
 /*TABLES*/
 #decks-container, #gamelist-container {
-    font: 1.75vw/1 sans-serif !important;
+    font: 2vh/1 sans-serif !important;
     overflow-y: scroll;
     overflow-x: hidden;
     height: 50%;
@@ -109,7 +130,14 @@ button:focus {
     padding: 4%
 }
 /*PROFILE PAGE*/
+#my-profile-in, #my-profile-in h2 {
+    height: 2.5vh;
+    padding: 0;
+    margin: 0;
+}
 h3 {
+    font: small-caps 3vh/1 sans-serif;
+    text-transform: none;
     margin: .1vh;
     padding: .1vh;
 }
@@ -117,4 +145,5 @@ h3 {
     border: 1px dashed;
     max-height: 20vh;
     max-width: 20vh;
+}
 }
