@@ -5,13 +5,18 @@ body {
 h2 {/*This is the main header for each of the tabs.*/
     font: small-caps 3.5vh/1 sans-serif;
     text-transform: none;
-    margin: 1vw;
+    margin: .5vh;
 }
 article:not(#duel-area-donations), #news-area {/*A uniform size for all articles, except donations. Also, relative positioning, for the absolute positioning to key off of.*/
     height: 47vw !important;
     width: 75vw !important;
+    overflow-y: scroll;
     margin-top: 12vh;
+    padding: 0;
     position: relative;
+}
+#news-area {
+    overflow-y: scroll
 }
 div#app {
     margin-bottom: 40px /*Increase this value if your taskbar blocks the interface.*/
@@ -31,27 +36,18 @@ div#app {
     border: none;
     height: 3vh;
     z-index: 2;
+    position: fixed;
     top: 12vh;
 }
 
 /*BUTTONS AND OTHER CLICKY THINGS.*/
 button, button:focus, .fake-button, .fake-button:focus, select {
-    font: 3vh/1 sans-serif !important;
+    font: 2vh/1 sans-serif !important;
     height: auto !important;
     width: auto !important;
 }
 button:focus {
     font-style: italic !important
-}
-
-#navbar-middle:not(#navbar-right) {
-    margin-right: 36vw
-}
-#navbar-left {/*There's no good way to make all these buttons fit.*/
-    display: none
-}
-#navbar-right {
-    margin-left: 60vw
 }
 #avatar-choice-in .fake-button {
     margin-top: .5vw;
