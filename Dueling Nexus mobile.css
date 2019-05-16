@@ -1,0 +1,93 @@
+@-moz-document url-prefix("https://duelingnexus.com/") {
+
+2
+
+body {
+
+3
+
+    font: 2vh/1 san-serif
+
+4
+
+}
+
+5
+
+h2 {/*This is the main header for each of the tabs.*/
+
+6
+
+    font: small-caps 3.5vh/1 sans-serif;
+
+7
+
+    text-transform: none;
+
+8
+
+    margin: .5vh;
+
+9
+
+}
+
+10
+
+article:not(#duel-area-donations), #news-area {/*A uniform size for all articles, except donations. Also, relative positioning, for the absolute positioning to key off of.*/
+
+11
+
+    height: 47vw !important;
+
+12
+
+    width: 75vw !important;
+
+13
+
+    overflow-y: scroll;
+
+14
+
+    margin-top: 12vh;
+
+15
+
+    padding: 0;
+
+16
+
+    position: relative;
+
+17
+
+}
+
+18
+
+#news-area {
+
+19
+
+    overflow-y: scroll
+
+20
+
+}
+
+21
+
+div#app {
+
+22
+
+    margin-bottom: 40px /*Increase this value if your taskbar blocks the interface.*/
+
+23
+
+}
+
+24
+
+#home-area {/*I don't like this here. I want to see the news.*/
