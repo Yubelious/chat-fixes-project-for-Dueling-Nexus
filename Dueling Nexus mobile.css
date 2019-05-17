@@ -240,12 +240,13 @@ h6, .h6 {/*Small headers.*/
     padding: 0.5vw 1.25vw;
 }
 .game-phase-button {
+    border: .2vw solid;
     height: 3.5vw;
-    width: 7.5vw;
-    transform: translateX(-4vw);
+    width: 6.5vw;
+    transform: translateX(-3vw);
 }
 table#game-field {
-    margin-left: 2vw;
+    margin-left: 1.5vw;
 }
 #game-column .engine-button {
     margin-bottom: 1vh
