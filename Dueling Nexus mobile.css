@@ -418,6 +418,9 @@ button#game-siding-done {
     bottom: 1vw;
     left: 1vw;
 }
+img.game-field-card {
+    height: 115% !important
+}
 }
 
 @-moz-document url-prefix("https://duelingnexus.com/editor") {
