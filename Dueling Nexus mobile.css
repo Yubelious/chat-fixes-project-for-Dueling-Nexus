@@ -242,10 +242,10 @@ h6, .h6 {/*Small headers.*/
 .game-phase-button {
     height: 3.5vw;
     width: 7.5vw;
-    transform: translateX(-1vw);
+    transform: translateX(-4vw);
 }
 table#game-field {
-    margin-left: 1vw;
+    margin-left: 2vw;
 }
 #game-column .engine-button {
     margin-bottom: 1vh
