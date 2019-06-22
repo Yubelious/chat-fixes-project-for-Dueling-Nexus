@@ -1,4 +1,4 @@
-@-moz-document url("https://duelingnexus.com/login"), url("https://duelingnexus.com/register"), url("https://duelingnexus.com/home"), url("https://duelingnexus.com/duel"), url("https://duelingnexus.com/gamelist"), url("https://duelingnexus.com/decks"), url("https://duelingnexus.com/profile") {
+@-moz-document url("https://duelingnexus.com/login"), url("https://duelingnexus.com/register"), url("https://duelingnexus.com/home"), url("https://duelingnexus.com/gamelist"), url("https://duelingnexus.com/decks"), url("https://duelingnexus.com/profile") {
 body {
     font: 2vh/1 san-serif
 }
@@ -222,34 +222,22 @@ h6, .h6 {/*Small headers.*/
     position: relative;
 }
 /*ENGINE BUTTONS*/
-.engine-button {
+.engine-button:not(.game-phase-button) {
     -moz-transition-duration: 2s;
     -o-transition-duration: 2s;
     transition-duration: 2s;
     cursor: pointer;
-    font-size: 2vh;
-    padding: 0.5vw 1.25vw;
+    font-size: 4vh;
     min-height: 0;
-    min-width: 4.5vw;
 }
 .engine-button:active {
     -moz-transition-duration: 1s;
     -o-transition-duration: 1s;
     transition-duration: 1s;
     font-style: italic;
-    padding: 0.5vw 1.25vw;
-}
-.game-phase-button {
-    border: .2vw solid;
-    height: 3.5vw;
-    width: 6.5vw;
-    transform: translateX(-3vw);
 }
 table#game-field {
     margin-left: 1.5vw;
-}
-#game-column .engine-button {
-    margin-bottom: 1vh
 }
 /*OPTIONS*/
 #options-area, #options-window {
@@ -363,6 +351,7 @@ table#game-field {
     padding: 0.5vw
 }
 #game-option-list .engine-button {/*This gives buttons a shape.*/
+    width: 5vw;
     margin: 0.25vw;
     padding: 0;
     position: relative;
@@ -398,7 +387,10 @@ table#game-field {
     font-size: 2.5vw
 }
 #game-end-window {
-    position: fixed
+    margin: 0;
+    position: fixed;
+    left: 72vw;
+    top: 27.5vh;
 }
 .game-field-zone-activate {
     position: absolute
@@ -424,8 +416,30 @@ button#game-siding-done {
     bottom: 1vw;
     left: 1vw;
 }
-img.game-field-card {
-    height: 115% !important
+/*PHASE BUTTONS*/
+button#game-dp-button, button#game-sp-button, button#game-mp1-button, button#game-bp-button, button#game-mp2-button, button#game-ep-button {
+    font-size: 2vh;
+    width: 4vw;
+    min-width: 0;
+    padding: 1vh;
+}
+button#game-dp-button {
+    transform: translate(65vw,-35vh) scale(2)
+}
+button#game-sp-button {
+    transform: translate(65vw,-30vh) scale(2)
+}
+button#game-mp1-button {
+    transform: translate(65vw,-25vh) scale(2)
+}
+button#game-bp-button {
+    transform: translate(65vw,-20vh) scale(2)
+}
+button#game-mp2-button {
+    transform: translate(65vw,-15vh) scale(2)
+}
+button#game-ep-button {
+    transform: translate(65vw,-10vh) scale(2)
 }
 }
 
