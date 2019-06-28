@@ -351,7 +351,8 @@ table#game-field {
     padding: 0.5vw
 }
 #game-option-list .engine-button {/*This gives buttons a shape.*/
-    width: 5vw;
+    width: auto;
+    min-width: 5vw;
     margin: 0.25vw;
     padding: 0;
     position: relative;
@@ -387,6 +388,7 @@ table#game-field {
     font-size: 2.5vw
 }
 #game-end-window {
+    transform: scale(.5);
     margin: 0;
     position: fixed;
     left: 72vw;
