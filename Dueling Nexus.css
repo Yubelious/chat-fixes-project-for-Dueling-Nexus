@@ -18,14 +18,14 @@ h2 {/*This is the main header for each of the tabs.*/
 h3 {
     font: small-caps 3.5vh/1 sans-serif;
     text-transform: none;
-    margin: .1vh;
+    margin: .5vh;
     padding: 0;
 }
 td {
 	height: 4vh;
 	min-height: 0;
 	margin: 0;
-	padding: 0;
+	padding: 0 .5vw;
 }
 div#app {
     margin-bottom: 40px /*Increase this value if your taskbar blocks the interface.*/
@@ -46,7 +46,7 @@ a {
     -moz-transition: all 1s ease-in-out;
     -o-transition: all 1s ease-in-out;
     transition: all 1s ease-in-out;
-    font-size: 1.5vw;
+    font-size: 2vh;
     padding: 0;
     text-decoration: none;
 }
@@ -80,10 +80,15 @@ button:hover {
 hr {
     display: none
 }
-form input[type="email"], form input[type="password"], form input[type="text"], input {
+form div, form input[type="checkbox"] {
+    margin: 0
+}
+form input[type="email"], form input[type="password"], input[type="text"], input {
     height: auto;
-    margin-top: 1vh;
     padding: .5vw;
+}
+input[type="checkbox"], label {
+    vertical-align: middle
 }
 input, label {
     font: 2vh/1 sans-serif;
@@ -143,6 +148,9 @@ input:hover, label:hover {
 #chat-button {
     font-size: 0
 }
+article {
+    margin-top: 7vh
+}
 }
 
 @-moz-document url("https://duelingnexus.com/login"), url("https://duelingnexus.com/register"), url("https://duelingnexus.com/recover") {
@@ -152,7 +160,6 @@ input:hover, label:hover {
     height: 39.5vw;
     width: 60vw;
     float: none;
-    margin-top: 3.33vh;
     position: relative;
 }
 #login-area h2::before, #login-email, #login-area h2::after, #login-password, .input-checkbox-group, #login-submit, #links-area {/*General code for this page. Ordered from top to bottom, and repeated below.*/
@@ -190,19 +197,31 @@ input:hover, label:hover {
     bottom: 35%;
     left: 1%;
 }
-#links-area {
-    margin: 20%;
-    width: 92%;
-    bottom: 20%;
-    left: 4%;
+#links-area[data-v-7df22d6c], #links-area[data-v-c3640fe8], #links-area[data-v-49df144c] {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    bottom: 10%;
+    left: 0;
 }
 #links-area[data-v-7df22d6c], #links-area[data-v-c3640fe8], #links-area[data-v-49df144c] {
+    font-size: 0;
+    border: 0;
+}
+a[data-v-7df22d6c], a[data-v-c3640fe8], a[data-v-49df144c] {
+    font: 2vh/6 sans-serif;
+    width: 50%;
+    float: left;
+}
+a[data-v-c3640fe8], a[data-v-49df144c] {
+    margin: 0 25%
+}
+a[data-v-7df22d6c] {
     border: 0
 }
-#links-area a {
-    padding: 5%
+#register-email, #register-username, #register-password, #register-password2, #recover-email {
+    margin: 1vh 0 3vh
 }
-
 #recover-area::before {
     content: "This feature is currently unavailable.";
     color: red;
@@ -218,7 +237,7 @@ input:hover, label:hover {
     max-width: 100vw;
     overflow: hidden;
     margin: 0;
-    padding: 0;
+    padding: .5vh;
     position: absolute;
     top: 75vh;
     right: 1vw;
@@ -256,7 +275,6 @@ input:hover, label:hover {
     height: 39.5vw;
     width: 60vw;
     float: none;
-    margin-top: 7vh;
     position: relative;
 }
 #my-profile-in[data-v-0262afa4], #my-profile-in h2, #avatar-choice-in[data-v-0262afa4], #sleeve-choice-in[data-v-0262afa4] {
@@ -308,10 +326,10 @@ button.arrow-button[data-v-0262afa4] {
 body {/*Less empty space in boxes*/
     line-height: 1
 }
-h4, .h4 {/*Big headers.*/
+h4 {/*Big headers.*/
     font-size: 2.25vh
 }
-h6, .h6 {/*Small headers.*/
+h6 {/*Small headers.*/
     font-size: 1.5vh
 }
 /*LEFT COLUMN*/
@@ -694,9 +712,6 @@ button#game-ep-button {
 h2 {
     font-size: 2vh
 }
-h3 {
-    font-size: 3vh
-}
 /*Smaller navbar*/
 #navbar-left {
     display: none
@@ -704,6 +719,16 @@ h3 {
 #navbar-middle, #navbar-middle button {
     float: left;
     left: 0;
+}
+/*Smaller login*/
+#register-email, #register-username, #register-password, #register-password2, #recover-email {
+    margin: .5vh 0 1.5vh
+}
+#links-area[data-v-7df22d6c], #links-area[data-v-c3640fe8], #links-area[data-v-49df144c] {
+    bottom: 0
+}
+#links-area a[data-v-c3640fe8] {
+    line-height: 5.5
 }
 /*Smaller profile*/
 #my-profile-in, #my-profile-in h2 {
