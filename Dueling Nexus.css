@@ -124,7 +124,8 @@ input:hover, label:hover {
     margin: 0;
 }
 #navbar-middle button, #navbar-right button {
-    font-size: 2vh
+    font-size: 2vh;
+    padding: 1vh;
 }
 #navbar-left button {
     width: 6vh;
@@ -145,7 +146,7 @@ input:hover, label:hover {
 }
 
 @-moz-document url("https://duelingnexus.com/login"), url("https://duelingnexus.com/register"), url("https://duelingnexus.com/recover") {
-/*SECTION 2 LOGIN*/
+/*SECTION 02 LOGIN*/
 /*This section applies to the Login, Register, and Recover pages, but not the news.*/
 #login-area[data-v-7df22d6c], #register-area[data-v-c3640fe8], #recover-area[data-v-49df144c] {
     height: 39.5vw;
@@ -209,7 +210,7 @@ input:hover, label:hover {
 }
 
 @-moz-document url("https://duelingnexus.com/login"), url("https://duelingnexus.com/home") {
-/*SECTION 3 NEWS*/
+/*SECTION 03 NEWS*/
 /*This section applies to the News Area on both the login and home pages.*/
 #news-area {
     height: 4vh;
@@ -249,7 +250,7 @@ input:hover, label:hover {
 }
 
 @-moz-document url-prefix("https://duelingnexus.com/profile") {
-/*SECTION 4 PROFILE*/
+/*SECTION 04 PROFILE*/
 /*This section applies to Profile & Settings.(Although it's really just profile settings, in my opinion.)*/
 #my-profile {
     height: 39.5vw;
@@ -301,7 +302,391 @@ button.arrow-button[data-v-0262afa4] {
 }
 }
 
-@-moz-document url-prefix("https://duelingnexus.com/login"), url-prefix("https://duelingnexus.com/register"), url-prefix("https://duelingnexus.com/recover"), url-prefix("https://duelingnexus.com/home"), url-prefix("https://duelingnexus.com/duel"), url-prefix("https://duelingnexus.com/gamelist"), url-prefix("https://duelingnexus.com/hostgame"), url-prefix("https://duelingnexus.com/decks"), url-prefix("https://duelingnexus.com/profile") {
+@-moz-document url-prefix("https://duelingnexus.com/game"), url-prefix("https://duelingnexus.com/editor") {
+/*SECTION 05 GAMEGLOBAL*/
+/*This section applies to the game and editor pages. Much of the code is shared.*/
+body {/*Less empty space in boxes*/
+    line-height: 1
+}
+h4, .h4 {/*Big headers.*/
+    font-size: 2.25vh
+}
+h6, .h6 {/*Small headers.*/
+    font-size: 1.5vh
+}
+/*LEFT COLUMN*/
+#card-column {/*Moves the left column to the left wall of the screen.*/
+    height: 100vh;
+    width: 24vw;
+    float: left;
+}
+#card-name {
+    text-align: center
+}
+#card-picture {/*"%" represents what percentage of the #card-column this image file takes up.*/
+    width: 50%
+}
+#card-picture-container {
+    margin: 0.5vw
+}
+#card-if-monster, #card-if-spell, #card-if-trap {
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -ms-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    font: bold 2vh sans-serif;
+}
+#card-if-monster:hover, #card-if-spell:hover, #card-if-trap:hover {
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -ms-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    font-size: 1.25vw;
+}
+#card-description-box {
+    font-size: 2vh;
+    text-align: justify;
+    cursor: s-resize;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 20vh;
+}
+/*MIDDLE COLUMN AND RIGHT COLUMN*/
+#game-container, #editor-container {
+    margin: 1vw
+}
+#editor-decks-column, #game-siding-column {
+    height: 40vw;
+    width: 35.5vw;
+    padding: 0 0.25vw;
+}
+#editor-deck-main-title, #editor-search-title, #siding-deck-main-title {
+	margin: 0 0 1vw 0
+}
+#editor-deck-extra-title, #editor-deck-side-title, #siding-deck-extra-title, #siding-deck-side-title {
+	margin: 0.5vw 0
+}
+#editor-main-deck, #siding-main-deck {
+    height: 20.1vw !important
+}
+#editor-extra-deck, #editor-side-deck, #siding-extra-deck, #siding-side-deck {
+    height: 5.1vw !important
+}
+#editor-search-column, #game-siding-column-2 {
+    height: 28.7vw;
+    width: 35.5vw;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+}
+/*ENGINE BUTTONS*/
+.engine-button:not(.game-phase-button) {
+    -moz-transition-duration: 2s;
+    -o-transition-duration: 2s;
+    transition-duration: 2s;
+    cursor: pointer;
+    font-size: 4vh;
+    min-height: 0;
+}
+.engine-button:active {
+    -moz-transition-duration: 1s;
+    -o-transition-duration: 1s;
+    transition-duration: 1s;
+    font-style: italic;
+}
+table#game-field {
+    margin-left: 1.5vw;
+}
+/*OPTIONS*/
+#options-area, #options-window {
+    position: fixed;
+    bottom: 40px;/*This should move the button that opens the option window above the taskbar of your computer.*/
+}
+#options-window {
+    cursor: s-resize;
+    height: 6.1vw;
+    width: auto;
+    overflow-y: scroll;
+    padding: 0.6vw;
+}
+#options-window p {
+    text-align: center;
+    margin: 0.6vw 0;
+}
+#options-window input {
+    cursor: grab
+}
+#options-window input:active, .engine-button:active {
+    cursor: grabbing
+}
+}
+
+@-moz-document url-prefix("https://duelingnexus.com/game") {
+/*SECTION 06 GAME*/
+/*This section affects only the game pages.*/
+.engine-window p, #game-chat-area, #game-chat-area .engine-text-box, #game-end-text, #game-end-title {
+    margin: 0;
+    padding: 0;
+}
+#game-to-spectator-button, #game-to-duelist-button, #game-deck-dropdown, .template-button, #game-rps-first, #game-rps-second, #game-end-button {
+    width: auto;
+    max-width: 28vw;
+}
+/*Chat*/
+#game-chat-area {/*This is the box that contains the chat to a confined space. It's the heart of this Stylish.*/
+    font-size: 2vh;
+    border: 1px dashed;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 20vh;
+    width: 24vw;
+    min-width: 0;
+    position: fixed;
+    bottom: 40px;
+    left: 1vw;
+}
+#game-chat-area .engine-text-box {/*This is the smaller box where you type into.*/
+    font-size: 2vh;
+    border: 0.375vw double;
+    box-sizing: border-box;
+    height: 4vh;
+    width: 21.4vw;
+    position: fixed;
+    bottom: 45px;
+    left: 1.5vw;
+}
+.game-avatar-area {/*This ensures that the left-most username doesn't enter the #card-column.*/
+    font-size: 1vw;
+    text-align: center;
+    word-break: break-all;
+    width: 81%;
+}
+/*Game room container*/
+#game-room-container {/*This is the big black box you see when you click a duel and enter a game room to prepare for the upcoming battle. It's here to prevent visual errors.*/
+    width: 50vw;
+    min-width: 500px;
+}
+#game-room-players {/*This is the left side of the big black box. It's here to make the selection pop-up about the same size as the player column.*/
+    width: 28vw;
+    min-width: 280px;
+    padding: 2vh 1vw 2vh 2vw;
+}
+#game-room-information {/*This is the right side of the big black box. It's here to prevent visual errors.*/
+    width: 16vw;
+    min-width: 160px;
+    padding: 2vh 2vw 2vh 1vw;
+}
+#game-deck-selection {/*It contains a scrollbar that prevents your decks from flooding off the bottom of the screen.*/
+    overflow-y: scroll;
+    cursor: s-resize;
+    height: 16vh;
+    width: 28vw;
+    min-width: 280px;
+    margin-top: 5px;
+    padding: 5px;
+    position: absolute;
+}
+/*RPS container*/
+#game-rps-container {
+    margin-top: 20vh
+}
+#game-rps-container img{
+    height: 28.8vh;
+    width: 19.95vh;
+    padding: 1vw;
+}
+#game-rps-first, #game-rps-second {
+    font-size: 3vw;
+    margin: 30vh 10vw;
+}
+/*Game column*/
+#game-column, #game-to-spectator-button, #game-to-duelist-button, #game-deck-dropdown, .template-button, #game-rps-first, #game-rps-second, #game-end-button {
+    width: auto
+}
+#game-alert-window, #game-end-window, #options-window, #game-results-container, #game-message-window, #game-waiting-menu, #game-selection-window, #game-yesno-window, #game-position-window, #game-option-window, #game-announce-window, #game-announce-card-window {/*This makes the windows transparent.*/
+    background-color: rgba(0, 0, 0, 0.5)
+}
+#game-option-window {
+    width: 45vw
+}
+#game-option-window .engine-button {
+    max-width: 45%
+}
+#game-option-list {
+    padding: 0.5vw
+}
+#game-option-list .engine-button {/*This gives buttons a shape.*/
+    height: auto;
+    width: auto;
+    min-width: 5vw;
+    margin: 0.25vw;
+    padding: 0;
+    position: relative;
+    bottom: 0;
+}
+#game-option-list .engine-button:before, #game-option-list .engine-button:after {/*This gives empty buttons a shape.*/
+    content: "~";
+    font-size: 0;
+}
+#game-yesno-yes-button, #game-yesno-no-button {
+    font-size: 3vw
+}
+#game-announce-window {/*DNx uses a lot of pop-up windows. This is one of them. The Game Announce Wincow is used for displaying lists ingame, such as types or attributes. Chances are you may not even know it exists.*/
+    overflow-y: scroll;
+    cursor: s-resize;
+    height: 10vw;
+    width: 10vw;
+}
+#game-selection-window, #game-announce-card-window {/*This affects the Graveyard, RFG, and search selection windows.*/
+    transform: translateY(-10vw) translateX(35vw);
+    cursor: s-resize;
+    overflow-y: scroll;
+    height: 20vw;
+    width: 40vw;
+    margin: 0;
+    padding-top: 0;
+}
+.game-selection-card {/*This adds space between the card images on the window so you can see the field below.*/
+    margin: 1vh 1vw 1vh 1vw;
+    z-index: 7;
+}
+#game-action-menu .engine-button-default {
+    font-size: 2.5vw
+}
+#game-end-window {
+    transform: scale(.5);
+    margin: 0;
+    position: fixed;
+    left: 71vw;
+    top: 0;
+}
+.game-field-zone-activate {
+    position: absolute
+}
+/*Siding column*/
+#game-siding-column-2 {
+    height: 37.67vw;
+    width: 37.67vw;
+}
+#game-siding-column-2:after {
+    content: 'HOW TO SIDE: \A \A To side on desktop, right click a card(s) in the "side" area and it will automatically move to the "deck", then right click a card(s) in the "deck" and it will automatically move to the "side". If you are on Android, drag a card(s) to the bottom right corner with your finger.\A \A Note that you will not be able to complete siding until the cards you sided in are in the bottom right corner of the "deck", and there are the same number of cards in the "deck" after siding as before siding. When you are done, click the buttom below.';
+    font: 1.5vw/1 sans-serif;
+    text-align: justify;
+    white-space: pre-line;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: auto;
+    width: 35.5vw;
+    padding: 1vw;
+	display: block;
+    position: fixed;
+}
+button#game-siding-done {
+    z-index: 2;
+    position: absolute;
+    bottom: 1vw;
+    left: 1vw;
+}
+/*Phase buttons*/
+button#game-dp-button, button#game-sp-button, button#game-mp1-button, button#game-bp-button, button#game-mp2-button, button#game-ep-button {
+    font-size: 2vh;
+    min-height: 0;
+    width: 4vw;
+    min-width: 0;
+    padding: 1vh;
+}
+button#game-dp-button {
+    transform: translate(65vw,-40vh) scale(2)
+}
+button#game-sp-button {
+    transform: translate(65vw,-35vh) scale(2)
+}
+button#game-mp1-button {
+    transform: translate(65vw,-30vh) scale(2)
+}
+button#game-bp-button {
+    transform: translate(65vw,-25vh) scale(2)
+}
+button#game-mp2-button {
+    transform: translate(65vw,-20vh) scale(2)
+}
+button#game-ep-button {
+    transform: translate(65vw,-15vh) scale(2)
+}
+}
+
+@-moz-document url-prefix("https://duelingnexus.com/editor/") {
+/*SECTION 07 EDITOR*/
+/*Editor top*/
+#editor-menu-container, #editor-menu-content, #editor-menu-title {
+    height: 6vh
+}
+#editor-menu-content {
+    padding: 0;
+    left: 0;
+}
+#editor-menu-title {
+    font: 3vh/2 sans-serif;
+    float: right;
+    margin-right: 1vh;
+}
+#editor-menu-spacer {
+    width: 0
+}
+.engine-button-navbar {
+    float: left;
+    margin: .5vh 0 0 .5vh;
+}
+#downloadDeck {/*You may not have this button.*/
+    margin-left: 2vw
+}
+/*Search area*/
+#editor-search-column {
+    border-bottom: 0.15vw solid
+}
+#editor-search-box {
+    height: 5vw
+}
+#editor-search-text {
+    height: 2.6vw
+}
+.editor-search-result {
+    cursor: pointer;
+    width: 50.3%;
+    margin: -0.11vw 0 0 -0.11vw;
+}
+.editor-search-card {
+    width: 33%;
+    float: left;
+    position: relative;
+}
+.editor-search-description {
+    -webkit-transition-duration: 2s;
+    -moz-transition-duration: 2s;
+    -ms-transition-duration: 2s;
+    -o-transition-duration: 2s;
+    transition-duration: 2s;
+    font-size: 1vw;
+    margin-left: 33%;
+    position: absolute;
+}
+.editor-search-description:hover {
+    font-size: 0.666666vw;
+    overflow: visible;
+    margin-left: 0;
+    position: absolute;
+}
+#editor-search-results {
+    border-left: 0.15vw solid;
+    height: 23.7vw;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+}
+
+@-moz-document url-prefix("https://duelingnexus.com/login"), url-prefix("https://duelingnexus.com/register"), url-prefix("https://duelingnexus.com/recover"), url-prefix("https://duelingnexus.com/home"), url-prefix("https://duelingnexus.com/duel"), url-prefix("https://duelingnexus.com/gamelist"), url-prefix("https://duelingnexus.com/hostgame"), url-prefix("https://duelingnexus.com/decks"), url-prefix("https://duelingnexus.com/profile"), url-prefix("https://duelingnexus.com/game") {
 /*SECTION 5 MINI*/
 /*This section uses a rule that changes various elements so they fit on really small screens.*/
 @media (max-width: 1250px) {
@@ -344,6 +729,25 @@ button.arrow-button[data-v-0262afa4] {
     font: 1.5vh/2 sans-serif;
     width: 30vh;
     margin: .5vh auto;
+}
+/*Phase buttons*/
+button#game-dp-button {
+    transform: translate(0,-9vh) scale(1.5)
+}
+button#game-sp-button {
+    transform: translate(0,-6vh) scale(1.5)
+}
+button#game-mp1-button {
+    transform: translate(0,-3vh) scale(1.5)
+}
+button#game-bp-button {
+    transform: translate(0,0vh) scale(1.5)
+}
+button#game-mp2-button {
+    transform: translate(0,3vh) scale(1.5)
+}
+button#game-ep-button {
+    transform: translate(0,6vh) scale(1.5)
 }
 }
 }
