@@ -1,0 +1,3 @@
+Dueling Nexus Mobile
+Patch notes
+v1.3 Made minor adjustments to #socket-connection, added a black navbar, adjusted some elements to account for the new navbar, got rid of a lot of scrollbars, article resizing now only affects the login register and recover pages, made numerous changes to the login register recover and profile pages, fixed all the hover animations I could find, News now hides when not in use, swapped the editor buttons to the left side the way I like them, added a background colour and line breaks to the siding tutorial, added an entire section of code dedicated for resolutions under 1250px wide.
