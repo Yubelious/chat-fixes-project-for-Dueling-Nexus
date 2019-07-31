@@ -1,4 +1,4 @@
-@-moz-document url("https://duelingnexus.com/login"), url("https://duelingnexus.com/register"), url("https://duelingnexus.com/recover"), url("https://duelingnexus.com/home"), url("https://duelingnexus.com/duel"), url("https://duelingnexus.com/gamelist"), url("https://duelingnexus.com/hostgame"), url("https://duelingnexus.com/decks"), url("https://duelingnexus.com/profile") {
+@-moz-document url("https://duelingnexus.com/login"), url("https://duelingnexus.com/register"), url("https://duelingnexus.com/recover"), url("https://duelingnexus.com/home"), url("https://duelingnexus.com/duel"), url("https://duelingnexus.com/gamelist"), url("https://duelingnexus.com/hostgame"), url("https://duelingnexus.com/decks"), url("https://duelingnexus.com/profile"), url("https://duelingnexus.com/donate") {
 /*SECTION 01 NAVGLOBAL*/
 /*This section is global code that applies to all of the navigation pages. For global code for the game and deckbuilding pages, go to GAMEGLOBAL*/
 body {
@@ -59,23 +59,26 @@ button, .fake-button[data-v-6f705b54], .file-picker-container img {
     text-align: center;
 }
 button, .file-picker-container {
-    -moz-transition-duration: 1s;
-    -o-transition-duration: 1s;
-    transition-duration: 1s;
+    -moz-transition-duration: 2s;
+    -o-transition-duration: 2s;
+    transition-duration: 2s;
+    transition-property: color, border;
     font-weight: bold;
     border: 1vw solid;
     min-width: 0;
 }
 button:focus, .file-picker-container {
-    -moz-transition-duration: 1s;
-    -o-transition-duration: 1s;
-    transition-duration: 1s;
+    -moz-transition-duration: 2s;
+    -o-transition-duration: 2s;
+    transition-duration: 2s;
+    transition-property: color, background, border;
     font-style: italic;
 }
 button:hover .file-picker-container {
     -moz-transition-duration: 1s;
     -o-transition-duration: 1s;
     transition-duration: 1s;
+    transition-property: color, border;
 }
 hr {
     display: none
@@ -186,12 +189,20 @@ article {
     top: 45%;
     left: 35%;
 }
-#login-submit {
+#login-submit, #register-area button, #recover-submit {
+    font-size: 2.5vh;
+    line-height: 1.5;
+    border-width: .15vw;
     height: auto;
     width: 98%;
     right: 1%;
+    padding: 0vw;
     bottom: 35%;
     left: 1%;
+}
+#login-email, #login-password, #register-email, #register-username, #register-password, #register-password2, #recover-email {
+    border-width: .3vw;
+    border-style: solid;
 }
 #links-area[data-v-7df22d6c], #links-area[data-v-c3640fe8], #links-area[data-v-49df144c] {
     margin: 0;
@@ -244,11 +255,13 @@ a[data-v-7df22d6c] {
     overflow-y: auto;
 }
 #news-area strong {
-    font: bold 2vh/1 serif;
+    font-size: 2vh;
+    line-height: 1;
     margin: 1vw;
 }
 #news-area p {
-    font: 2vh/1 serif;
+    font-size: 2vh;
+    line-height: 1;
     margin: 2vw;
 }
 #news-area::after {
