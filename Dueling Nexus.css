@@ -53,28 +53,29 @@ a:focus {
 a:hover {
     text-decoration: underline
 }
-button, .fake-button[data-v-6f705b54], .file-picker-container img {  
+article button, .fake-button[data-v-6f705b54], .file-picker-container img {  
     font-size: 2vh;
     line-height: 1;
     text-align: center;
 }
-button, .file-picker-container {
+article button, .file-picker-container {
     -moz-transition-duration: 2s;
     -o-transition-duration: 2s;
     transition-duration: 2s;
     transition-property: color, border;
     font-weight: bold;
-    border: 1vw solid;
+    border: .15vw solid;
+    min-height: 0;
     min-width: 0;
 }
-button:focus, .file-picker-container {
+article button:focus, .file-picker-container {
     -moz-transition-duration: 2s;
     -o-transition-duration: 2s;
     transition-duration: 2s;
     transition-property: color, background, border;
     font-style: italic;
 }
-button:hover .file-picker-container {
+article button:hover .file-picker-container {
     -moz-transition-duration: 1s;
     -o-transition-duration: 1s;
     transition-duration: 1s;
@@ -94,6 +95,7 @@ input[type="checkbox"], label {
     vertical-align: middle
 }
 input, label {
+    font-size: 2vh;
     opacity: .7;
     cursor: pointer;
 }
