@@ -17,13 +17,6 @@ h2, h3 {/*This is the main header for each of the tabs.*/
     margin: .5vh;
     padding: 0;
 }
-td, td:focus {
-	height: 4vh;
-	min-height: 0;
-    max-height: 4vh;
-	margin: 0;
-	padding: 0 .5vw;
-}
 div#app {
     margin-bottom: 40px /*Increase this value if your taskbar blocks the interface.*/
 }
@@ -58,28 +51,35 @@ article button, .fake-button[data-v-6f705b54], .file-picker-container img {
     line-height: 1;
     text-align: center;
 }
-article button, .file-picker-container {
+p button, #gamelist-buttons button, .button, button[data-v-6f705b54], .fake-button[data-v-6f705b54], button[data-v-0262afa4], .fake-button[data-v-0262afa4] {
     -moz-transition-duration: 2s;
     -o-transition-duration: 2s;
     transition-duration: 2s;
-    transition-property: color, border;
+    transition-property: color, background, border;
     font-weight: bold;
     border: .15vw solid;
     min-height: 0;
     min-width: 0;
 }
-article button:focus, .file-picker-container {
+p button:focus, #gamelist-buttons button:focus, .button:focus, button[data-v-6f705b54]:focus, .fake-button[data-v-6f705b54]:focus, button[data-v-0262afa4]:focus, .fake-button[data-v-0262afa4]:focus {
     -moz-transition-duration: 2s;
     -o-transition-duration: 2s;
     transition-duration: 2s;
     transition-property: color, background, border;
     font-style: italic;
 }
-article button:hover .file-picker-container {
-    -moz-transition-duration: 1s;
-    -o-transition-duration: 1s;
-    transition-duration: 1s;
-    transition-property: color, border;
+p button:hover, #gamelist-buttons button:hover, .button:hover, button[data-v-6f705b54]:hover, .fake-button[data-v-6f705b54]:hover, button[data-v-0262afa4]:hover, .fake-button[data-v-0262afa4]:hover {
+    -moz-transition-duration: 2s;
+    -o-transition-duration: 2s;
+    transition-duration: 2s;
+    transition-property: color, background, border;
+}
+article button:focus, p button:focus, .file-picker-container:focus {
+    -moz-transition-duration: 2s;
+    -o-transition-duration: 2s;
+    transition-duration: 2s;
+    transition-property: color, background, border;
+    font-style: italic;
 }
 hr {
     display: none
@@ -151,6 +151,14 @@ input:hover, label:hover {
 }
 article {
     margin-top: 7vh
+}
+/*Table stuff*/
+td, .table-button:active {
+	margin: 0;
+	padding: .5vw;
+}
+.table-button:active {
+    font-style: italic
 }
 }
 
