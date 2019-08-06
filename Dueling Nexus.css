@@ -262,7 +262,7 @@ a[data-v-7df22d6c] {
 }
 #recover-area::before {
     content: "This feature is currently unavailable.";
-    color: red;
+    color: #f33;
 }
 }
 
@@ -475,7 +475,6 @@ h6 {/*Small headers.*/
 table#game-field {
     margin-left: 1.5vw;
 }
-
 }
 
 @-moz-document url-prefix("https://duelingnexus.com/game") {
