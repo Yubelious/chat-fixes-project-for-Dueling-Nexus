@@ -30,7 +30,7 @@ div#app {
     top: 12vh;
     left: 1vw;
 }
-/*Here we have some general button and label rules.*/
+/*Here we have some general clicky thingy rules.*/
 a {
     -webkit-transition: all 1s ease-in-out;
     -moz-transition: all 1s ease-in-out;
@@ -87,7 +87,7 @@ hr {
 form div, form input[type="checkbox"] {
     margin: 0
 }
-form input[type="email"], form input[type="password"], form input[type="text"], input[type="text"] {
+form input[type="email"], form input[type="password"], form input[type="text"], input[type="text"], #login-submit, #register-area button, #recover-submit {
     -webkit-transition-duration: 1s;
     -moz-transition-duration: 1s;
     -o-transition-duration: 1s;
@@ -102,7 +102,7 @@ form input[type="email"], form input[type="password"], form input[type="text"], 
     height: 2.75vw;
     padding: 0;
 }
-form input[type="email"]:focus, form input[type="password"]:focus, form input[type="text"]:focus, input[type="text"]:focus, form input[type="email"]:hover, form input[type="password"]:hover, form input[type="text"]:hover, input[type="text"]:hover {
+form input[type="email"]:focus, form input[type="password"]:focus, form input[type="text"]:focus, input[type="text"]:focus, #login-submit:focus, #register-area button:focus, #recover-submit:focus, form input[type="email"]:hover, form input[type="password"]:hover, form input[type="text"]:hover, input[type="text"]:hover, #login-submit:hover, #register-area button:hover, #recover-submit:hover {
     -webkit-transition-duration: 1s;
     -moz-transition-duration: 1s;
     -o-transition-duration: 1s;
