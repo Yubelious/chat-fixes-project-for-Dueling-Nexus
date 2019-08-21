@@ -27,7 +27,7 @@ div#app {
     height: 3vh;
     z-index: 3;
     position: fixed;
-    top: 12vh;
+    top: 12.5vh;
     left: 1vw;
 }
 /*Here we have some general clicky thingy rules.*/
@@ -126,11 +126,11 @@ input:hover, label:hover {
 /*This is the code for the navbar, which can be seen from any tab.*/
 #navbar {
     background-color: black;
-    height: 6vh;
+    height: 8vh;
     min-height: 0;
     max-height: 25vh;
     width: auto;
-    z-index: 2;
+    z-index: 3;
     position: fixed;
     top: 0;
     left: 0;
@@ -140,29 +140,29 @@ input:hover, label:hover {
     border: 0;
     padding: 0;
 }
-#navbar button img {
-    height: 3vh;
-    width: 3vh;
+#navbar button img, p button img {
+    height: 3.25vh;
+    width: 3.25vh;
+    padding-bottom: .5vh;
 }
 #navbar-left button, #navbar-middle button, #navbar-right button {
-    height: 6vh;
+    height: 8vh;
     min-height: 0;
     min-width: 0;
     margin: 0;
 }
 #navbar-middle button, #navbar-right button {
-    font-size: 2vh;
-    padding: 1vh;
+    font-size: 3.5vh
 }
 #navbar-left button {
-    width: 6vh;
+    width: 8vh;
     float: left;
 }
 #navbar-middle {
     width: auto;
     position: fixed;
-    left: 33vw;
-    right: 33vw;
+    left: 25vw;
+    right: 25vw;
 }
 #navbar-right {
     float: right
@@ -171,7 +171,7 @@ input:hover, label:hover {
     font-size: 0
 }
 article {
-    margin-top: 7vh
+    margin-top: 9vh
 }
 /*Table stuff*/
 td, .table-button:active {
@@ -262,7 +262,7 @@ a[data-v-7df22d6c] {
 }
 #recover-area::before {
     content: "This feature is currently unavailable.";
-    color: #f33;
+    color: red;
 }
 }
 
@@ -475,6 +475,7 @@ h6 {/*Small headers.*/
 table#game-field {
     margin-left: 1.5vw;
 }
+
 }
 
 @-moz-document url-prefix("https://duelingnexus.com/game") {
@@ -530,7 +531,7 @@ table#game-field {
 #options-area, #options-window {
     position: fixed;
     bottom: 40px;/*This should move the button that opens the option window above the taskbar of your computer.*/
-    right: .5vw;
+    right: 25vw;
 }
 #options-window, #game-room-container {
     border: .15vw solid gray
