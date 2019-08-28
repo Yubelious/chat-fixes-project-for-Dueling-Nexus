@@ -1,6 +1,7 @@
 @-moz-document url("https://duelingnexus.com/login"), url("https://duelingnexus.com/register"), url("https://duelingnexus.com/recover"), url("https://duelingnexus.com/home"), url("https://duelingnexus.com/duel"), url("https://duelingnexus.com/gamelist"), url("https://duelingnexus.com/hostgame"), url("https://duelingnexus.com/decks"), url("https://duelingnexus.com/profile"), url("https://duelingnexus.com/donate") {
 /*SECTION 01 NAVGLOBAL*/
 /*This section is global code that applies to all of the navigation pages. For global code for the game and deckbuilding pages, go to GAMEGLOBAL*/
+@media (orientation: landscape) {
 body {
     font-size: 2vh;
     line-height: 1;
@@ -182,10 +183,37 @@ td, .table-button:active {
     font-style: italic
 }
 }
+@media (orientation: portrait) {
+div:not(#app) {
+    display: none
+}
+#app:before {
+    content: " ";
+    background: url(https://cdn.discordapp.com/attachments/403735097498664960/616381523796426759/information-icon-transparent_1916042.png) 3vh/3vh;
+    display: block;
+    height: 3vh;
+    width: 3vh;
+    transform: translateY(4vh) translateX(1vh)
+}
+#app:after {
+    content: "Please hold your device horizontally to use the website. You can still hold your device vertically to use the ingame chat.";
+    font-size: 3vh;
+    text-align: justify;
+    text-indent: 4vh;
+    color: #F33;
+    background-color: rgba(0, 0, 0, 0.8);
+    height: auto;
+    width: 85%;
+    display: block;
+    padding: 1vh;
+}
+}
+}
 
 @-moz-document url("https://duelingnexus.com/login"), url("https://duelingnexus.com/register"), url("https://duelingnexus.com/recover") {
 /*SECTION 02 LOGIN*/
 /*This section applies to the Login, Register, and Recover pages, but not the news.*/
+@media (orientation: landscape) {
 #login-area[data-v-7df22d6c], #register-area[data-v-c3640fe8], #recover-area[data-v-49df144c] {
     height: 39.5vw;
     width: 60vw;
@@ -262,13 +290,20 @@ a[data-v-7df22d6c] {
 }
 #recover-area::before {
     content: "This feature is currently unavailable.";
-    color: red;
+    color: #F33;
+}
+}
+@media (orientation: portrait) {
+div:not(#app) {
+    display: none
+}
 }
 }
 
 @-moz-document url("https://duelingnexus.com/login"), url("https://duelingnexus.com/home") {
 /*SECTION 03 NEWS*/
 /*This section applies to the News Area on both the login and home pages.*/
+@media (orientation: landscape) {
 #news-area {
     height: 4vh;
     width: auto;
@@ -307,10 +342,17 @@ a[data-v-7df22d6c] {
     font-size: .1vw
 }
 }
+@media (orientation: portrait) {
+div:not(#app) {
+    display: none
+}
+}
+}
 
 @-moz-document url-prefix("https://duelingnexus.com/profile") {
 /*SECTION 04 PROFILE*/
 /*This section applies to Profile & Settings.(Although it's really just profile settings, in my opinion.)*/
+@media (orientation: landscape) {
 #my-profile {
     height: 39.5vw;
     width: 60vw;
@@ -359,6 +401,12 @@ button.arrow-button[data-v-0262afa4] {
     max-width: 100%;
     margin: 5px auto;
     padding: 0;
+}
+}
+@media (orientation: portrait) {
+div:not(#app) {
+    display: none
+}
 }
 }
 
@@ -475,7 +523,6 @@ h6 {/*Small headers.*/
 table#game-field {
     margin-left: 1.5vw;
 }
-
 }
 
 @-moz-document url-prefix("https://duelingnexus.com/game") {
@@ -732,6 +779,7 @@ button#game-ep-button {
 @-moz-document url-prefix("https://duelingnexus.com/editor/") {
 /*SECTION 07 EDITOR*/
 /*Editor top*/
+@media (orientation: landscape) {
 #editor-menu-container, #editor-menu-content, #editor-menu-title {
     height: 6vh
 }
@@ -803,6 +851,12 @@ button#game-ep-button {
     overflow: visible;
     margin-left: 0;
     position: absolute;
+}
+}
+@media (orientation: portrait) {
+div {
+    display: none
+}
 }
 }
 
