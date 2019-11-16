@@ -1,4 +1,4 @@
-@-moz-document url("https://duelingnexus.com/login"), url("https://duelingnexus.com/register"), url("https://duelingnexus.com/recover"), url("https://duelingnexus.com/home"), url("https://duelingnexus.com/duel"), url("https://duelingnexus.com/gamelist"), url("https://duelingnexus.com/hostgame"), url("https://duelingnexus.com/decks"), url("https://duelingnexus.com/profile"), url("https://duelingnexus.com/donate") {
+@-moz-document url("https://duelingnexus.com/login"), url("https://duelingnexus.com/register"), url("https://duelingnexus.com/recover"), url("https://duelingnexus.com/home"), url("https://duelingnexus.com/duel"), url("https://duelingnexus.com/gamelist"), url("https://duelingnexus.com/hostgame"), url("https://duelingnexus.com/decks"), url("https://duelingnexus.com/profile"), url("https://duelingnexus.com/donate"), url("https://duelingnexus.com/privacy_policy.html") {
 /*SECTION 01 NAVGLOBAL*/
 /*This section is global code that applies to all of the navigation pages. For global code for the game and deckbuilding pages, go to GAMEGLOBAL*/
 @media (orientation: landscape) {
@@ -214,13 +214,18 @@ div:not(#app) {
 /*SECTION 02 LOGIN*/
 /*This section applies to the Login, Register, and Recover pages, but not the news.*/
 @media (orientation: landscape) {
-#login-area[data-v-7df22d6c], #register-area[data-v-c3640fe8], #recover-area[data-v-49df144c] {
+#login-area[data-v-9bfe76b0], #register-area[data-v-4068c77b], #recover-area[data-v-49df144c] {
     height: 39.5vw;
     width: 60vw;
     float: none;
-    position: relative;
 }
-#login-area h2::before, #login-email, #login-area h2::after, #login-password, .input-checkbox-group, #login-submit, #links-area {/*General code for this page. Ordered from top to bottom, and repeated below.*/
+#login-area[data-v-9bfe76b0], #recover-area[data-v-49df144c] {
+    position: relative
+}
+#register-area[data-v-4068c77b] {
+    overflow-y: auto
+}
+#login-area h2::before, #login-email, #login-area h2::after, #login-password, .input-checkbox-group, #login-submit, #login-area[data-v-9bfe76b0] p:not(#links-area), #links-area {/*General code for this page. Ordered from top to bottom, and repeated below.*/
     font-size: 1.5vw;
     position: absolute;
 }
@@ -253,36 +258,49 @@ div:not(#app) {
     line-height: 1.5;
     border-width: .15vw;
     height: auto;
+    min-height: 0;
     width: 98%;
     right: 1%;
-    padding: 0vw;
-    bottom: 35%;
+    padding: 0;
     left: 1%;
+}
+#login-submit {
+    top: 50%
+}
+#register-area button {
+    margin-top: 2vh
+}
+#login-area[data-v-9bfe76b0] p:not(#links-area), #register-area[data-v-4068c77b] p:not(#links-area) {
+    font-size: 2vh;
+    margin: 0;
+}
+#login-area[data-v-9bfe76b0] p:not(#links-area) {
+    top: 57%
 }
 #login-email, #login-password, #register-email, #register-username, #register-password, #register-password2, #recover-email {
     border-width: .3vw;
     border-style: solid;
 }
-#links-area[data-v-7df22d6c], #links-area[data-v-c3640fe8], #links-area[data-v-49df144c] {
+#links-area[data-v-9bfe76b0], #links-area[data-v-4068c77b], #links-area[data-v-49df144c] {
+    font-size: 0;
+    border: 0;
     margin: 0;
     padding: 0;
     width: 100%;
-    bottom: 10%;
     left: 0;
 }
-#links-area[data-v-7df22d6c], #links-area[data-v-c3640fe8], #links-area[data-v-49df144c] {
-    font-size: 0;
-    border: 0;
+#links-area[data-v-9bfe76b0], #links-area[data-v-49df144c] {
+    bottom: 10%
 }
-a[data-v-7df22d6c], a[data-v-c3640fe8], a[data-v-49df144c] {
+#links-area[data-v-9bfe76b0] a, #links-area[data-v-4068c77b] a, #links-area[data-v-49df144c] a {
     line-height: 6;
     width: 50%;
     float: left;
 }
-a[data-v-c3640fe8], a[data-v-49df144c] {
+#links-area[data-v-4068c77b] a, #links-area[data-v-49df144c] a {
     margin: 0 25%
 }
-a[data-v-7df22d6c] {
+#links-area[data-v-9bfe76b0] a {
     border: 0
 }
 #register-email, #register-username, #register-password, #register-password2, #recover-email {
@@ -860,7 +878,28 @@ div {
 }
 }
 
-@-moz-document url-prefix("https://duelingnexus.com/login"), url-prefix("https://duelingnexus.com/register"), url-prefix("https://duelingnexus.com/recover"), url-prefix("https://duelingnexus.com/home"), url-prefix("https://duelingnexus.com/duel"), url-prefix("https://duelingnexus.com/gamelist"), url-prefix("https://duelingnexus.com/hostgame"), url-prefix("https://duelingnexus.com/decks"), url-prefix("https://duelingnexus.com/profile"), url-prefix("https://duelingnexus.com/game"), url-prefix("https://duelingnexus.com/editor") {
+@-moz-document url("https://duelingnexus.com/privacy_policy.html") {
+#newsMain {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.news_list {
+    margin: 5vh 2.5vw;
+    height: 85vh;
+    width: auto;
+    max-width: 100%;
+    overflow-y: scroll;
+    position: absolute;
+    top: 0;
+}
+}
+
+@-moz-document url-prefix("https://duelingnexus.com/login"), url-prefix("https://duelingnexus.com/register"), url-prefix("https://duelingnexus.com/recover"), url-prefix("https://duelingnexus.com/home"), url-prefix("https://duelingnexus.com/duel"), url-prefix("https://duelingnexus.com/gamelist"), url-prefix("https://duelingnexus.com/hostgame"), url-prefix("https://duelingnexus.com/decks"), url-prefix("https://duelingnexus.com/profile"), url-prefix("https://duelingnexus.com/game"), url-prefix("https://duelingnexus.com/editor"), url-prefix("https://duelingnexus.com/donate") {
 /*SECTION 5 MINI*/
 /*This section uses a rule that changes various elements so they fit on really small screens.*/
 @media (max-width: 1250px) {
