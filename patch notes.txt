@@ -1,3 +1,3 @@
 CSS FIXES PROJECT
 **Patch Notes**
-v1.4 Redid the Login and Register pages to account for the new Privacy Policy, added code for the Privacy Policy page, added Donate + Privacy Policy pages to the global CSS, Increased the line-height for the table buttons, made adjustments to the settings tab, and modified the buttons on the editor menu to prevent overflow.
+v1.4 Redid the Login & Register pages to account for the new Privacy Policy, added code for the Privacy Policy page, added Donate & Privacy Policy pages to the global CSS, Increased the line-height for the table buttons, made adjustments to the settings tab, and modified the buttons on the editor menu to prevent overflow.
