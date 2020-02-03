@@ -1,6 +1,9 @@
 @-moz-document url("https://duelingnexus.com/login"), url("https://duelingnexus.com/register"), url("https://duelingnexus.com/recover"), url("https://duelingnexus.com/home"), url("https://duelingnexus.com/duel"), url("https://duelingnexus.com/gamelist"), url("https://duelingnexus.com/hostgame"), url("https://duelingnexus.com/decks"), url("https://duelingnexus.com/profile"), url("https://duelingnexus.com/leaderboard"), url("https://duelingnexus.com/donate"), url("https://duelingnexus.com/privacy_policy.html") {
 /*SECTION 01 NAVGLOBAL*/
 /*This section is global code that applies to all of the navigation pages. For global code for the game and deckbuilding pages, go to GAMEGLOBAL*/
+html {
+    background-position: right bottom
+}
 @media (orientation: landscape) {
 body {
     font-size: 2vh;
@@ -161,7 +164,7 @@ input:hover, label:hover {
     width: 8vh;
     float: left;
 }
-#navbar-left br {
+#navbar-left br, #navbar-middle br {
     display: none
 }
 #navbar-left {
@@ -193,6 +196,10 @@ td, .table-button:active {
 }
 }
 @media (orientation: portrait) {
+html {
+    background-position: right bottom;
+    background-size: 375% 100%;
+}
 div:not(#app) {
     display: none
 }
@@ -1065,6 +1072,7 @@ h2 {
 }
 #navbar-middle, #navbar-middle button {
     float: left;
+    vertical-align: top;
     left: 0;
 }
 /*Smaller login*/
