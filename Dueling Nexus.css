@@ -1,4 +1,4 @@
-@-moz-document url("https://duelingnexus.com/login"), url("https://duelingnexus.com/register"), url("https://duelingnexus.com/recover"), url("https://duelingnexus.com/home"), url("https://duelingnexus.com/duel"), url("https://duelingnexus.com/gamelist"), url("https://duelingnexus.com/hostgame"), url("https://duelingnexus.com/decks"), url("https://duelingnexus.com/profile"), url("https://duelingnexus.com/donate"), url("https://duelingnexus.com/privacy_policy.html") {
+@-moz-document url("https://duelingnexus.com/login"), url("https://duelingnexus.com/register"), url("https://duelingnexus.com/recover"), url("https://duelingnexus.com/home"), url("https://duelingnexus.com/duel"), url("https://duelingnexus.com/gamelist"), url("https://duelingnexus.com/hostgame"), url("https://duelingnexus.com/decks"), url("https://duelingnexus.com/profile"), url("https://duelingnexus.com/leaderboard"), url("https://duelingnexus.com/donate"), url("https://duelingnexus.com/privacy_policy.html") {
 /*SECTION 01 NAVGLOBAL*/
 /*This section is global code that applies to all of the navigation pages. For global code for the game and deckbuilding pages, go to GAMEGLOBAL*/
 @media (orientation: landscape) {
@@ -154,16 +154,23 @@ input:hover, label:hover {
     margin: 0;
 }
 #navbar-middle button, #navbar-right button {
-    font-size: 3.5vh
+    font-size: 3.5vh;
+    margin-right: 1vh;
 }
 #navbar-left button {
     width: 8vh;
     float: left;
 }
+#navbar-left br {
+    display: none
+}
+#navbar-left {
+    width: 24vh
+}
 #navbar-middle {
     width: auto;
     position: fixed;
-    left: 25vw;
+    left: 25vh;
     right: 25vw;
 }
 #navbar-right {
@@ -198,7 +205,7 @@ div:not(#app) {
     transform: translateY(4vh) translateX(1vh)
 }
 #app:after {
-    content: "Please hold your device horizontally to use the website. You can still hold your device vertically to use the ingame chat.";
+    content: "Please hold your device horizontally to use the website. You can still hold your device vertically to type.";
     font-size: 3vh;
     text-align: justify;
     text-indent: 4vh;
@@ -325,7 +332,7 @@ div:not(#app) {
 
 @-moz-document url("https://duelingnexus.com/login"), url("https://duelingnexus.com/home") {
 /*SECTION 03 NEWS*/
-/*This section applies to the News Area on both the login and home pages.*/
+/*This section applies to the News Area on both the login and home pages, as well as any transitions between the two.*/
 @media (orientation: landscape) {
 #news-area {
     height: 4vh;
@@ -372,10 +379,100 @@ div:not(#app) {
 }
 }
 
+@-moz-document url("https://duelingnexus.com/home") {
+/*SECTION 04 HOME*/
+/*This section affects the home page.*/
+@media (orientation: landscape) {
+#navbar-middle button:first-of-type {
+    animation: thistab 2s;
+    font-size: 0;
+    width: 8vh;
+    vertical-align: top;
+}
+}
+@media (orientation: portrait) {
+div:not(#app) {
+    display: none
+}
+}
+@keyframes thistab {
+    from {
+        font-size: 3vh;
+        width: 7vw;
+    }
+    to {
+        font-size: 0;
+        width: 8vh;
+    }
+}
+}
+
+@-moz-document url("https://duelingnexus.com/duel"), url("https://duelingnexus.com/gamelist"), url("https://duelingnexus.com/hostgame") {
+/*SECTION 05 DUELZONE*/
+/*This section affects the various duel related pages.*/
+@media (orientation: landscape) {
+#navbar-middle button:nth-of-type(2) {
+    animation: thistab 2s;
+    font-size: 0;
+    width: 8vh;
+    vertical-align: top;
+}
+}
+@media (orientation: portrait) {
+div:not(#app) {
+    display: none
+}
+}
+@keyframes thistab {
+    from {
+        font-size: 3vh;
+        width: 9vw;
+    }
+    to {
+        font-size: 0;
+        width: 8vh;
+    }
+}
+}
+
+@-moz-document url("https://duelingnexus.com/decks") {
+/*SECTION 06 DECKS*/
+/*This section affects the deck manager.*/
+@media (orientation: landscape) {
+#navbar-middle button:nth-of-type(3) {
+    animation: thistab 2s;
+    font-size: 0;
+    width: 8vh;
+    vertical-align: top;
+}
+}
+@media (orientation: portrait) {
+div:not(#app) {
+    display: none
+}
+}
+@keyframes thistab {
+    from {
+        font-size: 3vh;
+        width: 10vw;
+    }
+    to {
+        font-size: 0;
+        width: 8vh;
+    }
+}
+}
+
 @-moz-document url-prefix("https://duelingnexus.com/profile") {
-/*SECTION 04 PROFILE*/
+/*SECTION 07 PROFILE*/
 /*This section applies to Profile & Settings.(Although it's really just profile settings, in my opinion.)*/
 @media (orientation: landscape) {
+#navbar-middle button:nth-of-type(4) {
+    animation: thistab 2s;
+    font-size: 0;
+    width: 8vh;
+    vertical-align: top;
+}
 #my-profile {
     height: 41vw;
     width: 60vw;
@@ -436,10 +533,48 @@ div:not(#app) {
     display: none
 }
 }
+@keyframes thistab {
+    from {
+        font-size: 3vh;
+        width: 7vw;
+    }
+    to {
+        font-size: 0;
+        width: 8vh;
+    }
+}
+}
+
+@-moz-document url("https://duelingnexus.com/leaderboard") {
+/*SECTION 08 LEADERBOARD*/
+/*This section affects the leaderboard.*/
+@media (orientation: landscape) {
+#navbar-middle button:nth-of-type(5) {
+    animation: thistab 2s;
+    font-size: 0;
+    width: 8vh;
+    vertical-align: top;
+}
+}
+@media (orientation: portrait) {
+div:not(#app) {
+    display: none
+}
+}
+@keyframes thistab {
+    from {
+        font-size: 3vh;
+        width: 11vw;
+    }
+    to {
+        font-size: 0;
+        width: 8vh;
+    }
+}
 }
 
 @-moz-document url-prefix("https://duelingnexus.com/game"), url-prefix("https://duelingnexus.com/editor") {
-/*SECTION 05 GAMEGLOBAL*/
+/*SECTION 09 GAMEGLOBAL*/
 /*This section applies to the game and editor pages. Much of the code is shared.*/
 div {
     line-height: 1
@@ -554,7 +689,7 @@ table#game-field {
 }
 
 @-moz-document url-prefix("https://duelingnexus.com/game") {
-/*SECTION 06 GAME*/
+/*SECTION 10 GAME*/
 /*This section affects only the game pages.*/
 .engine-window p, #game-chat-area, #game-chat-area .engine-text-box, #game-end-text, #game-end-title {
     margin: 0;
@@ -805,7 +940,7 @@ button#game-ep-button {
 }
 
 @-moz-document url-prefix("https://duelingnexus.com/editor/") {
-/*SECTION 07 EDITOR*/
+/*SECTION 11 EDITOR*/
 /*This section affects the Editor pages, where you build your deck.*/
 /*Editor top*/
 @media (orientation: landscape) {
@@ -890,7 +1025,7 @@ div {
 }
 
 @-moz-document url("https://duelingnexus.com/privacy_policy.html") {
-/*SECTION 08 PRIVACY*/
+/*SECTION 12 PRIVACY*/
 /*This section affects the Privacy Policy page.*/
 #newsMain {
     height: 100vh;
@@ -912,8 +1047,8 @@ div {
 }
 }
 
-@-moz-document url-prefix("https://duelingnexus.com/login"), url-prefix("https://duelingnexus.com/register"), url-prefix("https://duelingnexus.com/recover"), url-prefix("https://duelingnexus.com/home"), url-prefix("https://duelingnexus.com/duel"), url-prefix("https://duelingnexus.com/gamelist"), url-prefix("https://duelingnexus.com/hostgame"), url-prefix("https://duelingnexus.com/decks"), url-prefix("https://duelingnexus.com/profile"), url-prefix("https://duelingnexus.com/game"), url-prefix("https://duelingnexus.com/editor"), url-prefix("https://duelingnexus.com/donate"), url-prefix("https://duelingnexus.com/privacy_policy.html") {
-/*SECTION 09 MINI*/
+@-moz-document url-prefix("https://duelingnexus.com/login"), url-prefix("https://duelingnexus.com/register"), url-prefix("https://duelingnexus.com/recover"), url-prefix("https://duelingnexus.com/home"), url-prefix("https://duelingnexus.com/duel"), url-prefix("https://duelingnexus.com/gamelist"), url-prefix("https://duelingnexus.com/hostgame"), url-prefix("https://duelingnexus.com/decks"), url-prefix("https://duelingnexus.com/profile"), url-prefix("https://duelingnexus.com/leaderboard"), url-prefix("https://duelingnexus.com/game"), url-prefix("https://duelingnexus.com/editor"), url-prefix("https://duelingnexus.com/donate"), url-prefix("https://duelingnexus.com/privacy_policy.html") {
+/*SECTION 13 MINI*/
 /*This section uses a rule that changes various elements so they fit on really small screens.*/
 @media (max-width: 1250px) {
 body {
