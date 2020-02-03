@@ -39,13 +39,14 @@ a {
     transition: all 1s ease-in-out;
     font-size: 2vh;
     padding: 0;
-    text-decoration: none;
+    text-decoration: underline;
+    opacity: .75;
 }
 a:focus {
     font-style: italic
 }
 a:hover {
-    text-decoration: underline
+    opacity: 1
 }
 article button, .fake-button[data-v-6f705b54], .file-picker-container img {  
     font-size: 2vh;
@@ -215,12 +216,12 @@ div:not(#app) {
 /*SECTION 02 LOGIN*/
 /*This section applies to the Login, Register, and Recover pages, but not the news.*/
 @media (orientation: landscape) {
-#login-area[data-v-9bfe76b0], #register-area[data-v-4068c77b], #recover-area[data-v-49df144c] {
-    height: 39.5vw;
-    width: 60vw;
+#login-area[data-v-9bfe76b0], #register-area[data-v-4068c77b], #recover-area[data-v-8098b0b4] {
+    height: 79vh;
+    width: 120vh;
     float: none;
 }
-#login-area[data-v-9bfe76b0], #recover-area[data-v-49df144c] {
+#login-area[data-v-9bfe76b0], #recover-area[data-v-80980b4] {
     position: relative
 }
 #register-area[data-v-4068c77b] {
@@ -278,11 +279,14 @@ div:not(#app) {
 #login-area[data-v-9bfe76b0] p:not(#links-area) {
     top: 57%
 }
+.login-error p[data-v-9bfe76b0] {
+    line-height: 3.5
+}
 #login-email, #login-password, #register-email, #register-username, #register-password, #register-password2, #recover-email {
     border-width: .3vw;
     border-style: solid;
 }
-#links-area[data-v-9bfe76b0], #links-area[data-v-4068c77b], #links-area[data-v-49df144c] {
+#links-area[data-v-9bfe76b0], #links-area[data-v-4068c77b], #links-area[data-v-80980b4] {
     font-size: 0;
     border: 0;
     margin: 0;
@@ -290,15 +294,15 @@ div:not(#app) {
     width: 100%;
     left: 0;
 }
-#links-area[data-v-9bfe76b0], #links-area[data-v-49df144c] {
+#links-area[data-v-9bfe76b0], #links-area[data-v-80980b4] {
     bottom: 10%
 }
-#links-area[data-v-9bfe76b0] a, #links-area[data-v-4068c77b] a, #links-area[data-v-49df144c] a {
+#links-area[data-v-9bfe76b0] a, #links-area[data-v-4068c77b] a, #links-area[data-v-80980b4] a {
     line-height: 6;
     width: 50%;
     float: left;
 }
-#links-area[data-v-4068c77b] a, #links-area[data-v-49df144c] a {
+#links-area[data-v-4068c77b] a, #links-area[data-v-80980b4] a {
     margin: 0 25%
 }
 #links-area[data-v-9bfe76b0] a {
@@ -331,7 +335,7 @@ div:not(#app) {
     margin: 0;
     padding: .5vh;
     position: absolute;
-    top: 75vh;
+    bottom: 15vh;
     right: 1vw;
     left: 1vw;
 }
@@ -912,6 +916,10 @@ div {
 /*SECTION 09 MINI*/
 /*This section uses a rule that changes various elements so they fit on really small screens.*/
 @media (max-width: 1250px) {
+body {
+    background-attachment: scroll;
+    background-position: right bottom;
+}
 /*Smaller headers*/
 h2 {
     font-size: 2vh
@@ -928,7 +936,7 @@ h2 {
 #register-email, #register-username, #register-password, #register-password2, #recover-email {
     margin: .5vh 0 1.5vh
 }
-#links-area[data-v-7df22d6c], #links-area[data-v-c3640fe8], #links-area[data-v-49df144c] {
+#links-area[data-v-7df22d6c], #links-area[data-v-c3640fe8], #links-area[data-v-80980b4] {
     bottom: 0
 }
 #links-area a[data-v-c3640fe8] {
