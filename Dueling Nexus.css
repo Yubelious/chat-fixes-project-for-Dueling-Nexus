@@ -405,7 +405,7 @@ div:not(#app) {
 @keyframes thistab {
     from {
         font-size: 3vh;
-        width: 7vw;
+        width: 14vh;
     }
     to {
         font-size: 0;
@@ -433,7 +433,7 @@ div:not(#app) {
 @keyframes thistab {
     from {
         font-size: 3vh;
-        width: 9vw;
+        width: 18vh;
     }
     to {
         font-size: 0;
@@ -461,7 +461,7 @@ div:not(#app) {
 @keyframes thistab {
     from {
         font-size: 3vh;
-        width: 10vw;
+        width: 20vh;
     }
     to {
         font-size: 0;
@@ -480,10 +480,11 @@ div:not(#app) {
     width: 8vh;
     vertical-align: top;
 }
-#my-profile {
-    height: 41vw;
-    width: 60vw;
+#my-profile[data-v-7d3c70a7] {
+    height: 78vh;
+    width: 120vh;
     float: none;
+    margin-bottom: 23vh;
     position: relative;
 }
 #my-profile-in[data-v-0262afa4], #avatar-choice-in[data-v-0262afa4], #sleeve-choice-in[data-v-0262afa4] {
@@ -494,6 +495,9 @@ div:not(#app) {
     line-height: 1;
     padding: 0;
     margin: .5vh .5vh 0 0;
+}
+#avatar-choice-in[data-v-7d3c70a7], #sleeve-choice-in[data-v-7d3c70a7]{
+    padding: 0
 }
 h3 {
     margin: 0 .5vh
@@ -534,6 +538,20 @@ button.arrow-button[data-v-0262afa4] {
     margin: 5px auto;
     padding: 0;
 }
+#my-profile h3:nth-child(3){
+    border: 1px solid #7a7a7a;
+    background-color: rgba(0,0,0,.9);
+    height: 20vh;
+    width: 120vh;
+    margin: 0;
+    position: absolute;
+    left: -2px;
+}
+#profile-ranking-table {
+    z-index: 2;
+    position: absolute;
+    top: 85vh;
+}
 }
 @media (orientation: portrait) {
 div:not(#app) {
@@ -543,7 +561,7 @@ div:not(#app) {
 @keyframes thistab {
     from {
         font-size: 3vh;
-        width: 7vw;
+        width: 14vh;
     }
     to {
         font-size: 0;
@@ -571,7 +589,7 @@ div:not(#app) {
 @keyframes thistab {
     from {
         font-size: 3vh;
-        width: 11vw;
+        width: 22vh;
     }
     to {
         font-size: 0;
@@ -1057,7 +1075,7 @@ div {
 @-moz-document url-prefix("https://duelingnexus.com/login"), url-prefix("https://duelingnexus.com/register"), url-prefix("https://duelingnexus.com/recover"), url-prefix("https://duelingnexus.com/home"), url-prefix("https://duelingnexus.com/duel"), url-prefix("https://duelingnexus.com/gamelist"), url-prefix("https://duelingnexus.com/hostgame"), url-prefix("https://duelingnexus.com/decks"), url-prefix("https://duelingnexus.com/profile"), url-prefix("https://duelingnexus.com/leaderboard"), url-prefix("https://duelingnexus.com/game"), url-prefix("https://duelingnexus.com/editor"), url-prefix("https://duelingnexus.com/donate"), url-prefix("https://duelingnexus.com/privacy_policy.html") {
 /*SECTION 13 MINI*/
 /*This section uses a rule that changes various elements so they fit on really small screens.*/
-@media (max-width: 1250px) {
+@media (max-width: 1024px) {
 body {
     background-attachment: scroll;
     background-position: right bottom;
