@@ -56,7 +56,7 @@ article button, .fake-button[data-v-6f705b54], .file-picker-container img {
     line-height: 1;
     text-align: center;
 }
-p button, #gamelist-buttons button, .button, button[data-v-6f705b54], .fake-button[data-v-6f705b54], button[data-v-0262afa4], .fake-button[data-v-0262afa4] {
+p button, #gamelist-buttons button, .button, button[data-v-6f705b54], .fake-button[data-v-6f705b54], button[data-v-7d3c70a7], .fake-button[data-v-7d3c70a7] {
     -moz-transition-duration: 2s;
     -o-transition-duration: 2s;
     transition-duration: 2s;
@@ -66,14 +66,14 @@ p button, #gamelist-buttons button, .button, button[data-v-6f705b54], .fake-butt
     min-height: 0;
     min-width: 0;
 }
-p button:focus, #gamelist-buttons button:focus, .button:focus, button[data-v-6f705b54]:focus, .fake-button[data-v-6f705b54]:focus, button[data-v-0262afa4]:focus, .fake-button[data-v-0262afa4]:focus {
+p button:focus, #gamelist-buttons button:focus, .button:focus, button[data-v-6f705b54]:focus, .fake-button[data-v-6f705b54]:focus, button[data-v-7d3c70a7]:focus, .fake-button[data-v-7d3c70a7]:focus {
     -moz-transition-duration: 2s;
     -o-transition-duration: 2s;
     transition-duration: 2s;
     transition-property: color, background, border;
     font-style: italic;
 }
-p button:hover, #gamelist-buttons button:hover, .button:hover, button[data-v-6f705b54]:hover, .fake-button[data-v-6f705b54]:hover, button[data-v-0262afa4]:hover, .fake-button[data-v-0262afa4]:hover {
+p button:hover, #gamelist-buttons button:hover, .button:hover, button[data-v-6f705b54]:hover, .fake-button[data-v-6f705b54]:hover, button[data-v-7d3c70a7]:hover, .fake-button[data-v-7d3c70a7]:hover {
     -moz-transition-duration: 2s;
     -o-transition-duration: 2s;
     transition-duration: 2s;
@@ -484,10 +484,10 @@ div:not(#app) {
     height: 78vh;
     width: 120vh;
     float: none;
-    margin-bottom: 23vh;
+    margin-bottom: 26vh;
     position: relative;
 }
-#my-profile-in[data-v-0262afa4], #avatar-choice-in[data-v-0262afa4], #sleeve-choice-in[data-v-0262afa4] {
+#my-profile-in[data-v-7d3c70a7], #avatar-choice-in[data-v-7d3c70a7], #sleeve-choice-in[data-v-7d3c70a7] {
     padding: 0;
     margin: 0;
 }
@@ -506,16 +506,16 @@ h3 {
     border-width: 1px;
     border-style: dashed;
 }
-.avatar-image[data-v-0262afa4], .sleeve-image[data-v-0262afa4] {
+.avatar-image[data-v-7d3c70a7], .sleeve-image[data-v-7d3c70a7] {
     max-height: 200px;
     height: 200px;
     border-width: .1vh;
     border-style: dashed;
 }
-.avatar-image[data-v-0262afa4] {
+.avatar-image[data-v-7d3c70a7] {
     width: 200px
 }
-button.arrow-button[data-v-0262afa4] {
+button.arrow-button[data-v-7d3c70a7] {
     font-size: 2vw;
     height: 202px;
     width: 45px;
@@ -528,7 +528,7 @@ button.arrow-button[data-v-0262afa4] {
     bottom: 0;
     left: 0;
 }
-.file-picker-container[data-v-0262afa4], .remove-custom-button[data-v-0262afa4] {
+.file-picker-container[data-v-7d3c70a7], .remove-custom-button[data-v-7d3c70a7] {
     font-size: 2vh;
     line-height: 3;
     height: auto;
@@ -541,14 +541,14 @@ button.arrow-button[data-v-0262afa4] {
 #my-profile h3:nth-child(3){
     border: 1px solid #7a7a7a;
     background-color: rgba(0,0,0,.9);
-    height: 20vh;
+    height: 16vh;
     width: 120vh;
     margin: 0;
     position: absolute;
-    left: -2px;
+    top: 80vh;
+    left: -.15vw;
 }
 #profile-ranking-table {
-    z-index: 2;
     position: absolute;
     top: 85vh;
 }
@@ -1080,10 +1080,6 @@ body {
     background-attachment: scroll;
     background-position: right bottom;
 }
-/*Smaller headers*/
-h2 {
-    font-size: 2vh
-}
 /*Smaller navbar*/
 #navbar-left {
     display: none
@@ -1104,30 +1100,39 @@ h2 {
     line-height: 5.5
 }
 /*Smaller profile*/
+#my-profile[data-v-7d3c70a7] {
+    height: 57.5vh
+}
 #my-profile-in, #my-profile-in h2 {
     height: 2.5vh;
     padding: 0;
     margin: 0;
 }
-.avatar-image[data-v-0262afa4], .sleeve-image[data-v-0262afa4] {
+.avatar-image[data-v-7d3c70a7], .sleeve-image[data-v-7d3c70a7] {
     max-height: 20vh;
     border-width: .1vh;
 }
-.avatar-image[data-v-0262afa4] {
+.avatar-image[data-v-7d3c70a7] {
     width: 20vh
 }
-button.arrow-button[data-v-0262afa4] {
+button.arrow-button[data-v-7d3c70a7] {
     font-size: 2vh;
     height: 20.2vh;
     width: 4.5vh;
     margin: 0 .5vh;
     padding: 0;
 }
-.file-picker-container[data-v-0262afa4], .remove-custom-button[data-v-0262afa4] {
+.file-picker-container[data-v-7d3c70a7], .remove-custom-button[data-v-7d3c70a7] {
     font-size: 1.5vh;
     line-height: 2;
     width: 30vh;
     margin: .5vh auto;
+}
+#my-profile h3:nth-child(3){
+    top: 60vh
+}
+#profile-ranking-table {
+    top: 65vh;
 }
 /*Phase buttons*/
 button#game-dp-button {
