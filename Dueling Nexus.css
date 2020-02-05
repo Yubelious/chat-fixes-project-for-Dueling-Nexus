@@ -1,4 +1,4 @@
-@-moz-document url("https://duelingnexus.com/login"), url("https://duelingnexus.com/register"), url("https://duelingnexus.com/recover"), url("https://duelingnexus.com/home"), url("https://duelingnexus.com/duel"), url("https://duelingnexus.com/gamelist"), url("https://duelingnexus.com/hostgame"), url("https://duelingnexus.com/decks"), url("https://duelingnexus.com/profile"), url("https://duelingnexus.com/leaderboard"), url("https://duelingnexus.com/donate"), url("https://duelingnexus.com/privacy_policy.html") {
+@-moz-document url("https://duelingnexus.com/login"), url("https://duelingnexus.com/register"), url("https://duelingnexus.com/recover"), url("https://duelingnexus.com/home"), url("https://duelingnexus.com/duel"), url("https://duelingnexus.com/gamelist"), url("https://duelingnexus.com/hostgame"), url("https://duelingnexus.com/decks"), url("https://duelingnexus.com/profile"), url("https://duelingnexus.com/leaderboard"), url("https://duelingnexus.com/donate") {
 /*SECTION 01 NAVGLOBAL*/
 /*This section is global code that applies to all of the navigation pages. For global code for the game and deckbuilding pages, go to GAMEGLOBAL*/
 html {
@@ -199,9 +199,6 @@ td, .table-button:active {
 html {
     background-position: right bottom;
     background-size: 375% 100%;
-}
-div:not(#app) {
-    display: none
 }
 #app:before {
     content: " ";
@@ -426,7 +423,7 @@ div:not(#app) {
 }
 }
 @media (orientation: portrait) {
-div:not(#app) {
+div:not(#app), #gamelist-area,#custom-game-area {
     display: none
 }
 }
@@ -454,7 +451,7 @@ div:not(#app) {
 }
 }
 @media (orientation: portrait) {
-div:not(#app) {
+div:not(#app), #decks-area {
     display: none
 }
 }
@@ -528,6 +525,9 @@ button.arrow-button[data-v-7d3c70a7] {
     bottom: 0;
     left: 0;
 }
+#profile-ranking-table td[data-v-7d3c70a7] {
+    padding: 0
+}
 .file-picker-container[data-v-7d3c70a7], .remove-custom-button[data-v-7d3c70a7] {
     font-size: 2vh;
     line-height: 3;
@@ -554,7 +554,7 @@ button.arrow-button[data-v-7d3c70a7] {
 }
 }
 @media (orientation: portrait) {
-div:not(#app) {
+div:not(#app), #my-profile {
     display: none
 }
 }
@@ -582,7 +582,7 @@ div:not(#app) {
 }
 }
 @media (orientation: portrait) {
-div:not(#app) {
+div:not(#app), #leaderboard-page {
     display: none
 }
 }
@@ -1072,13 +1072,28 @@ div {
 }
 }
 
+@-moz-document url("https://duelingnexus.com/donate") {
+/*SECTION 13 DONATE*/
+/*This section affects the donate page.*/
+@media (orientation: portrait) {
+div:not(#app), #donate-area {
+    display: none
+}
+}
+
+}
+
 @-moz-document url-prefix("https://duelingnexus.com/login"), url-prefix("https://duelingnexus.com/register"), url-prefix("https://duelingnexus.com/recover"), url-prefix("https://duelingnexus.com/home"), url-prefix("https://duelingnexus.com/duel"), url-prefix("https://duelingnexus.com/gamelist"), url-prefix("https://duelingnexus.com/hostgame"), url-prefix("https://duelingnexus.com/decks"), url-prefix("https://duelingnexus.com/profile"), url-prefix("https://duelingnexus.com/leaderboard"), url-prefix("https://duelingnexus.com/game"), url-prefix("https://duelingnexus.com/editor"), url-prefix("https://duelingnexus.com/donate"), url-prefix("https://duelingnexus.com/privacy_policy.html") {
-/*SECTION 13 MINI*/
+/*SECTION 14 MINI*/
 /*This section uses a rule that changes various elements so they fit on really small screens.*/
 @media (max-width: 1024px) {
 body {
     background-attachment: scroll;
     background-position: right bottom;
+}
+/*Smaller headers*/
+h2, h3 {
+    font-size: 3vh
 }
 /*Smaller navbar*/
 #navbar-left {
@@ -1101,7 +1116,7 @@ body {
 }
 /*Smaller profile*/
 #my-profile[data-v-7d3c70a7] {
-    height: 57.5vh
+    height: 59.5vh
 }
 #my-profile-in, #my-profile-in h2 {
     height: 2.5vh;
