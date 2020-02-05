@@ -1052,6 +1052,18 @@ div {
 @-moz-document url("https://duelingnexus.com/privacy_policy.html") {
 /*SECTION 12 PRIVACY*/
 /*This section affects the Privacy Policy page.*/
+h2, h3 {/*This is the main header for each of the tabs.*/
+    font-variant: small-caps;
+    font-size: 3.5vh;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: .1vw;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    margin: .5vh;
+    padding: 0;
+}
 #newsMain {
     height: 100vh;
     width: 100vw;
@@ -1080,7 +1092,6 @@ div:not(#app), #donate-area {
     display: none
 }
 }
-
 }
 
 @-moz-document url-prefix("https://duelingnexus.com/login"), url-prefix("https://duelingnexus.com/register"), url-prefix("https://duelingnexus.com/recover"), url-prefix("https://duelingnexus.com/home"), url-prefix("https://duelingnexus.com/duel"), url-prefix("https://duelingnexus.com/gamelist"), url-prefix("https://duelingnexus.com/hostgame"), url-prefix("https://duelingnexus.com/decks"), url-prefix("https://duelingnexus.com/profile"), url-prefix("https://duelingnexus.com/leaderboard"), url-prefix("https://duelingnexus.com/game"), url-prefix("https://duelingnexus.com/editor"), url-prefix("https://duelingnexus.com/donate"), url-prefix("https://duelingnexus.com/privacy_policy.html") {
