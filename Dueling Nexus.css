@@ -1052,17 +1052,47 @@ div {
 @-moz-document url("https://duelingnexus.com/privacy_policy.html") {
 /*SECTION 12 PRIVACY*/
 /*This section affects the Privacy Policy page.*/
-h2, h3 {/*This is the main header for each of the tabs.*/
+/*Here we have some general clicky thingy rules.*/
+a {
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    padding: 0;
+    text-decoration: underline;
+    opacity: .75;
+}
+a:focus {
+    font-style: italic
+}
+a:hover {
+    opacity: 1
+}
+h1, h2, h3 {
     font-variant: small-caps;
-    font-size: 3.5vh;
     line-height: 1;
     text-transform: none;
-    letter-spacing: .1vw;
+    letter-spacing: .1vh;
     -moz-user-select: none;
     -o-user-select: none;
     user-select: none;
     margin: .5vh;
     padding: 0;
+}
+h1 {
+    font-size: 4vh
+}
+h2 {
+    font-size: 3.5vh
+}
+h3 {
+    font-size: 3vh
+}
+h4 {
+    font-size: 2.5vh
+}
+li, p {
+    font-size: 1.5vh
 }
 #newsMain {
     height: 100vh;
