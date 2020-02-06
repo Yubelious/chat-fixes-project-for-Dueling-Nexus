@@ -1170,6 +1170,9 @@ body {
 h2, h3 {
     font-size: 3vh
 }
+h4 {
+    font-size: 2vw
+}
 /*Smaller navbar*/
 #navbar-left {
     display: none
@@ -1246,6 +1249,10 @@ button#game-ep-button {
 /*Smaller textbox*/
 #game-chat-area .engine-text-box {
     width: 21.5vw
+}
+/*smaller editor*/
+.engine-button-navbar {
+    font-size: 2vh
 }
 }
 }
