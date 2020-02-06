@@ -969,6 +969,17 @@ button#game-ep-button {
 /*This section affects the Editor pages, where you build your deck.*/
 /*Editor top*/
 @media (orientation: landscape) {
+#editor-menu-title, .engine-button, span {
+    font-size: 2vh
+}
+#rs-ext-banlist {
+    height: 4vh
+}
+.engine-button-navbar, #rs-ext-banlist {
+    font-size: 1.6vw;
+    float: left;
+    margin: 1.25vh 0 0 .5vh;
+}
 #editor-menu-container, #editor-menu-content, #editor-menu-title {
     height: 6vh
 }
@@ -977,45 +988,41 @@ button#game-ep-button {
     left: 0;
 }
 #editor-menu-title {
-    font-size: 2vh;
     line-height: 3;
     text-align: right;
+    word-wrap: break-word;
+    overflow-y: auto;
     float: right;
+    max-width: 33.3vw;
     margin-right: 1vh;
-    width: 68.1vw;
 }
 #editor-menu-spacer {
     display: none
 }
-.engine-button-navbar {
-    font-size: 1.6vw;
-    float: left;
-    margin: 1.25vh 0 0 .5vh;
-}
-/*Search area*/
 #editor-search-column {    
     border-width: 0 0 .15vw 0;
     border-color: #AAAAAA;
     border-style: solid;
 }
-#editor-search-box {
-    height: 5vw
-}
-#editor-search-text {
+.engine-text-box {
     margin: 1vw 0 0 0
 }
+#editor-search-box {
+    height: 6vw;
+    overflow-y: auto;
+}
 #editor-search-results {
-    border-width: 0 .15vw 0 .15vw;
+    border-width: .15vw .15vw 0 .15vw;
     border-color: #AAAAAA;
     border-style: solid;
-    height: 35vw;
+    height: 34vw;
     overflow-x: hidden;
     overflow-y: auto;
     margin-top: .15vw;
 }
 .editor-search-result {
     cursor: pointer;
-    width: 50.23%;
+    width: 100%;
     border-width: .15vw;
     margin: 0 0 -.11vw -.1vw;
 }
@@ -1040,6 +1047,9 @@ button#game-ep-button {
     overflow: visible;
     margin-left: 0;
     position: absolute;
+}
+.template-name {
+    font-weight: bold
 }
 }
 @media (orientation: portrait) {
@@ -1232,26 +1242,6 @@ button#game-mp2-button {
 }
 button#game-ep-button {
     transform: translate(0,6vh) scale(1.5)
-}
-/*Smaller editor*/
-#editor-menu-title {
-    font-size: 1.75vh;
-    line-height: 3.5;
-    width: 59.5vw;
-    margin: 0 .5vw 0 0;
-    padding: 0;
-}
-.editor-search-description:hover {
-    font-size: 0.9vh
-}
-.editor-search-result {
-    width: 100%
-}
-.editor-search-description {
-    font-size: 2vw
-}
-.editor-search-description:hover {
-    font-size: 1.33vw
 }
 /*Smaller textbox*/
 #game-chat-area .engine-text-box {
