@@ -1,3 +1,3 @@
 CSS FIXES PROJECT
 **Patch Notes**
-v1.5 Modified the editor code so it's compatible with Sock's editor Extension, added features to prevent clipping with a scrollbar for when it stubbornly clips anyway.
+v1.5 Modified the editor code so it's compatible with Sock's editor Extension, added features to prevent clipping with a scrollbar for when it stubbornly clips anyway, and fixed "image uploaded successfully" bug.
