@@ -1,6 +1,9 @@
-@-moz-document url("https://duelingnexus.com/login"), url("https://duelingnexus.com/register"), url("https://duelingnexus.com/recover"), url("https://duelingnexus.com/home"), url("https://duelingnexus.com/duel"), url("https://duelingnexus.com/gamelist"), url("https://duelingnexus.com/hostgame"), url("https://duelingnexus.com/decks"), url("https://duelingnexus.com/profile"), url("https://duelingnexus.com/donate") {
+@-moz-document url("https://duelingnexus.com/login"), url("https://duelingnexus.com/register"), url("https://duelingnexus.com/recover"), url("https://duelingnexus.com/home"), url("https://duelingnexus.com/duel"), url("https://duelingnexus.com/gamelist"), url("https://duelingnexus.com/hostgame"), url("https://duelingnexus.com/decks"), url("https://duelingnexus.com/profile"), url("https://duelingnexus.com/leaderboard"), url("https://duelingnexus.com/donate") {
 /*SECTION 01 NAVGLOBAL*/
 /*This section is global code that applies to all of the navigation pages. For global code for the game and deckbuilding pages, go to GAMEGLOBAL*/
+html {
+    background-position: right bottom
+}
 @media (orientation: landscape) {
 body {
     font-size: 2vh;
@@ -39,20 +42,21 @@ a {
     transition: all 1s ease-in-out;
     font-size: 2vh;
     padding: 0;
-    text-decoration: none;
+    text-decoration: underline;
+    opacity: .75;
 }
 a:focus {
     font-style: italic
 }
 a:hover {
-    text-decoration: underline
+    opacity: 1
 }
 article button, .fake-button[data-v-6f705b54], .file-picker-container img {  
     font-size: 2vh;
     line-height: 1;
     text-align: center;
 }
-p button, #gamelist-buttons button, .button, button[data-v-6f705b54], .fake-button[data-v-6f705b54], button[data-v-0262afa4], .fake-button[data-v-0262afa4] {
+p button, #gamelist-buttons button, .button, button[data-v-6f705b54], .fake-button[data-v-6f705b54], button[data-v-7d3c70a7], .fake-button[data-v-7d3c70a7] {
     -moz-transition-duration: 2s;
     -o-transition-duration: 2s;
     transition-duration: 2s;
@@ -62,14 +66,14 @@ p button, #gamelist-buttons button, .button, button[data-v-6f705b54], .fake-butt
     min-height: 0;
     min-width: 0;
 }
-p button:focus, #gamelist-buttons button:focus, .button:focus, button[data-v-6f705b54]:focus, .fake-button[data-v-6f705b54]:focus, button[data-v-0262afa4]:focus, .fake-button[data-v-0262afa4]:focus {
+p button:focus, #gamelist-buttons button:focus, .button:focus, button[data-v-6f705b54]:focus, .fake-button[data-v-6f705b54]:focus, button[data-v-7d3c70a7]:focus, .fake-button[data-v-7d3c70a7]:focus {
     -moz-transition-duration: 2s;
     -o-transition-duration: 2s;
     transition-duration: 2s;
     transition-property: color, background, border;
     font-style: italic;
 }
-p button:hover, #gamelist-buttons button:hover, .button:hover, button[data-v-6f705b54]:hover, .fake-button[data-v-6f705b54]:hover, button[data-v-0262afa4]:hover, .fake-button[data-v-0262afa4]:hover {
+p button:hover, #gamelist-buttons button:hover, .button:hover, button[data-v-6f705b54]:hover, .fake-button[data-v-6f705b54]:hover, button[data-v-7d3c70a7]:hover, .fake-button[data-v-7d3c70a7]:hover {
     -moz-transition-duration: 2s;
     -o-transition-duration: 2s;
     transition-duration: 2s;
@@ -153,16 +157,23 @@ input:hover, label:hover {
     margin: 0;
 }
 #navbar-middle button, #navbar-right button {
-    font-size: 3.5vh
+    font-size: 3.5vh;
+    margin-right: 1vh;
 }
 #navbar-left button {
     width: 8vh;
     float: left;
 }
+#navbar-left br, #navbar-middle br {
+    display: none
+}
+#navbar-left {
+    width: 24vh
+}
 #navbar-middle {
     width: auto;
     position: fixed;
-    left: 25vw;
+    left: 25vh;
     right: 25vw;
 }
 #navbar-right {
@@ -176,6 +187,7 @@ article {
 }
 /*Table stuff*/
 td, .table-button:active {
+    line-height: 2.5;
 	margin: 0;
 	padding: .5vw;
 }
@@ -184,8 +196,9 @@ td, .table-button:active {
 }
 }
 @media (orientation: portrait) {
-div:not(#app) {
-    display: none
+html {
+    background-position: right bottom;
+    background-size: 375% 100%;
 }
 #app:before {
     content: " ";
@@ -196,7 +209,7 @@ div:not(#app) {
     transform: translateY(4vh) translateX(1vh)
 }
 #app:after {
-    content: "Please hold your device horizontally to use the website. You can still hold your device vertically to use the ingame chat.";
+    content: "Please hold your device horizontally to use the website. You can still hold your device vertically to type.";
     font-size: 3vh;
     text-align: justify;
     text-indent: 4vh;
@@ -214,13 +227,18 @@ div:not(#app) {
 /*SECTION 02 LOGIN*/
 /*This section applies to the Login, Register, and Recover pages, but not the news.*/
 @media (orientation: landscape) {
-#login-area[data-v-7df22d6c], #register-area[data-v-c3640fe8], #recover-area[data-v-49df144c] {
-    height: 39.5vw;
-    width: 60vw;
+#login-area[data-v-9bfe76b0], #register-area[data-v-4068c77b], #recover-area[data-v-8098b0b4] {
+    height: 79vh;
+    width: 120vh;
     float: none;
-    position: relative;
 }
-#login-area h2::before, #login-email, #login-area h2::after, #login-password, .input-checkbox-group, #login-submit, #links-area {/*General code for this page. Ordered from top to bottom, and repeated below.*/
+#login-area[data-v-9bfe76b0], #recover-area[data-v-80980b4] {
+    position: relative
+}
+#register-area[data-v-4068c77b] {
+    overflow-y: auto
+}
+#login-area h2::before, #login-email, #login-area h2::after, #login-password, .input-checkbox-group, #login-submit, #login-area[data-v-9bfe76b0] p:not(#links-area), #links-area {/*General code for this page. Ordered from top to bottom, and repeated below.*/
     font-size: 1.5vw;
     position: absolute;
 }
@@ -253,36 +271,52 @@ div:not(#app) {
     line-height: 1.5;
     border-width: .15vw;
     height: auto;
+    min-height: 0;
     width: 98%;
     right: 1%;
-    padding: 0vw;
-    bottom: 35%;
+    padding: 0;
     left: 1%;
+}
+#login-submit {
+    top: 50%
+}
+#register-area button {
+    margin-top: 2vh
+}
+#login-area[data-v-9bfe76b0] p:not(#links-area), #register-area[data-v-4068c77b] p:not(#links-area) {
+    font-size: 2vh;
+    margin: 0;
+}
+#login-area[data-v-9bfe76b0] p:not(#links-area) {
+    top: 57%
+}
+.login-error p[data-v-9bfe76b0] {
+    line-height: 3.5
 }
 #login-email, #login-password, #register-email, #register-username, #register-password, #register-password2, #recover-email {
     border-width: .3vw;
     border-style: solid;
 }
-#links-area[data-v-7df22d6c], #links-area[data-v-c3640fe8], #links-area[data-v-49df144c] {
+#links-area[data-v-9bfe76b0], #links-area[data-v-4068c77b], #links-area[data-v-80980b4] {
+    font-size: 0;
+    border: 0;
     margin: 0;
     padding: 0;
     width: 100%;
-    bottom: 10%;
     left: 0;
 }
-#links-area[data-v-7df22d6c], #links-area[data-v-c3640fe8], #links-area[data-v-49df144c] {
-    font-size: 0;
-    border: 0;
+#links-area[data-v-9bfe76b0], #links-area[data-v-80980b4] {
+    bottom: 10%
 }
-a[data-v-7df22d6c], a[data-v-c3640fe8], a[data-v-49df144c] {
+#links-area[data-v-9bfe76b0] a, #links-area[data-v-4068c77b] a, #links-area[data-v-80980b4] a {
     line-height: 6;
     width: 50%;
     float: left;
 }
-a[data-v-c3640fe8], a[data-v-49df144c] {
+#links-area[data-v-4068c77b] a, #links-area[data-v-80980b4] a {
     margin: 0 25%
 }
-a[data-v-7df22d6c] {
+#links-area[data-v-9bfe76b0] a {
     border: 0
 }
 #register-email, #register-username, #register-password, #register-password2, #recover-email {
@@ -302,7 +336,7 @@ div:not(#app) {
 
 @-moz-document url("https://duelingnexus.com/login"), url("https://duelingnexus.com/home") {
 /*SECTION 03 NEWS*/
-/*This section applies to the News Area on both the login and home pages.*/
+/*This section applies to the News Area on both the login and home pages, as well as any transitions between the two.*/
 @media (orientation: landscape) {
 #news-area {
     height: 4vh;
@@ -312,7 +346,7 @@ div:not(#app) {
     margin: 0;
     padding: .5vh;
     position: absolute;
-    top: 75vh;
+    bottom: 15vh;
     right: 1vw;
     left: 1vw;
 }
@@ -349,37 +383,136 @@ div:not(#app) {
 }
 }
 
+@-moz-document url("https://duelingnexus.com/home") {
+/*SECTION 04 HOME*/
+/*This section affects the home page.*/
+@media (orientation: landscape) {
+#navbar-middle button:first-of-type {
+    animation: thistab 2s;
+    font-size: 0;
+    width: 8vh;
+    vertical-align: top;
+}
+}
+@media (orientation: portrait) {
+div:not(#app) {
+    display: none
+}
+}
+@keyframes thistab {
+    from {
+        font-size: 3vh;
+        width: 14vh;
+    }
+    to {
+        font-size: 0;
+        width: 8vh;
+    }
+}
+}
+
+@-moz-document url("https://duelingnexus.com/duel"), url("https://duelingnexus.com/gamelist"), url("https://duelingnexus.com/hostgame") {
+/*SECTION 05 DUELZONE*/
+/*This section affects the various duel related pages.*/
+@media (orientation: landscape) {
+#navbar-middle button:nth-of-type(2) {
+    animation: thistab 2s;
+    font-size: 0;
+    width: 8vh;
+    vertical-align: top;
+}
+}
+@media (orientation: portrait) {
+div:not(#app), #gamelist-area,#custom-game-area {
+    display: none
+}
+}
+@keyframes thistab {
+    from {
+        font-size: 3vh;
+        width: 18vh;
+    }
+    to {
+        font-size: 0;
+        width: 8vh;
+    }
+}
+}
+
+@-moz-document url("https://duelingnexus.com/decks") {
+/*SECTION 06 DECKS*/
+/*This section affects the deck manager.*/
+@media (orientation: landscape) {
+#navbar-middle button:nth-of-type(3) {
+    animation: thistab 2s;
+    font-size: 0;
+    width: 8vh;
+    vertical-align: top;
+}
+}
+@media (orientation: portrait) {
+div:not(#app), #decks-area {
+    display: none
+}
+}
+@keyframes thistab {
+    from {
+        font-size: 3vh;
+        width: 20vh;
+    }
+    to {
+        font-size: 0;
+        width: 8vh;
+    }
+}
+}
+
 @-moz-document url-prefix("https://duelingnexus.com/profile") {
-/*SECTION 04 PROFILE*/
+/*SECTION 07 PROFILE*/
 /*This section applies to Profile & Settings.(Although it's really just profile settings, in my opinion.)*/
 @media (orientation: landscape) {
-#my-profile {
-    height: 39.5vw;
-    width: 60vw;
+#navbar-middle button:nth-of-type(4) {
+    animation: thistab 2s;
+    font-size: 0;
+    width: 8vh;
+    vertical-align: top;
+}
+#my-profile[data-v-7d3c70a7] {
+    height: 78vh;
+    width: 120vh;
     float: none;
+    margin-bottom: 26vh;
     position: relative;
 }
-#my-profile-in[data-v-0262afa4], #my-profile-in h2, #avatar-choice-in[data-v-0262afa4], #sleeve-choice-in[data-v-0262afa4] {
+#my-profile-in[data-v-7d3c70a7], #avatar-choice-in[data-v-7d3c70a7], #sleeve-choice-in[data-v-7d3c70a7] {
     padding: 0;
     margin: 0;
 }
 #my-profile-in h2 {
-    line-height: 2
+    line-height: 1;
+    padding: 0;
+    margin: .5vh .5vh 0 0;
+}
+#avatar-choice-in[data-v-7d3c70a7], #sleeve-choice-in[data-v-7d3c70a7]{
+    padding: 0
+}
+h3 {
+    margin: 0 .5vh
 }
 .avatar-image, .sleeve-image {
     border-width: 1px;
     border-style: dashed;
 }
-.avatar-image[data-v-0262afa4], .sleeve-image[data-v-0262afa4] {
+.avatar-image[data-v-7d3c70a7], .sleeve-image[data-v-7d3c70a7] {
     max-height: 200px;
     height: 200px;
     border-width: .1vh;
     border-style: dashed;
 }
-.avatar-image[data-v-0262afa4] {
+.avatar-image[data-v-7d3c70a7] {
     width: 200px
 }
-button.arrow-button[data-v-0262afa4] {
+button.arrow-button[data-v-7d3c70a7] {
     font-size: 2vw;
     height: 202px;
     width: 45px;
@@ -392,7 +525,10 @@ button.arrow-button[data-v-0262afa4] {
     bottom: 0;
     left: 0;
 }
-.file-picker-container[data-v-0262afa4], .remove-custom-button[data-v-0262afa4] {
+#profile-ranking-table td[data-v-7d3c70a7] {
+    padding: 0
+}
+.file-picker-container[data-v-7d3c70a7], .remove-custom-button[data-v-7d3c70a7] {
     font-size: 2vh;
     line-height: 3;
     height: auto;
@@ -402,16 +538,68 @@ button.arrow-button[data-v-0262afa4] {
     margin: 5px auto;
     padding: 0;
 }
+#my-profile h3:nth-child(3){
+    border: 1px solid #7a7a7a;
+    background-color: rgba(0,0,0,.9);
+    height: 16vh;
+    width: 120vh;
+    margin: 0;
+    position: absolute;
+    top: 80vh;
+    left: -.15vw;
+}
+#profile-ranking-table {
+    position: absolute;
+    top: 85vh;
+}
 }
 @media (orientation: portrait) {
-div:not(#app) {
+div:not(#app), #my-profile {
     display: none
 }
+}
+@keyframes thistab {
+    from {
+        font-size: 3vh;
+        width: 14vh;
+    }
+    to {
+        font-size: 0;
+        width: 8vh;
+    }
+}
+}
+
+@-moz-document url("https://duelingnexus.com/leaderboard") {
+/*SECTION 08 LEADERBOARD*/
+/*This section affects the leaderboard.*/
+@media (orientation: landscape) {
+#navbar-middle button:nth-of-type(5) {
+    animation: thistab 2s;
+    font-size: 0;
+    width: 8vh;
+    vertical-align: top;
+}
+}
+@media (orientation: portrait) {
+div:not(#app), #leaderboard-page {
+    display: none
+}
+}
+@keyframes thistab {
+    from {
+        font-size: 3vh;
+        width: 22vh;
+    }
+    to {
+        font-size: 0;
+        width: 8vh;
+    }
 }
 }
 
 @-moz-document url-prefix("https://duelingnexus.com/game"), url-prefix("https://duelingnexus.com/editor") {
-/*SECTION 05 GAMEGLOBAL*/
+/*SECTION 09 GAMEGLOBAL*/
 /*This section applies to the game and editor pages. Much of the code is shared.*/
 div {
     line-height: 1
@@ -526,7 +714,7 @@ table#game-field {
 }
 
 @-moz-document url-prefix("https://duelingnexus.com/game") {
-/*SECTION 06 GAME*/
+/*SECTION 10 GAME*/
 /*This section affects only the game pages.*/
 .engine-window p, #game-chat-area, #game-chat-area .engine-text-box, #game-end-text, #game-end-title {
     margin: 0;
@@ -777,9 +965,21 @@ button#game-ep-button {
 }
 
 @-moz-document url-prefix("https://duelingnexus.com/editor/") {
-/*SECTION 07 EDITOR*/
+/*SECTION 11 EDITOR*/
+/*This section affects the Editor pages, where you build your deck.*/
 /*Editor top*/
 @media (orientation: landscape) {
+#editor-menu-title, .engine-button, span {
+    font-size: 2vh
+}
+#rs-ext-banlist {
+    height: 4vh
+}
+.engine-button-navbar, #rs-ext-banlist {
+    font-size: 1.6vw;
+    float: left;
+    margin: 1.25vh 0 0 .5vh;
+}
 #editor-menu-container, #editor-menu-content, #editor-menu-title {
     height: 6vh
 }
@@ -788,45 +988,41 @@ button#game-ep-button {
     left: 0;
 }
 #editor-menu-title {
-    font-size: 2vh;
     line-height: 3;
     text-align: right;
+    word-wrap: break-word;
+    overflow-y: auto;
     float: right;
+    max-width: 33.3vw;
     margin-right: 1vh;
-    width: 68.1vw;
 }
 #editor-menu-spacer {
     display: none
 }
-.engine-button-navbar {
-    font-size: 3vh;
-    float: left;
-    margin: 1vh 0 0 .5vh;
-}
-/*Search area*/
 #editor-search-column {    
     border-width: 0 0 .15vw 0;
     border-color: #AAAAAA;
     border-style: solid;
 }
-#editor-search-box {
-    height: 5vw
-}
-#editor-search-text {
+.engine-text-box {
     margin: 1vw 0 0 0
 }
+#editor-search-box {
+    height: 6vw;
+    overflow-y: auto;
+}
 #editor-search-results {
-    border-width: 0 .15vw 0 .15vw;
+    border-width: .15vw .15vw 0 .15vw;
     border-color: #AAAAAA;
     border-style: solid;
-    height: 35vw;
+    height: 34vw;
     overflow-x: hidden;
     overflow-y: auto;
     margin-top: .15vw;
 }
 .editor-search-result {
     cursor: pointer;
-    width: 50.23%;
+    width: 100%;
     border-width: .15vw;
     margin: 0 0 -.11vw -.1vw;
 }
@@ -852,6 +1048,9 @@ button#game-ep-button {
     margin-left: 0;
     position: absolute;
 }
+.template-name {
+    font-weight: bold
+}
 }
 @media (orientation: portrait) {
 div {
@@ -860,13 +1059,119 @@ div {
 }
 }
 
-@-moz-document url-prefix("https://duelingnexus.com/login"), url-prefix("https://duelingnexus.com/register"), url-prefix("https://duelingnexus.com/recover"), url-prefix("https://duelingnexus.com/home"), url-prefix("https://duelingnexus.com/duel"), url-prefix("https://duelingnexus.com/gamelist"), url-prefix("https://duelingnexus.com/hostgame"), url-prefix("https://duelingnexus.com/decks"), url-prefix("https://duelingnexus.com/profile"), url-prefix("https://duelingnexus.com/game"), url-prefix("https://duelingnexus.com/editor") {
-/*SECTION 5 MINI*/
-/*This section uses a rule that changes various elements so they fit on really small screens.*/
-@media (max-width: 1250px) {
-/*Smaller headers*/
+@-moz-document url("https://duelingnexus.com/privacy_policy.html") {
+/*SECTION 12 PRIVACY*/
+/*This section affects the Privacy Policy page.*/
+/*Here we have some general clicky thingy rules.*/
+a {
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    padding: 0;
+    text-decoration: underline;
+    opacity: .75;
+}
+a:focus {
+    font-style: italic
+}
+a:hover {
+    opacity: 1
+}
+h1, h2, h3 {
+    font-variant: small-caps;
+    line-height: 1;
+    text-transform: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    margin: .5vh;
+    padding: 0;
+}
+#newsMain {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.news_list {
+    margin: 5vh 2.5vw;
+    height: 85vh;
+    width: auto;
+    max-width: 100%;
+    overflow-y: scroll;
+    position: absolute;
+    top: 0;
+}
+@media (orientation: landscape) {
+h1, h2, h3 {
+    letter-spacing: .1vw
+}
+h1 {
+    font-size: 2vw
+}
 h2 {
-    font-size: 2vh
+    font-size: 1.75vw
+}
+h3 {
+    font-size: 1.5vw
+}
+h4 {
+    font-size: 1.25vw
+}
+li, p {
+    font-size: 1vw
+}
+}
+@media (orientation: portrait) {
+h1, h2, h3 {
+    letter-spacing: .2vh
+}
+h1 {
+    font-size: 4vh
+}
+h2 {
+    font-size: 3.5vh
+}
+h3 {
+    font-size: 3vh
+}
+h4 {
+    font-size: 2.5vh
+}
+li, p {
+    font-size: 1.75vh
+}
+}
+}
+
+@-moz-document url("https://duelingnexus.com/donate") {
+/*SECTION 13 DONATE*/
+/*This section affects the donate page.*/
+@media (orientation: portrait) {
+div:not(#app), #donate-area {
+    display: none
+}
+}
+}
+
+@-moz-document url-prefix("https://duelingnexus.com/login"), url-prefix("https://duelingnexus.com/register"), url-prefix("https://duelingnexus.com/recover"), url-prefix("https://duelingnexus.com/home"), url-prefix("https://duelingnexus.com/duel"), url-prefix("https://duelingnexus.com/gamelist"), url-prefix("https://duelingnexus.com/hostgame"), url-prefix("https://duelingnexus.com/decks"), url-prefix("https://duelingnexus.com/profile"), url-prefix("https://duelingnexus.com/leaderboard"), url-prefix("https://duelingnexus.com/game"), url-prefix("https://duelingnexus.com/editor"), url-prefix("https://duelingnexus.com/donate"), url-prefix("https://duelingnexus.com/privacy_policy.html") {
+/*SECTION 14 MINI*/
+/*This section uses a rule that changes various elements so they fit on really small screens.*/
+@media (max-width: 1024px) {
+body {
+    background-attachment: scroll;
+    background-position: right bottom;
+}
+/*Smaller headers*/
+h2, h3 {
+    font-size: 3vh
+}
+h4 {
+    font-size: 2vw
 }
 /*Smaller navbar*/
 #navbar-left {
@@ -874,43 +1179,53 @@ h2 {
 }
 #navbar-middle, #navbar-middle button {
     float: left;
+    vertical-align: top;
     left: 0;
 }
 /*Smaller login*/
 #register-email, #register-username, #register-password, #register-password2, #recover-email {
     margin: .5vh 0 1.5vh
 }
-#links-area[data-v-7df22d6c], #links-area[data-v-c3640fe8], #links-area[data-v-49df144c] {
+#links-area[data-v-7df22d6c], #links-area[data-v-c3640fe8], #links-area[data-v-80980b4] {
     bottom: 0
 }
 #links-area a[data-v-c3640fe8] {
     line-height: 5.5
 }
 /*Smaller profile*/
+#my-profile[data-v-7d3c70a7] {
+    height: 59.5vh
+}
 #my-profile-in, #my-profile-in h2 {
     height: 2.5vh;
     padding: 0;
     margin: 0;
 }
-.avatar-image[data-v-0262afa4], .sleeve-image[data-v-0262afa4] {
+.avatar-image[data-v-7d3c70a7], .sleeve-image[data-v-7d3c70a7] {
     max-height: 20vh;
     border-width: .1vh;
 }
-.avatar-image[data-v-0262afa4] {
+.avatar-image[data-v-7d3c70a7] {
     width: 20vh
 }
-button.arrow-button[data-v-0262afa4] {
+button.arrow-button[data-v-7d3c70a7] {
     font-size: 2vh;
     height: 20.2vh;
     width: 4.5vh;
     margin: 0 .5vh;
     padding: 0;
 }
-.file-picker-container[data-v-0262afa4], .remove-custom-button[data-v-0262afa4] {
+.file-picker-container[data-v-7d3c70a7], .remove-custom-button[data-v-7d3c70a7] {
     font-size: 1.5vh;
     line-height: 2;
     width: 30vh;
     margin: .5vh auto;
+}
+#my-profile h3:nth-child(3){
+    top: 60vh
+}
+#profile-ranking-table {
+    top: 65vh;
 }
 /*Phase buttons*/
 button#game-dp-button {
@@ -931,29 +1246,13 @@ button#game-mp2-button {
 button#game-ep-button {
     transform: translate(0,6vh) scale(1.5)
 }
-/*Smaller editor*/
-#editor-menu-title {
-    font-size: 1.75vh;
-    line-height: 3.5;
-    width: 59.5vw;
-    margin: 0 .5vw 0 0;
-    padding: 0;
-}
-.editor-search-description:hover {
-    font-size: 0.9vh
-}
-.editor-search-result {
-    width: 100%
-}
-.editor-search-description {
-    font-size: 2vw
-}
-.editor-search-description:hover {
-    font-size: 1.33vw
-}
 /*Smaller textbox*/
 #game-chat-area .engine-text-box {
     width: 21.5vw
+}
+/*smaller editor*/
+.engine-button-navbar {
+    font-size: 2vh
 }
 }
 }
