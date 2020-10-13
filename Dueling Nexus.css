@@ -25,7 +25,7 @@ h2, h3 {/*This is the main header for each of the tabs.*/
     user-select: none;
     margin: .5vh;
 }
-button img {
+button img, .fake-button img {
     height: 2vw;
     width: 2vw;
     float: right;
@@ -53,7 +53,7 @@ button img {
 }
 #gamelist-area[data-v-33d70790], #custom-game-area[data-v-7fa67ee2], #decks-area[data-v-417e0dbe], #my-profile[data-v-402aeb34], #leaderboard-page, #donate-area[data-v-5ccd2ad4] {
     height: 75%;
-    bottom: 41px;
+    bottom: 12%;
 }
 /*Here we have some general clicky thingy rules.*/
 a {
@@ -76,7 +76,7 @@ article button, .fake-button[data-v-6f705b54], .file-picker-container img {
     line-height: 1;
     text-align: center;
 }
-article button, p button, #gamelist-buttons button, .button, button[data-v-6f705b54], .fake-button[data-v-6f705b54], button[data-v-7d3c70a7], .fake-button[data-v-7d3c70a7] {
+article button, p button, #gamelist-buttons button, .button, button[data-v-417e0dbe]/*Refers to the button(s) on the Deck Editor page.*/, .fake-button[data-v-417e0dbe]/*Refers to the fake button(s) on the Deck Editor page.*/, button[data-v-402aeb34]/*Refers to the button(s) on the My Profile page.*/, .fake-button[data-v-402aeb34]/*Refers to the fake button(s) on the My Profile page.*/ {
     -moz-transition-duration: 2s;
     -o-transition-duration: 2s;
     transition-duration: 2s;
@@ -779,5 +779,64 @@ td[data-v-33d70790] {
     100% {
         font-size: 2vh;
     }
+}
+}
+
+@-moz-document url-prefix("https://duelingnexus.com/decks") {
+/*SECTION 6 DECK EDITOR*/
+/*This section applies to the page that loads when you click the Deck Editor button.*/
+#app {
+    overflow-y: auto
+}
+h2[data-v-417e0dbe] {
+    overflow: visible;
+    max-height: 6%;
+}
+#decks-buttons[data-v-417e0dbe] {
+    overflow: visible;
+    max-height: 15%;
+    margin-bottom : 1%;
+}
+#decks-buttons button, button[data-v-417e0dbe], .fake-button[data-v-417e0dbe] {
+    text-align: center;
+    box-sizing: border-box;
+    width: 24%;
+    padding: 1vh;
+    margin-right: 1%;
+}
+#decks-container {
+    overflow-y: auto;
+    max-height: 75%;
+    position: absolute;
+    bottom: 2%;
+}
+table[data-v-417e0dbe] {
+    width: 99%;
+    table-layout: fixed;
+}
+.td-big {
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 65%;
+    min-width: 0;
+    overflow: hidden;
+}
+td {
+    font-size: 1vw;
+    text-align: center;
+    padding: .75vw;
+}
+}
+
+@-moz-document url-prefix("https://duelingnexus.com/profile") {
+/*SECTION 7 PROFILE*/
+/*This section applies to the page that loads when you click the Profile button.*/
+.remove-custom-button[data-v-402aeb34], .fake-button[data-v-402aeb34] {
+    text-align: center;
+    line-height: 1;
+    box-sizing: border-box;
+    width: 70%;
+    padding: 1vw;
 }
 }
