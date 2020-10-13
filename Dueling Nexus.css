@@ -1,4 +1,4 @@
-@-moz-document url("https://duelingnexus.com/login"), url("https://duelingnexus.com/register"), url("https://duelingnexus.com/recover"), url("https://duelingnexus.com/home"), url("https://duelingnexus.com/duel"), url("https://duelingnexus.com/gamelist"), url("https://duelingnexus.com/hostgame"), url("https://duelingnexus.com/decks"), url("https://duelingnexus.com/profile"), url("https://duelingnexus.com/leaderboard"), url("https://duelingnexus.com/donate") {
+@-moz-document url("https://duelingnexus.com/login"), url("https://duelingnexus.com/register"), url("https://duelingnexus.com/recover"), url("https://duelingnexus.com/home"), url("https://duelingnexus.com/duel"), url("https://duelingnexus.com/gamelist"), url("https://duelingnexus.com/hostgame"), url("https://duelingnexus.com/hostbotgame"), url("https://duelingnexus.com/decks"), url("https://duelingnexus.com/profile"), url("https://duelingnexus.com/leaderboard"), url("https://duelingnexus.com/donate") {
 /*SECTION 01 NAVGLOBAL*/
 /*This section is global code that applies to all of the navigation pages. For global code for the game and deckbuilding pages, go to GAMEGLOBAL*/
 html {
@@ -24,7 +24,11 @@ h2, h3 {/*This is the main header for each of the tabs.*/
     -o-user-select: none;
     user-select: none;
     margin: .5vh;
-    padding: 0;
+}
+button img {
+    height: 2vw;
+    width: 2vw;
+    float: right;
 }
 #home-area {
     background-color: rgba(0, 0, 0, 0);
@@ -33,7 +37,7 @@ h2, h3 {/*This is the main header for each of the tabs.*/
 #home-area h2, #home-area button {
     display: none
 }
-#duel-area, #gamelist-area[data-v-33d70790], #custom-game-area[data-v-7fa67ee2], #decks-area[data-v-417e0dbe], #my-profile[data-v-402aeb34], #leaderboard-page, #donate-area[data-v-5ccd2ad4] {
+#gamelist-area[data-v-33d70790], #custom-game-area[data-v-7fa67ee2], #decks-area[data-v-417e0dbe], #my-profile[data-v-402aeb34], #leaderboard-page, #donate-area[data-v-5ccd2ad4] {
     box-sizing: border-box;
     display: block;
     overflow-y: auto;
@@ -47,13 +51,9 @@ h2, h3 {/*This is the main header for each of the tabs.*/
     right: 12%;
     left: 12%;
 }
-#duel-area {
-    height: 67.5%;
-    top: 25%;
-}
 #gamelist-area[data-v-33d70790], #custom-game-area[data-v-7fa67ee2], #decks-area[data-v-417e0dbe], #my-profile[data-v-402aeb34], #leaderboard-page, #donate-area[data-v-5ccd2ad4] {
     height: 75%;
-    top: 15%;
+    bottom: 41px;
 }
 /*Here we have some general clicky thingy rules.*/
 a {
@@ -104,9 +104,6 @@ article button:focus, p button:focus, .file-picker-container:focus {
     transition-duration: 2s;
     transition-property: color, background, border;
     font-style: italic;
-}
-hr {
-    display: none
 }
 form div {
     margin: 0 0 1vw 0
@@ -659,7 +656,7 @@ form button {
 }
 
 @-moz-document url-prefix("https://duelingnexus.com/home") {
-/*SECTION 4 HOME*/
+/*SECTION 03 HOME*/
 /*This section affects the page that loads when you first login*/
 #navbar-right {
     z-index: 2
@@ -694,5 +691,93 @@ article:not(#home-area) {
 	100% {
 		opacity: 1;
 	}
+}
+}
+
+@-moz-document url-prefix("https://duelingnexus.com/duel"), url-prefix("https://duelingnexus.com/gamelist"), url-prefix("https://duelingnexus.com/hostgame"), url-prefix("https://duelingnexus.com/hostbotgame") {
+/*SECTION 04 DUEL ZONE*/
+/*This section effects the pages that show up when you click the Duel Zone button.*/
+#app {
+    overflow-y: auto
+}
+/*duel area*/
+#duel-area {
+    margin-bottom: 41px
+}
+h3, #duel-area > div > p:nth-of-type(7) {
+    text-align: left;
+    margin: 0;
+}
+h3 {
+    padding: 1vh 0 .5vh 10%
+}
+select {
+    height: 100%;
+    padding: 0;
+}
+#duel-area > div > p > button, select {
+    text-align: left
+}
+/*gamelist*/
+#gamelist-buttons[data-v-33d70790] {
+    height: 6vh;
+    max-height: 10%;
+    overflow: visible;
+    margin: 0;
+}
+#gamelist-buttons[data-v-33d70790] button {
+    line-height: 5vh
+}
+#gamelist-filters[data-v-33d70790] {
+    max-height: 20%;
+    overflow: visible;
+    margin: 0;
+}
+#gamelist-filters[data-v-33d70790] p {
+    margin: 2%
+}
+#gamelist-container[data-v-33d70790] {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 64%;
+}
+input[data-v-33d70790][type="text"] {
+    height: 3.25vh;
+    width: 26%;
+    padding: 0;
+    z-index: 2;
+    position: relative;
+}
+/*table*/
+td, th {
+    font-size: 2vh;
+    max-width: 15vw;
+}
+td[data-v-33d70790] {
+    animation: 2.5s GrowFromTop
+}
+@-moz-keyframes GrowFromTop {
+    0% {
+        font-size: 0;
+    }
+    100% {
+        font-size: 2vh;
+    }
+}
+@-o-keyframes GrowFromTop {
+    0% {
+        font-size: 0;
+    }
+    100% {
+        font-size: 2vh;
+    }
+}
+@keyframes GrowFromTop {
+    0% {
+        font-size: 0;
+    }
+    100% {
+        font-size: 2vh;
+    }
 }
 }
