@@ -1,3 +1,3 @@
 CSS FIXES PROJECT
 **Patch Notes**
-v1.4 Fixed up some stuff broken by an update, redid the Login & Register pages to account for the new Privacy Policy, added code for the Privacy Policy page, added Donate & Privacy Policy pages to the global CSS, increased the line-height for the table buttons, made adjustments to the settings tab, modified the buttons on the editor menu to prevent overflow, added transition feature to the navbar, added the Leaderboard page to the global CSS, and updated the Profile page.
+v2: Redesigned the layout, moved the navbar to the left side, added collapserpent support to the navhar, and modified the editor.
