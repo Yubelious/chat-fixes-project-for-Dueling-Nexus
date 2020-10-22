@@ -859,7 +859,7 @@ div {
     line-height: 1
 }
 h4 {/*Big headers.*/
-    font-size: 3vh
+    font-size: 1.75vw
 }
 h6 {/*Small headers.*/
     font-size: 1.5vh
@@ -957,7 +957,7 @@ h6 {/*Small headers.*/
     min-height: 4vh;/* If this causes problems, return to 0;*/
     padding: 0 .333vw;
 }
-.engine-button:active, #rs-ext-advanced-search-bar > button {
+.engine-button:active, #rs-ext-advanced-search-bar > button:active {
     -moz-transition-duration: 1s;
     -o-transition-duration: 1s;
     transition-duration: 1s;
@@ -1223,60 +1223,112 @@ button#game-ep-button {
 /*SECTION 11 EDITOR*/
 /*This section affects the Editor pages, where you build your deck.*/
 /*Editor top*/
-@media (orientation: landscape) {
-#editor-menu-title, .engine-button, span, #rs-ext-advanced-search-bar > button {
-    font-size: 2vh
+body {
+    overflow: auto
 }
-#rs-ext-banlist, #editor-select-cardpool {
-    height: 4vh
+select {
+    text-align: center
 }
-.engine-button-navbar, #rs-ext-banlist, #editor-select-cardpool {
-    font-size: 1.6vw;
-    float: left;
-    margin: 1.25vh 0 0 .5vh;
+.engine-button[disabled], .engine-button:disabled {
+    cursor: not-allowed
 }
+/*Editor menu*/
 #editor-menu-container, #editor-menu-content, #editor-menu-title {
-    height: 6vh
+    height: 8vh
+}
+#editor-menu-container {
+    margin: 0 0 1% 0
 }
 #editor-menu-content {
     width: 100%;
     padding: 0;
     left: 0;
 }
-#editor-menu-title:nth-of-type(1), span#editor-menu-title:nth-of-type(3) {
-    line-height: 3
+#editor-menu-title:nth-of-type(1), span#editor-menu-title:nth-of-type(3), #rs-ext-menu-expand:before {
+    font-size: 1.2vw;
+    margin-top: 0;
+    margin-left: 1vw;
 }
 #editor-menu-title:nth-of-type(1) {
+    line-height: 3.25;
     text-align: right;
     white-space: normal;
     word-wrap: break-word;
-    overflow-x: visible;
     overflow-y: auto;
     float: right;
-    width: auto;
-    max-width: 21vw;
+    width: 33.33vw;
     padding-right: 1vh;
-    margin-right: 6vh;
+    margin-right: 8vh;
+}
+span#editor-menu-title:nth-of-type(3), #rs-ext-menu-expand:before {
+    line-height: 3.35
 }
 #editor-menu-title:nth-of-type(3) {
-    float: left
+    width: 6vw;
+    float: left;
+}
+#editor-select-cardpool, #editor-menu-content select, .engine-button-navbar {
+    font-size: 1.2vw;
+    height: 4vh;
+    float: left;
+    margin: 2vh 0 0 1vw;
+}
+#editor-menu-content select {
+    width: 16vw;
+    margin-right: 1vw;
+}
+#rs-ext-banlist {
+    transform: translateX(5vw)
 }
 #editor-menu-spacer {
     display: none
 }
+#rs-ext-menu-expand:before {
+    content: "Banlist: ";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 25%;
+}
+#rs-ext-menu-expand {
+    height: 8vh;
+    width: 8vh;
+    margin: 0;
+    position: absolute;
+    z-index: 4;
+}
+#rs-ext-overflow-menu button {
+    width: max-content;
+    clear: both;
+    float: right;
+    margin: .75vw;
+}
+/*#rs-ext-overflow-menu button:before {
+    content: " ";
+    border: 1px dashed;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 0, .1);
+    height: 3.5vw;
+    width: 2.75vw;
+    position: fixed;
+    top: 9vh;
+    right: 2vw;
+}*/
+/*Search Column*/
 #editor-search-column {    
     border-width: 0 0 .15vw 0;
     border-color: #AAAAAA;
     border-style: solid;
     margin-bottom: 40px;
 }
-/*Search Column*/
 #editor-search-box {
     height: 18vw;
     overflow-y: auto;
 }
 #editor-search-box div:nth-child(2):not(#rs-ext-spell) table:first-of-type {
-    width: 100%
+    font-size: 2.25vh;
+    padding: 0;
+    width: 100%;
 }
 #editor-search-box div:nth-child(2):not(#rs-ext-spell), #rs-ext-navigation {
     padding: 0 !important;
@@ -1285,6 +1337,9 @@ button#game-ep-button {
 #rs-ext-navigate-left, #rs-ext-navigate-right {
     padding: .5vh 1vh;
     margin: .5vh 1vh !important;
+}
+#rs-ext-advanced-search-bar > button {
+    font-size: 2.25vh
 }
 #rs-ext-advanced-search-bar > button {
     margin: 0 1vh 0 0
@@ -1301,13 +1356,6 @@ button#game-ep-button {
 .template-name {
     font-weight: bold
 }
-#rs-ext-menu-expand {
-    height: 6vh;
-    width: 6vh;
-    margin: 0;
-    position: absolute;
-    z-index: 4;
-}
 #rs-ext-overflow-menu {
     -moz-transition-duration: 1s;
     -ms-transition-duration: 1s;
@@ -1316,13 +1364,9 @@ button#game-ep-button {
     overflow-y: auto;
     box-sizing: border-box;
     height: 94vh;
-    width: 12vw;
+    width: min-content;
     z-index: 3;
-    top: 6vh;
-}
-#rs-ext-overflow-menu button {
-    float: right;
-    margin: 1vw;
+    top: 8vh;
 }
 #rs-ext-advanced-pop-outs > .rs-ext-shrinkable {
     padding: 0;
@@ -1373,11 +1417,9 @@ button#game-ep-button {
 .card-preview {
     width: 60%
 }
-
 /*Other*/
 .nexus-gui-button {
     display: none
-}
 }
 @media (orientation: portrait) {
 div {
