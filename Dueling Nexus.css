@@ -867,8 +867,8 @@ h6 {/*Small headers.*/
 #editor-container, #game-container, .engine-dark-box {
     margin: 0
 }
-#card-column, #editor-decks-column, #game-siding-column {
-    height: 100vh
+#editor-decks-column, #game-siding-column {
+    height: 40vw
 }
 #card-column {/*Moves the left column to the left wall of the screen.*/
     width: 24vw;
@@ -899,48 +899,57 @@ h6 {/*Small headers.*/
 #card-name, #editor-deck-main-title, #editor-search-title, #siding-deck-main-title,#editor-deck-extra-title, #editor-deck-side-title, #siding-deck-extra-title, #siding-deck-side-title {
 	margin: 0
 }
-#card-picture-container, #editor-main-deck, #siding-main-deck {
+#editor-main-deck, #siding-main-deck {
     height: 20.5vw !important;
     min-height: 0;
-    max-height: 100vh;
-    margin: 1vw 0 .5vw 0;
 }
-#card-picture {/*"%" represents what percentage of the #card-column this image file takes up.*/
+#siding-main-deck, #editor-main-deck {
+    margin: 1vw 0 .5vw 0
+}
+/*Card Column*/
+#card-column {
+    display: grid;
+    grid-template-areas: "header" "picture" "description";
+    grid-template-rows: max-content auto 13.5vw
+}
+#card-name {
+	grid-area: header;
+    padding: .5%;
+}
+#card-picture-container {
+	grid-area: picture;
+    min-height: 0;
+    margin: 0;
+    padding: 10%;
+    position: relative;
+}
+#card-picture {/*"%" represents what percentage of the #card-picture-container this image file takes up.*/
     height: 100%;
     width: auto;
     max-width: 100%;
 }
 #card-description-box {
-    font-size: 2vh;
+    font-size: 1.15vw;;
     text-align: justify;
-    cursor: s-resize;
     overflow-x: hidden;
     overflow-y: auto;
-    height: 10.75vw;
     padding: .5vh 1vh;
 }
-#card-if-monster, #card-if-spell, #card-if-trap {
-    -webkit-transition: .5s ease-in-out;
-    -moz-transition: .5s ease-in-out;
-    -ms-transition: .5s ease-in-out;
-    -o-transition: .5s ease-in-out;
-    transition: .5s ease-in-out;
-    font: bold 2vh sans-serif;
+#card-description {
+    line-height: 1.1
 }
-#card-if-monster:hover, #card-if-spell:hover, #card-if-trap:hover {
-    -webkit-transition: .5s ease-in-out;
-    -moz-transition: .5s ease-in-out;
-    -ms-transition: .5s ease-in-out;
-    -o-transition: .5s ease-in-out;
-    transition: .5s ease-in-out;
-    font-size: 1.25vw;
+#card-description-box p {
+    margin-bottom: 0
+}
+#card-if-monster, #card-if-spell, #card-if-trap {
+    font: bold 1.2vw sans-serif
 }
 #editor-extra-deck, #editor-side-deck, #siding-extra-deck, #siding-side-deck {
-    height: 5.25vw !important;
+    height: 5.2vw !important;
     margin: .5vw 0;
 }
 .engine-text-box {
-    font-size: 1.5vw;
+    font-size: 1.25vw;
     height: 2.3vw;
     padding: .15vw;
     border-color: #AAAAAA;
@@ -984,7 +993,8 @@ table#game-field {
 }
 /*Chat*/
 #card-column {
-    margin-top: .5vw
+    height: 70vh;
+    margin-top: .5vw;
 }
 #game-chat-area {/*This is the box that contains the chat to a confined space. It's the heart of this Stylish.*/
     font-size: 2vh;
@@ -1027,7 +1037,6 @@ table#game-field {
     border: .15vw solid gray
 }
 #options-window {
-    cursor: s-resize;
     height: 6.1vw;
     width: auto;
     overflow-y: scroll;
@@ -1078,7 +1087,6 @@ hr {
 #game-deck-selection {/*It contains a scrollbar that prevents your decks from flooding off the bottom of the screen.*/
     overflow-y: auto;
     overflow-x: hidden;
-    cursor: s-resize;
     height: 16vh;
     width: 28vw;
     min-width: 280px;
@@ -1138,13 +1146,11 @@ hr {
 }
 #game-announce-window {/*DNx uses a lot of pop-up windows. This is one of them. The Game Announce Wincow is used for displaying lists ingame, such as types or attributes. Chances are you may not even know it exists.*/
     overflow-y: scroll;
-    cursor: s-resize;
     height: 10vw;
     width: 10vw;
 }
 #game-selection-window, #game-announce-card-window {/*This affects the Graveyard, RFG, and search selection windows.*/
     transform: translateY(-10vw) translateX(35vw);
-    cursor: s-resize;
     overflow-y: scroll;
     height: 20vw;
     width: 40vw;
@@ -1261,7 +1267,7 @@ select {
     margin-right: 8vh;
 }
 span#editor-menu-title:nth-of-type(3), #rs-ext-menu-expand:before {
-    line-height: 3.35
+    line-height: 8vh
 }
 #editor-menu-title:nth-of-type(3) {
     width: 6vw;
@@ -1314,6 +1320,10 @@ span#editor-menu-title:nth-of-type(3), #rs-ext-menu-expand:before {
     top: 9vh;
     right: 2vw;
 }*/
+/*Card Column*/
+#card-column {
+    height: 40vw
+}
 /*Search Column*/
 #editor-search-column {    
     border-width: 0 0 .15vw 0;
