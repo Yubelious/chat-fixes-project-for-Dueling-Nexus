@@ -1,3 +1,3 @@
 CSS FIXES PROJECT
 **Patch Notes**
-v2: Redesigned the layout, moved the navbar to the left side, added collapserpent support to the navhar, and modified the editor.
+v2: Redesigned the layout, moved the navbar to the left side, added collapserpent support to the navhar, modified the editor, and modified the in-duel pages.
