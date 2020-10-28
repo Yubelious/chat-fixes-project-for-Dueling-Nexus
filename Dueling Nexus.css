@@ -852,11 +852,9 @@ td {
 @-moz-document url-prefix("https://duelingnexus.com/game"), url-prefix("https://duelingnexus.com/editor") {
 /*SECTION 09 GAMEGLOBAL*/
 /*This section applies to the game and editor pages. Much of the code is shared.*/
-html {
-    overflow: auto
-}
 div {
-    line-height: 1
+    font-size: 1vw;
+    line-height: 1;
 }
 h4 {/*Big headers.*/
     font-size: 1.75vw
@@ -994,7 +992,7 @@ table#game-field {
     max-width: 28vw;
 }
 .engine-button:not(.game-phase-button) {
-    font-size: 3.5vh
+    font-size: 1.9vw
 }
 /*Chat*/
 #card-column {
@@ -1057,6 +1055,9 @@ table#game-field {
 #options-window input:active, .engine-button:active {
     cursor: grabbing
 }
+#options-hide-button {
+    margin-left: .5vw
+}
 hr {
     height: .15vw
 }
@@ -1073,7 +1074,7 @@ hr {
 #game-room-players {/*This is the left side of the big black box. It's here to make the selection pop-up about the same size as the player column.*/
     font-size: 2vh;
     width: 28vw;
-    min-width: 280px;
+    min-width: 0;
     padding: 0 1vw;
 }
 #game-room-information {/*This is the right side of the big black box. It's here to prevent visual errors.*/
@@ -1119,7 +1120,8 @@ hr {
 }
 /*Game column*/
 #game-column, #game-to-spectator-button, #game-to-duelist-button, #game-deck-dropdown, .template-button, #game-rps-first, #game-rps-second, #game-end-button {
-    width: auto
+    height: auto;
+    width: auto;
 }
 #game-column {
     padding-left: 0
