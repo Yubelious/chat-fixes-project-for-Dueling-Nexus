@@ -1227,13 +1227,22 @@ table p {
 .empty-game-field-zone-full button {
     margin: 0 !important
 }
-/*Avatar and Life Points*/
-.game-avatar-area {/*This ensures that the left-most username doesn't enter the #card-column.*/
+/*Avatar, bars, and buttons*/
+.game-avatar-area, .empty-game-field-zone-full button, #game-turn-display {
+    width: 6vw
+}
+.empty-game-field-zone-full:nth-of-type(1) .game-avatar-area, .empty-game-field-zone-full:nth-of-type(1) button, #game-turn-display {
+    background-color: red;
+    transform: translateX(-25%)
+}
+.empty-game-field-zone-full:nth-of-type(2)/* .game-avatar-area, .empty-game-field-zone-full:nth-of-type(2) button*/ {
+    transform: translateX(25%)
+}
+.game-avatar-area {
     font-size: 1vw;
     text-align: center;
     word-break: break-all;
     height: 25vh;
-    width: 100%;
     overflow-x: hidden;
     overflow-y: auto;
 }
