@@ -1180,7 +1180,7 @@ table p {
     padding: 0;
 }
 #game-field {
-    transform: scale(.9) translateY(-5%)
+    transform: scale(.8) translateY(-5%)
 }
 #game-alert-window, #game-end-window, #options-window, #game-results-container, #game-message-window, #game-waiting-menu, #game-selection-window, #game-yesno-window, #game-position-window, #game-option-window, #game-announce-window, #game-announce-card-window {/*This makes the windows transparent.*/
     background-color: rgba(0, 0, 0, 0.5)
@@ -1227,24 +1227,37 @@ table p {
 .empty-game-field-zone-full button {
     margin: 0 !important
 }
+#game-field-player-hand .game-field-zone-content, #game-field-opponent-hand .game-field-zone-content {
+    background-color: red;
+    height: max-content;
+    max-height: min-content;
+    width: 158%;
+    transform: translateX(-18.5%);
+}
 /*Avatar, bars, and buttons*/
 .game-avatar-area, .empty-game-field-zone-full button, #game-turn-display {
-    width: 6vw
+    font-size: 1vw;
+    width: 6vw !important;
 }
 .empty-game-field-zone-full:nth-of-type(1) .game-avatar-area, .empty-game-field-zone-full:nth-of-type(1) button, #game-turn-display {
-    background-color: red;
-    transform: translateX(-25%)
+    transform: translateX(-35%)
 }
-.empty-game-field-zone-full:nth-of-type(2)/* .game-avatar-area, .empty-game-field-zone-full:nth-of-type(2) button*/ {
+.empty-game-field-zone-full:nth-of-type(3) .game-avatar-area, .empty-game-field-zone-full:nth-of-type(3) button {
     transform: translateX(25%)
 }
 .game-avatar-area {
     font-size: 1vw;
     text-align: center;
     word-break: break-all;
-    height: 25vh;
+    height: 30vh;
     overflow-x: hidden;
     overflow-y: auto;
+}
+#game-turn-display {
+    margin: 1vw 0 1vw 0
+}
+td {
+    vertical-align: baseline
 }
 /*Siding*/
 }
