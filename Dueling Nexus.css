@@ -946,13 +946,17 @@ h6 {/*Small headers.*/
     position: fixed;
     top: 0;
 }
-.game-card-tab-button {
-    height: 8vh
+#card-column, #game-card-info {
+    height: 92vh;
+    width: 24vw;
+}
+#game-card-info {
+    top: 8vh
 }
 #editor-container #card-column, #game-card-info {
     display: grid;
-    grid-template-areas: 'header picture description';
-    grid-template-rows: max-content auto 40%;
+    grid-template-areas: 'header' 'picture' 'description' '.';
+    grid-template-rows: max-content auto 25% 18%;
     gap: 1.5vh;
 }
 #card-name {
@@ -969,7 +973,7 @@ h6 {/*Small headers.*/
     min-height: 0;
     margin: 0;
     position: relative;
-    bottom: 41px; /*Keep this number the same as the "bottom" on #card-description-box.*/
+    bottom: 0;
 }
 #card-picture {
     height: auto;
@@ -987,9 +991,8 @@ h6 {/*Small headers.*/
     overflow-y: auto;
     padding: .5vh 1vh;
     position: relative;
-    bottom: 41px; /*Raise this number if the taskbar blocks the text*/
+    bottom: 0;
 }
-
 #card-description {
     line-height: 1.1
 }
@@ -999,154 +1002,11 @@ h6 {/*Small headers.*/
 #card-if-monster, #card-if-spell, #card-if-trap {
     font: bold 1.1vw sans-serif
 }
-#editor-extra-deck, #editor-side-deck, #siding-extra-deck, #siding-side-deck {
-    height: 5.2vw !important
-}
-#editor-extra-deck, #siding-extra-deck {
-    margin: .5vw 0
-}
-#editor-side-deck, #siding-side-deck {
-    margin: .5vw 0 0
-}
-.engine-text-box {
-    font-size: 1.25vw;
-    height: 2.3vw;
-    padding: .15vw;
-    border-color: #AAAAAA;
-    border-width: .15vw;
-}
-/*Chatbox*/
-#game-chat-area {/*This is the box that contains the chat to a confined space. It's the heart of this theme.*/
-    font-size: 2vh;
-    border: 1px dashed antiquewhite;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    height: 11vh;
-    width: 23vw;
-    min-width: 0;
-    bottom: 40px;
-}
-#game-chat-area .engine-text-box {/*This is the smaller box where you type into.*/
-    font-size: 1vw;
-    border: 3px double #f0f0f0;
-    height: 4vh;
-    width: 21vw;
-    position: fixed;
-    bottom: 41px;
-    left: .6%;
-}
-/*Options tab*/
-.game-card-tab-button {
-    height: 8vh;
-    padding: 0;
-}
-.game-option {
-    padding: .2vw
-}
-table.game-option input {
-    width: 95%
-}
-#game-options {
-    max-height: 72vh;
-    overflow-y: auto;
-}
-#game-options td, #game-options p {
-    font-size: 1vw;
-    line-height: 1;
-    margin: .5vh;
-}
-/*Game room*/
-#game-room-players > div:nth-of-type(1) {
-    display: grid;
-    grid-template-areas: 'Host Ready Opponent';
-    grid-template-columns: 33.33% 33.33% 33.33%;
-    height: 50%;
-    position: relative;
-}
-.game-room-player-container, #game-room-player-ready-button-container {
-    height: 100%;
-    width: 100% !important;
-    border-collapse: collapse;
-}
-.game-room-player-container:nth-of-type(1) {
-    grid-area: Host
-}
-#game-room-player-ready-button-container {
-    grid-area: Ready;
-    display: flex;
-    flex-direction: column;
-}
-.game-room-player-container:nth-of-type(2) {
-    grid-area: Opponent;
-    margin: 0 0 0 auto;
-}
-.game-room-player-container img {
-    background-size: 85% 85% !important
-}
-#game-room-avatar-player1-image, #game-room-avatar-player2-image, #game-room-avatar-player3-image, #game-room-avatar-player4-image {
-    height: 12vh
-}
-table p {
-    width: 17vw;
-    margin-bottom: 0 !important;
-}
-#game-room-player1-username, #game-room-player2-username, #game-room-player3-username, #game-room-player4-username {
-    font-size: 2.5vh;
-    max-height: 7vh;
-    overflow: auto;
-}
-#game-room-player1-title, #game-room-player2-title, #game-room-player3-title, #game-room-player4-title {
-    font-size: 2vh
-}
-#game-room-current-action {
-    font-size: 1.5vw !important
-}
-#game-room-current-action-subheading {
-    font-size: 1.1vw !important
-}
-#game-room-circular-button-container {
-    width: 25%;
-    padding-top: 25%;
-    margin: auto auto 0 auto;
-}
-#game-room-circular-button-container button {
-    font-size: 1.2vw
-}
-.game-room-player-container:nth-of-type(2) td:nth-of-type(1) {
-    transform: translateX(-2%)
-}
-#game-room-deck-container-player1, #game-room-deck-container-player2 {
-    height: 50% !important
-}
-#game-room-deck-selection-player1, #game-room-deck-selection-player2 {
-    padding-top: 3% !important
-}
-#game-room-deck-container-player2 {
-    width: 49%;
-    position: absolute;
-    right: 0;
-}
-#game-deck-selection-player1, #game-deck-selection-player2 {
-    height: 15vh
-}
-#game-room-deck-selection-player2 {
-    margin-right: 5%;
-    float: right;
-}
-#game-rps-rock, #game-rps-paper, #game-rps-scissors, #game-rps-rock-hidden, #game-rps-paper-hidden, #game-rps-scissors-hidden, #game-rps-first, #game-rps-second {
-    width: 25%
-}
 }
 
 @-moz-document url-prefix("https://duelingnexus.com/game") {
 /*SECTION 10 GAME*/
 /*This section affects only the game pages.*/
-span {
-    font-weight: bold
-}
-table {
-    border: 0
-}
 .engine-window p, #game-chat-area, #game-chat-area .engine-text-box, #game-end-text, #game-end-title {
     margin: 0;
     padding: 0;
@@ -1187,16 +1047,6 @@ table {
 }
 #game-room-information-table tr {
     height: 3vh
-}
-#game-room-players {
-    user-select: none;
-    height: 50vh;
-    width: 70vw;
-    max-width: 100%;
-    padding: 0;
-    position: absolute;
-    bottom: 41px;
-    left: 25vw;
 }
 /*Avatar and Life Points*/
 .game-avatar-area {/*This ensures that the left-most username doesn't enter the #card-column.*/
@@ -1252,7 +1102,7 @@ table.game-option input:active {
 /*Game room*/
 #game-room-players > div:nth-of-type(1) {
     display: grid;
-    grid-template-areas: 'Host' 'Ready' 'Opponent';
+    grid-template-areas: 'Host Ready Opponent';
     grid-template-columns: 33.33% 33.33% 33.33%;
     height: 50%;
     position: relative;
