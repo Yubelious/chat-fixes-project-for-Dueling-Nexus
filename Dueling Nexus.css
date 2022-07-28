@@ -2,7 +2,8 @@
 /*SECTION 01 NAVGLOBAL*/
 /*This section is global code that applies to all of the navigation pages. For global code for the game and deckbuilding pages, go to GAMEGLOBAL*/
 html {
-    background-position: right bottom
+    background-position: right bottom;
+    background-color: black;
 }
 body {
     font-size: 2vh;
@@ -849,16 +850,45 @@ td {
 @-moz-document url-prefix("https://duelingnexus.com/game"), url-prefix("https://duelingnexus.com/editor") {
 /*SECTION 07 GAMEGLOBAL*/
 /*This section applies to the game and editor pages. Much of the code is shared.*/
-
+html {
+    background-position: right bottom;
+    background-color: black;
+}
+body {
+    font-size: 2vh;
+    line-height: 1;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+}
+article {
+    padding: 1%
+}
+div {
+    font-size: 1vw;
+    line-height: 1;
+}
+div#app, #duel-area {
+    margin-bottom: 41px /*Increase this value if your taskbar blocks the interface. Search "41px" and raise all of them to the same value.*/
+}
+h2, h3 {/*This is the main header for each of the tabs.*/
+    font-size: 3.5vh;
+    line-height: 1;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    margin: .5vh;
+}
+button img, .fake-button img {
+    height: 2vw;
+    width: 2vw;
+    float: right;
+}
 #editor-menu-container, #editor-menu-content {
     height: 8vh;
     width: 100%;
     padding: 0;
     position: fixed;
-}
-div {
-    font-size: 1vw;
-    line-height: 1;
 }
 #card-name, #editor-deck-main-title, #editor-deck-extra-title, #editor-deck-side-title, #siding-deck-main-title, #siding-deck-extra-title, #siding-deck-side-title {/*Big headers.*/
     font-size: 1.25vw;
@@ -870,7 +900,7 @@ h6 {/*Small headers.*/
 #editor-container, #game-container, .engine-dark-box {
     margin: 0
 }
-#card-column, #game-card-info {/*Moves the left column to the left wall of the screen.*/
+#card-column, #game-card-info {
     height: 92vh;
     width: 24vw;
 }
@@ -895,7 +925,7 @@ h6 {/*Small headers.*/
 .engine-text-box, #card-description-box, #editor-main-deck, #siding-main-deck, #editor-extra-deck, #editor-side-deck, #siding-extra-deck, #siding-side-deck {
     border-width: .15vw
 }
-.engine-dark-box, #card-column, #card-name, #card-picture-container, #card-description-box, #editor-main-deck, #siding-main-deck, #editor-extra-deck, #editor-side-deck, #siding-extra-deck, #siding-side-deck, .engine-text-box, #editor-search-results {
+.engine-dark-box, .engine-text-box, #card-column, #card-name, #card-picture-container, #card-description-box, #editor-main-deck, #siding-main-deck, #editor-extra-deck, #editor-side-deck, #siding-extra-deck, #siding-side-deck, #editor-search-results {
     box-sizing: border-box
 }
 #card-name, #editor-deck-main-title, #editor-search-title, #siding-deck-main-title, #editor-deck-extra-title, #editor-deck-side-title, #siding-deck-extra-title, #siding-deck-side-title {
@@ -985,6 +1015,127 @@ h6 {/*Small headers.*/
     border-color: #AAAAAA;
     border-width: .15vw;
 }
+/*Chatbox*/
+#game-chat-area {/*This is the box that contains the chat to a confined space. It's the heart of this theme.*/
+    font-size: 2vh;
+    border: 1px dashed antiquewhite;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 11vh;
+    width: 23vw;
+    min-width: 0;
+    bottom: 40px;
+}
+#game-chat-area .engine-text-box {/*This is the smaller box where you type into.*/
+    font-size: 1vw;
+    border: 3px double #f0f0f0;
+    height: 4vh;
+    width: 21vw;
+    position: fixed;
+    bottom: 41px;
+    left: .6%;
+}
+/*Options tab*/
+.game-card-tab-button {
+    height: 8vh;
+    padding: 0;
+}
+.game-option {
+    padding: .2vw
+}
+table.game-option input {
+    width: 95%
+}
+#game-options {
+    max-height: 72vh;
+    overflow-y: auto;
+}
+#game-options td, #game-options p {
+    font-size: 1vw;
+    line-height: 1;
+    margin: .5vh;
+}
+/*Game room*/
+#game-room-players > div:nth-of-type(1) {
+    display: grid;
+    grid-template-areas: 'Host Ready Opponent';
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    height: 50%;
+    position: relative;
+}
+.game-room-player-container, #game-room-player-ready-button-container {
+    height: 100%;
+    width: 100% !important;
+    border-collapse: collapse;
+}
+.game-room-player-container:nth-of-type(1) {
+    grid-area: Host
+}
+#game-room-player-ready-button-container {
+    grid-area: Ready;
+    display: flex;
+    flex-direction: column;
+}
+.game-room-player-container:nth-of-type(2) {
+    grid-area: Opponent;
+    margin: 0 0 0 auto;
+}
+.game-room-player-container img {
+    background-size: 85% 85% !important
+}
+#game-room-avatar-player1-image, #game-room-avatar-player2-image, #game-room-avatar-player3-image, #game-room-avatar-player4-image {
+    height: 12vh
+}
+table p {
+    width: 17vw;
+    margin-bottom: 0 !important;
+}
+#game-room-player1-username, #game-room-player2-username, #game-room-player3-username, #game-room-player4-username {
+    font-size: 2.5vh;
+    max-height: 7vh;
+    overflow: auto;
+}
+#game-room-player1-title, #game-room-player2-title, #game-room-player3-title, #game-room-player4-title {
+    font-size: 2vh
+}
+#game-room-current-action {
+    font-size: 1.5vw !important
+}
+#game-room-current-action-subheading {
+    font-size: 1.1vw !important
+}
+#game-room-circular-button-container {
+    width: 25%;
+    padding-top: 25%;
+    margin: auto auto 0 auto;
+}
+#game-room-circular-button-container button {
+    font-size: 1.2vw
+}
+.game-room-player-container:nth-of-type(2) td:nth-of-type(1) {
+    transform: translateX(-2%)
+}
+#game-room-deck-container-player1, #game-room-deck-container-player2 {
+    height: 50% !important
+}
+#game-room-deck-selection-player1, #game-room-deck-selection-player2 {
+    padding-top: 3% !important
+}
+#game-room-deck-container-player2 {
+    width: 49%;
+    position: absolute;
+    right: 0;
+}
+#game-deck-selection-player1, #game-deck-selection-player2 {
+    height: 15vh
+}
+#game-room-deck-selection-player2 {
+    margin-right: 5%;
+    float: right;
+}
+#game-rps-rock, #game-rps-paper, #game-rps-scissors, #game-rps-rock-hidden, #game-rps-paper-hidden, #game-rps-scissors-hidden, #game-rps-first, #game-rps-second {
+    width: 25%
+}
 }
 
 @-moz-document url-prefix("https://duelingnexus.com/game") {
@@ -1015,10 +1166,21 @@ table {
     left: 0;
 }
 #game-room-container-top {
+    margin-top: 8vh;
     margin-left: 25vw;
     height: 25vh;
     min-width: 0;
     width: 70vw;
+}
+#game-room-players {
+    user-select: none;
+    height: 50vh;
+    width: 70vw;
+    max-width: 100%;
+    padding: 0;
+    position: absolute;
+    bottom: 41px;
+    left: 25vw;
 }
 #game-room-information {
     padding: 0
@@ -1036,14 +1198,145 @@ table {
     bottom: 41px;
     left: 25vw;
 }
-#game-rps-rock-hidden, #game-rps-paper-hidden, #game-rps-scissors-hidden {
-    width: 25%
-}
 /*Avatar and Life Points*/
 .game-avatar-area {/*This ensures that the left-most username doesn't enter the #card-column.*/
     font-size: 1vw;
     text-align: center;
     word-break: break-all;
     width: 81%;
+}
+/*Chatbox*/
+#game-chat-area {/*This is the box that contains the chat to a confined space. It's the heart of this theme.*/
+    font-size: 2vh;
+    border: 1px dashed antiquewhite;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 11vh;
+    width: 23vw;
+    min-width: 0;
+    bottom: 40px;
+}
+#game-chat-area .engine-text-box {/*This is the smaller box where you type into.*/
+    font-size: 1vw;
+    border: 3px double #f0f0f0;
+    height: 4vh;
+    width: 21vw;
+    position: fixed;
+    bottom: 41px;
+    left: .6%;
+}
+/*Options tab*/
+.game-card-tab-button {
+    height: 8vh;
+    padding: 0;
+}
+.game-option {
+    padding: .2vw
+}
+table.game-option input {
+    width: 95%;
+    cursor: grab;
+}
+table.game-option input:active {
+    cursor: grabbing
+}
+#game-options {
+    max-height: 72vh;
+    overflow-y: auto;
+}
+#game-options td, #game-options p {
+    font-size: 1vw;
+    line-height: 1;
+    margin: .5vh;
+}
+/*Game room*/
+#game-room-players > div:nth-of-type(1) {
+    display: grid;
+    grid-template-areas: 'Host' 'Ready' 'Opponent';
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    height: 50%;
+    position: relative;
+}
+.game-room-player-container, #game-room-player-ready-button-container {
+    height: 100%;
+    width: 100% !important;
+    border-collapse: collapse;
+}
+.game-room-player-container:nth-of-type(1) {
+    grid-area: Host
+}
+#game-room-player-ready-button-container {
+    grid-area: Ready;
+    display: flex;
+    flex-direction: column;
+}
+.game-room-player-container:nth-of-type(2) {
+    grid-area: Opponent;
+    margin: 0 0 0 auto;
+}
+.game-room-player-container img {
+    background-size: 85% 85% !important
+}
+#game-room-avatar-player1-image, #game-room-avatar-player2-image, #game-room-avatar-player3-image, #game-room-avatar-player4-image {
+    height: 12vh
+}
+table p {
+    width: 17vw;
+    margin-bottom: 0 !important;
+}
+#game-room-player1-username, #game-room-player2-username, #game-room-player3-username, #game-room-player4-username {
+    font-size: 2.5vh;
+    max-height: 7vh;
+    overflow: auto;
+}
+#game-room-player1-title, #game-room-player2-title, #game-room-player3-title, #game-room-player4-title {
+    font-size: 2vh
+}
+#game-room-current-action {
+    font-size: 1.5vw !important
+}
+#game-room-current-action-subheading {
+    font-size: 1.1vw !important
+}
+#game-room-circular-button-container {
+    width: 25%;
+    padding-top: 25%;
+    margin: auto auto 0 auto;
+}
+#game-room-circular-button-container button {
+    font-size: 1.2vw
+}
+.game-room-player-container:nth-of-type(2) td:nth-of-type(1) {
+    transform: translateX(-2%)
+}
+#game-room-deck-container-player1, #game-room-deck-container-player2 {
+    height: 50% !important
+}
+#game-room-deck-selection-player1, #game-room-deck-selection-player2 {
+    padding-top: 3% !important
+}
+#game-room-deck-container-player2 {
+    width: 49%;
+    position: absolute;
+    right: 0;
+}
+#game-deck-selection-player1, #game-deck-selection-player2 {
+    height: 15vh
+}
+#game-room-deck-selection-player2 {
+    margin-right: 5%;
+    float: right;
+}
+#game-rps-rock, #game-rps-paper, #game-rps-scissors, #game-rps-rock-hidden, #game-rps-paper-hidden, #game-rps-scissors-hidden, #game-rps-first, #game-rps-second {
+    width: 25%
+}
+}
+
+@-moz-document url-prefix("https://duelingnexus.com/editor") {
+#editor-menu-container, #editor-menu-content {
+    height: 8vh;
+    width: 100%;
+    padding: 0;
+    position: fixed;
 }
 }
