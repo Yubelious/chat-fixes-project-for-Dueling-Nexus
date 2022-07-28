@@ -1048,13 +1048,6 @@ h6 {/*Small headers.*/
 #game-room-information-table tr {
     height: 3vh
 }
-/*Avatar and Life Points*/
-.game-avatar-area {/*This ensures that the left-most username doesn't enter the #card-column.*/
-    font-size: 1vw;
-    text-align: center;
-    word-break: break-all;
-    width: 81%;
-}
 /*Chatbox*/
 #game-chat-area {/*This is the box that contains the chat to a confined space. It's the heart of this theme.*/
     font-size: 2vh;
@@ -1179,6 +1172,25 @@ table p {
 }
 #game-rps-rock, #game-rps-paper, #game-rps-scissors, #game-rps-rock-hidden, #game-rps-paper-hidden, #game-rps-scissors-hidden, #game-rps-first, #game-rps-second {
     width: 25%
+}
+/*Game field*/
+#game-column {
+    height: calc(92vh - 40px);
+    overflow: auto;
+    padding: 0;
+}
+#game-field {
+    transform: scale(.9) translateY(-5%)
+}
+/*Avatar and Life Points*/
+.game-avatar-area {/*This ensures that the left-most username doesn't enter the #card-column.*/
+    font-size: 1vw;
+    text-align: center;
+    word-break: break-all;
+    height: 25vh;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 }
 
