@@ -1182,6 +1182,51 @@ table p {
 #game-field {
     transform: scale(.9) translateY(-5%)
 }
+#game-alert-window, #game-end-window, #options-window, #game-results-container, #game-message-window, #game-waiting-menu, #game-selection-window, #game-yesno-window, #game-position-window, #game-option-window, #game-announce-window, #game-announce-card-window {/*This makes the windows transparent.*/
+    background-color: rgba(0, 0, 0, 0.5)
+}
+#game-option-list .engine-button {/*This gives buttons a shape.*/
+    height: auto;
+    width: auto;
+    min-width: 5vw;
+    margin: 0.25vw;
+    padding: 0;
+    position: relative;
+    bottom: 0;
+}
+#game-option-list .engine-button:before, #game-option-list .engine-button:after {/*This gives empty buttons a shape.*/
+    content: "~";
+    font-size: 0;
+}
+#game-yesno-yes-button, #game-yesno-no-button {
+    font-size: 3vw
+}
+#game-announce-window {/*DNx uses a lot of pop-up windows. This is one of them. The Game Announce Window is used for displaying lists ingame, such as types or attributes. Chances are you may not even know it exists.*/
+    overflow-y: scroll;
+    height: 10vw;
+    width: 10vw;
+}
+#game-selection-window, #game-announce-card-window {/*This affects the Graveyard, RFG, and search selection windows.*/
+    transform: translateY(-10vw) translateX(35vw);
+    overflow-y: scroll;
+    height: 20vw;
+    width: 40vw;
+    margin: 0;
+    padding-top: 0;
+}
+.game-selection-card {/*This adds space between the card images on the window so you can see the field below.*/
+    margin: 1vh 1vw 1vh 1vw;
+    z-index: 7;
+}
+#game-action-menu .engine-button-default {
+    font-size: 2.5vw
+}
+.game-field-zone-activate {
+    position: absolute
+}
+.empty-game-field-zone-full button {
+    margin: 0 !important
+}
 /*Avatar and Life Points*/
 .game-avatar-area {/*This ensures that the left-most username doesn't enter the #card-column.*/
     font-size: 1vw;
@@ -1192,6 +1237,7 @@ table p {
     overflow-x: hidden;
     overflow-y: auto;
 }
+/*Siding*/
 }
 
 @-moz-document url-prefix("https://duelingnexus.com/editor") {
