@@ -1170,6 +1170,7 @@ table p {
 /*Game field*/
 #game-column {
     height: calc(92vh - 40px);
+    width: auto;
     overflow: auto;
     padding: 0;
 }
