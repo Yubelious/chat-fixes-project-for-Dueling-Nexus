@@ -904,24 +904,23 @@ h6 {/*Small headers.*/
     height: 92vh;
     width: 24vw;
 }
-#card-column, #game-column, #game-siding-column, #editor-decks-column, #editor-search-column {
-    margin: 8vh .5vw 0 0 !important
+#card-column, #game-column, #game-siding-column, #editor-decks-column {
+    margin: 8vh 1vw 0 0 !important
 }
-/*#editor-decks-column, #game-siding-column {
-    width: 35.5vw;
+#editor-decks-column, #game-siding-column {
+    max-width: 39vw;
     padding: 0;
 }
-#editor-search-column {
+#editor-search-column, #game-siding-button-container {
     height: 40vw;
-    width: 36.3vw;
-    overflow: hidden;
-    margin: 0 .5vw;
+    min-width: 33vw;
+    width: 33vw;
     padding: 0;
     position: relative;
 }
 .engine-dark-box { 
     min-height: 2vw
-}*/
+}
 .engine-text-box, #card-description-box, #editor-main-deck, #siding-main-deck, #editor-extra-deck, #editor-side-deck, #siding-extra-deck, #siding-side-deck {
     border-width: .15vw
 }
@@ -933,8 +932,7 @@ h6 {/*Small headers.*/
 	margin: .5vw 0;
 }
 #editor-main-deck, #siding-main-deck {
-    height: 20.5vw !important;
-    min-height: 0;
+    min-height: 0
 }
 #siding-main-deck, #editor-main-deck {
     margin: 1vw 0 .5vw 0
@@ -945,10 +943,6 @@ h6 {/*Small headers.*/
     width: 24vw;
     position: fixed;
     top: 0;
-}
-#card-column, #game-card-info {
-    height: 92vh;
-    width: 24vw;
 }
 #game-card-info {
     top: 8vh
@@ -1005,7 +999,7 @@ h6 {/*Small headers.*/
 }
 
 @-moz-document url-prefix("https://duelingnexus.com/game") {
-/*SECTION 10 GAME*/
+/*SECTION 08 GAME*/
 /*This section affects only the game pages.*/
 .engine-window p, #game-chat-area, #game-chat-area .engine-text-box, #game-end-text, #game-end-title {
     margin: 0;
@@ -1262,16 +1256,73 @@ table p {
     margin: 1vw 0 1vw 0
 }
 /*Siding*/
-/*#game-siding-button-container {
-	
-}*/
+#game-siding-button-container {
+    height: 100vh;
+	position: absolute;
+    top: 0;
+    right: 0;
+}
+#game-siding-button-container:after {
+    content: 'HOW TO SIDE: \A \A To side on desktop, right click a card(s) in the "Main" area and it will move to the "Side", then right click a card(s) in the "Side" and it will move to the "Main". If you are on Android, drag a card(s) to the bottom right corner with your finger.\A \A Note that you will not be able to complete siding until the cards you sided in are in the bottom right corner of the "Main", and there are the same number of cards in the "Main" after siding as before siding. When you are done, click the buttom below.';
+    font: 1.25vw/1 sans-serif;
+    text-align: justify;
+    white-space: pre-line;
+    border-left: 1px solid #777777;
+    background: linear-gradient(rgba(18,23,36,0.7) 0%, rgba(1,1,17,0.7) 100%);
+    height: 100vh;
+    padding: 10vh 10% 0 5%;
+	display: block;
+    position: relative;
+}
+button#game-siding-done {
+    width: 96%;
+    z-index: 2;
+    position: absolute;
+    bottom: calc(40px + 2%);
+    left: 2%;
+}
 }
 
 @-moz-document url-prefix("https://duelingnexus.com/editor") {
-#editor-menu-container, #editor-menu-content {
+/*SECTION 09 EDITOR*/
+body {
+    overflow: auto
+}
+select {
+    text-align: center
+}
+.engine-button[disabled], .engine-button:disabled {
+    cursor: not-allowed
+}
+/*Editor menu*/
+#editor-menu-container, #editor-menu-content, #editor-menu-title {
     height: 8vh;
     width: 100%;
     padding: 0;
     position: fixed;
+}
+#editor-menu-content {
+    display: grid;
+    grid-template-areas: 'name banlist dropdown save clear undo redo sort shuffle share';
+    grid-template-rows: 33.33vw 7vw 7vw 4vw 4vw 4vw 4vw 4vw 4vw 4vw;
+}
+#editor-menu-title-deck {
+    grid-area: name;
+    font-size: 2.25vh;
+    padding-right: 1vh;
+    margin-top: 0;
+    margin-right: 1vw;
+    margin-left: 8vh;
+    line-height: 3;
+    text-align: left;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-y: auto;
+    height: 8vh;
+}
+/*Search column*/
+#editor-search-column {
+    margin-top: 8vh;
+    overflow: hidden
 }
 }
