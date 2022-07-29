@@ -884,12 +884,6 @@ button img, .fake-button img {
     width: 2vw;
     float: right;
 }
-#editor-menu-container, #editor-menu-content {
-    height: 8vh;
-    width: 100%;
-    padding: 0;
-    position: fixed;
-}
 #card-name, #editor-deck-main-title, #editor-deck-extra-title, #editor-deck-side-title, #siding-deck-main-title, #siding-deck-extra-title, #siding-deck-side-title {/*Big headers.*/
     font-size: 1.25vw;
     text-align: center;
@@ -1296,24 +1290,27 @@ select {
     cursor: not-allowed
 }
 /*Editor menu*/
-#editor-menu-container, #editor-menu-content, #editor-menu-title {
+#editor-menu-container, #editor-menu-content {
+    position: fixed
+}
+#editor-menu-container, #editor-menu-content, #editor-menu-title, #editor-menu-title-banlist {
     height: 8vh;
+    line-height: 3;
+}
+#editor-menu-container, #editor-menu-content, #editor-menu-title, #editor-menu-title-deck, #editor-menu-spacer, #editor-menu-title-banlist, #editor-select-banlist, #editor-menu-spacer-small, #editor-menu-container button {
     width: 100%;
     padding: 0;
-    position: fixed;
+    margin: 0;
 }
 #editor-menu-content {
     display: grid;
-    grid-template-areas: 'name spacer banlist select spacer2 save clear undo redo sort shuffle share';
-    grid-template-columns: 33.33vw 1vw 5vw 8vw 1vw 6vw 6vw 6vw 6vw 6vw 6vw 6vw;
+    grid-template-areas: '. name spacer banlist select spacer2 save clear undo redo sort shuffle share';
+    grid-template-columns: 1vw 33.33vw 2vw 7vw 8vw 1vw 6vw 6vw 6vw 6vw 6vw 6vw 6vw;
 }
 #editor-menu-title-deck {
     grid-area: name;
-    font-size: 2.25vh;
-    padding-right: 1vh;
-    margin-top: 0;
-    margin-left: 8vh;
-    line-height: 3;
+    background-color: red;
+    font-size: 2.5vh;
     text-align: left;
     white-space: normal;
     word-wrap: break-word;
@@ -1321,16 +1318,20 @@ select {
     height: 8vh;
 }
 #editor-menu-spacer {
-    grid-area: spacer
+    grid-area: spacer;
+    background-color: orange;
 }
 #editor-menu-title-banlist {
-    grid-area: banlist
+    grid-area: banlist;
+    background-color: yellow;
 }
 #editor-select-banlist {
-    grid-area: select
+    grid-area: select;
+    background-color: green;
 }
 #editor-menu-spacer-small {
-    grid-area: spacer2
+    grid-area: spacer2;
+    background-color: blue;
 }
 #editor-save-button {
     grid-area: save
