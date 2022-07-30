@@ -855,8 +855,6 @@ html {
     background-color: black;
 }
 body {
-    font-size: 2vh;
-    line-height: 1;
     height: 100vh;
     margin: 0;
     position: relative;
@@ -865,7 +863,7 @@ article {
     padding: 1%
 }
 div {
-    font-size: 1vw;
+    font-size: 2vh;
     line-height: 1;
 }
 div#app, #duel-area {
@@ -1358,9 +1356,93 @@ select {
     min-height: 0;
     min-width: 0;
 }
-/*Search column*/
-#editor-search-column {
+/*The right-most column.*/
+    #editor-search-column {
+    display: grid;
+    grid-template-areas: 'box' 'results';
+    grid-template-rows: max-content auto;
     margin-top: 8vh;
-    overflow: hidden
+    overflow: hidden;
+    border: 1px dashed #AAA;
+    height: calc(92vh - 41px);
+    min-height: 0 !important;
+}
+#editor-search-box {
+    grid-area: box
+}
+#editor-search-results {
+	grid-area: results;
+    border-width: .15vw .15vw 0 .15vw;
+    border-color: #AAAAAA;
+    border-style: solid;
+    height: 34vw;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin-top: .15vw;
+}
+#editor-search-text {
+    margin-top: 1vh
+}
+#editor-search-text, #editor-select-card-type, #editor-multi-select-monster-type, #editor-multi-select-monster-ability, #editor-select-monster-attribute, #editor-select-monster-race, #editor-select-spell-type, #editor-select-trap-type, #editor-multi-select-genre, #editor-select-limit, #editor-select-cardpool, #editor-select-results, #editor-sort-results {
+	height: auto;
+    min-width: 0;
+}
+#editor-filters {
+    height: 44vh;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+#filters-left, #filters-right, .editor-filter-select, .editor-filter-multiselect-span, .editor-filter-text-box {
+    width: 48%;
+	border: 1px solid red;
+}
+.editor-filter-select, .editor-filter-multiselect-span {
+    min-width: 0
+}
+.editor-filter-select, .editor-filter-multiselect-span, .editor-filter-multliine-text-box, .editor-filter-text-box {
+    float: right
+}
+.editor-filter-multiselect {
+	width: 100%
+}
+.editor-select-checkboxes {
+    width: max-content
+}
+input {
+    text-align: center
+}
+.editor-search-result {/*This provides a nice even table without that bulging middle.*/
+    border: 2px solid;
+    cursor: pointer;
+    width: 50.19%;
+    margin: 0 -2px -2px 0;
+}
+.editor-search-card {/*These allows the card name to move over the image.*/
+    width: 33%;
+    float: left;
+    position: relative;
+}
+.editor-search-description {
+    -webkit-transition: 1s ease-in-out;
+    -moz-transition: 1s ease-in-out;
+    -ms-transition: 1s ease-in-out;
+    -o-transition: 1s ease-in-out;
+    transition: 1s ease-in-out;
+    font: bold 0.7vw/1 initial !important;
+    background: rgba(0,0,0,0);
+    margin-left: 33%;
+    position: absolute;
+}
+.editor-search-description:hover {/*This moves the card name above the image, resizes the font, and applies a transparent background colour. Now you can read the longer names.*/
+    -webkit-transition: 1s ease-in-out;
+    -moz-transition: 1s ease-in-out;
+    -ms-transition: 1s ease-in-out;
+    -o-transition: 1s ease-in-out;
+    transition: 1s ease-in-out;
+    font-size: 0.65vw;
+    background: linear-gradient(90deg, rgba(0,0,0,0.4), rgba(0,0,0,0.8));
+    overflow: visible;
+    margin-left: 0%;
+    position: absolute;
 }
 }
