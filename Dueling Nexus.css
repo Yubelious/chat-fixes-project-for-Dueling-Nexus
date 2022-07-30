@@ -1295,23 +1295,22 @@ select {
 }
 #editor-menu-container, #editor-menu-content, #editor-menu-title, #editor-menu-title-banlist {
     height: 8vh;
-    line-height: 3;
+    line-height: 3.5;
 }
 #editor-menu-container, #editor-menu-content, #editor-menu-title, #editor-menu-title-deck, #editor-menu-spacer, #editor-menu-title-banlist, #editor-select-banlist, #editor-menu-spacer-small, #editor-menu-container button {
+    font-size: 2.25vh;
     width: 100%;
     padding: 0;
     margin: 0;
 }
 #editor-menu-content {
     display: grid;
-    grid-template-areas: '. name spacer banlist select spacer2 save clear undo redo sort shuffle share';
-    grid-template-columns: 1vw 33.33vw 2vw 7vw 8vw 1vw 6vw 6vw 6vw 6vw 6vw 6vw 6vw;
+    grid-template-areas: '. name spacer2 banlist select spacer save clear undo redo sort shuffle share';
+    grid-template-columns: .5vw 30vw .5vw 5.5vw 12.25vw 1vw repeat(7, 6vw);
+    gap: .5vw;
 }
 #editor-menu-title-deck {
     grid-area: name;
-    background-color: red;
-    font-size: 2.5vh;
-    text-align: left;
     white-space: normal;
     word-wrap: break-word;
     overflow-y: auto;
@@ -1319,19 +1318,16 @@ select {
 }
 #editor-menu-spacer {
     grid-area: spacer;
-    background-color: orange;
 }
 #editor-menu-title-banlist {
     grid-area: banlist;
-    background-color: yellow;
+    text-align: right;
 }
 #editor-select-banlist {
     grid-area: select;
-    background-color: green;
 }
 #editor-menu-spacer-small {
     grid-area: spacer2;
-    background-color: blue;
 }
 #editor-save-button {
     grid-area: save
@@ -1353,6 +1349,14 @@ select {
 }
 #editor-share-button {
     grid-area: share
+}
+#editor-menu-title-deck, #editor-select-banlist {
+    text-align: left
+}
+#editor-select-banlist, #editor-menu-container button {
+    align-self: center;
+    min-height: 0;
+    min-width: 0;
 }
 /*Search column*/
 #editor-search-column {
