@@ -988,6 +988,21 @@ h6 {/*Small headers.*/
 #card-if-monster, #card-if-spell, #card-if-trap {
     font: bold 1.1vw sans-serif
 }
+/*ENGINE BUTTONS*/
+.engine-button:not(.game-phase-button), select, button {
+    -moz-transition-duration: 2s;
+    -o-transition-duration: 2s;
+    transition-duration: 2s;
+    font-family: "Arial Narrow", inherit;
+    border-width: .15vw;
+    cursor: pointer;
+}
+.engine-button:active, select:active, button:active {
+    -moz-transition-duration: .5s;
+    -o-transition-duration: .5s;
+    transition-duration: .5s;
+    transform: translateY(.5vh);
+}
 }
 
 @-moz-document url-prefix("https://duelingnexus.com/game") {
@@ -1287,6 +1302,9 @@ select {
 .engine-button[disabled], .engine-button:disabled {
     cursor: not-allowed
 }
+.editor-select, .editor-filter-text-box, .editor-filter-multliine-text-box {
+    height: auto
+}
 /*Editor menu*/
 #editor-menu-container, #editor-menu-content {
     position: fixed
@@ -1357,7 +1375,7 @@ select {
     min-width: 0;
 }
 /*The right-most column.*/
-    #editor-search-column {
+#editor-search-column {
     display: grid;
     grid-template-areas: 'box' 'results';
     grid-template-rows: max-content auto;
@@ -1392,12 +1410,9 @@ select {
     overflow-y: auto;
     scrollbar-width: none;
 }
-#filters-left, #filters-right, .editor-filter-select, .editor-filter-multiselect-span, .editor-filter-text-box {
+#filters-left, #filters-right, #editor-filters span:not(.editor-realtime-search-span), .editor-filter-select, .editor-filter-multiselect-span, .editor-filter-text-box, .editor-filter-multliine-text-box {
     width: 48%;
-	border: 1px solid red;
-}
-.editor-filter-select, .editor-filter-multiselect-span {
-    min-width: 0
+    min-width: 0;
 }
 .editor-filter-select, .editor-filter-multiselect-span, .editor-filter-multliine-text-box, .editor-filter-text-box {
     float: right
@@ -1410,6 +1425,13 @@ select {
 }
 input {
     text-align: center
+}
+.editor-realtime-search-span, #editor-clear-filters-button, #editor-search-button {
+    width: max-content;
+    min-width: 0;
+    height: auto;
+    min-height: 0;
+    float: right;
 }
 .editor-search-result {/*This provides a nice even table without that bulging middle.*/
     border: 2px solid;
