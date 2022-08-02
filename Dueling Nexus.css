@@ -1392,6 +1392,7 @@ select {
 	grid-area: results;
     overflow-x: hidden;
     overflow-y: auto;
+    scrollbar-width: thin;
     margin-top: .15vw;
 }
 #editor-search-text {
@@ -1429,40 +1430,39 @@ input {
     min-height: 0;
     float: right;
 }
-.editor-search-result {/*This provides a nice even table without that bulging middle.*/
+.editor-search-result {
     cursor: pointer;
-    max-width: 50.19%;
-    margin: 0 -2px -2px 0;
+    border-right: 0;
+    max-width: 50%;
+    position: relative;
 }
-.editor-search-card {/*These allows the card name to move over the image.*/
-    width: 33%;
+.editor-search-card {
+    width: calc(100% / 3);
     position: relative;
 }
 .editor-search-description {
-    -moz-transition: 1s ease-in-out;
-    -o-transition: 1s ease-in-out;
-    transition: 1s ease-in-out;
-    font-size: 1vw;
-    background: rgba(0,0,0,0);
-    margin-left: 33%;
-    position: absolute;
-}
-.editor-search-description:hover {/*This moves the card name above the image, resizes the font, and applies a transparent background colour. Now you can read the longer names.*/
-    -webkit-transition: 1s ease-in-out;
-    -moz-transition: 1s ease-in-out;
-    -ms-transition: 1s ease-in-out;
-    -o-transition: 1s ease-in-out;
-    transition: 1s ease-in-out;
-    font-size: 0.6vw;
-    background: /*radial-gradient(closest-corner at 20% 35%, rgba(0, 0, 0, 0.8) 60%, rgba(0,0,0,0)), */radial-gradient(closest-corner at 5% 10%, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
-    height: 50%;
-    width: 100%;
-    z-index: 2;
-    overflow: visible;
-    margin-left: 0%;
+    text-align: right;
+    padding: 0;
+    max-height: 100%;
+    width: 98%;
+    overflow-x: visible;
+    overflow-y: auto;
+    scrollbar-width: none;
     position: absolute;
 }
 .editor-search-description .template-name {
-    font-weight: bold
+    background: radial-gradient(rgba(17, 25, 37, .7) 25%, rgba(0, 0, 0, 0));
+    font-size: 1.75vh;
+    font-weight: bold;
+    white-space: pre-wrap;
+    overflow: visible;
+    max-width: 100%;
+    width: min-content;
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+}
+.editor-search-description .template-if-monster, .editor-search-description .template-if-spell {
+    font-size: 1.5vh
 }
 }
