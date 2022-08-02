@@ -1413,11 +1413,24 @@ select {
     overflow-y: auto;
     scrollbar-width: none;
 }
+.editor-filter-container {
+    padding: 2%
+}
+#editor-filters span {
+    margin-bottom: 5%
+}
+#editor-filters p {
+    margin: 0;
+}
 #filters-left, #filters-right, #editor-filters span:not(.editor-realtime-search-span), .editor-filter-select, .editor-filter-multiselect-span, .editor-filter-text-box, .editor-filter-multliine-text-box {
-    width: 48%;
+    line-height: 1.5;
+    width: 47%;
     min-width: 0;
 }
-.editor-filter-select, .editor-filter-multiselect-span, .editor-filter-multliine-text-box, .editor-filter-text-box {
+#editor-filters select {
+    font-size: 2vh;
+}
+#filters-right, .editor-filter-select, .editor-filter-multiselect-span, .editor-filter-multliine-text-box, .editor-filter-text-box {
     float: right
 }
 .editor-filter-multiselect {
@@ -1430,6 +1443,9 @@ select {
 input {
     text-align: center
 }
+.editor-if-monster {
+    margin-top: 0 !important
+}
 .editor-if-link > div {
     color: #777;
     width: auto;
@@ -1437,24 +1453,29 @@ input {
     border-width: 1px 1px 0 1px;
     border-style: solid;
     border-collapse: collapse;
-    display: table;
+    display: inline-table !important;
 }
 .editor-if-link > div > p, .editor-filter-link-arrow-button {
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 .editor-if-link > div > p {
     width: 100%;
-    border-bottom: 1px solid #777;
+    border: 1px solid #777;
+    display: table-row;
 }
-#editor-select-link-top-left, #editor-select-link-top, #editor-select-link-top-right, #editor-select-link-left, #editor-select-link-right, #editor-select-link-bottom-left, #editor-select-link-bottom, #editor-select-link-bottom-right {
+.editor-filter-link-arrow-button {
     border-top: 0;
     border-bottom: 0;
-}
-#editor-select-link-top-left, #editor-select-link-top, #editor-select-link-left, #editor-select-link-bottom-left, #editor-select-link-bottom {
-    border-left: 0
+    display: table-cell;
 }
 #editor-select-link-top-right, #editor-select-link-right, #editor-select-link-bottom-right {
     border-right: 0
+}
+#editor-select-link-top-left, #editor-select-link-left, #editor-select-link-bottom-left {
+    border-left: 0
+}
+.editor-filter-label-right {
+    padding-left: 5% !important
 }
 .editor-realtime-search-span, #editor-clear-filters-button, #editor-search-button {
     width: max-content;
@@ -1500,4 +1521,7 @@ input {
 }/*
 .editor-search-description .template-if-monster, .editor-search-description .template-if-spell {
 }*/
+span {
+    background-color: green
+}
 }
