@@ -1431,21 +1431,30 @@ input {
     text-align: center
 }
 .editor-if-link > div {
-    width: 50%;
+    color: #777;
+    width: auto;
     height: auto;
-    border-bottom: 1px solid #777;
+    border-width: 1px 1px 0 1px;
+    border-style: solid;
+    border-collapse: collapse;
+    display: table;
 }
 .editor-if-link > div > p, .editor-filter-link-arrow-button {
     box-sizing: border-box
 }
 .editor-if-link > div > p {
     width: 100%;
-    border-top: 1px solid #777;
+    border-bottom: 1px solid #777;
 }
-#editor-select-link-top-left, #editor-select-link-top, #editor-select-link-top-right {
-    height: calc(100% / 3);
-    width: calc(100% / 3);
+#editor-select-link-top-left, #editor-select-link-top, #editor-select-link-top-right, #editor-select-link-left, #editor-select-link-right, #editor-select-link-bottom-left, #editor-select-link-bottom, #editor-select-link-bottom-right {
     border-top: 0;
+    border-bottom: 0;
+}
+#editor-select-link-top-left, #editor-select-link-top, #editor-select-link-left, #editor-select-link-bottom-left, #editor-select-link-bottom {
+    border-left: 0
+}
+#editor-select-link-top-right, #editor-select-link-right, #editor-select-link-bottom-right {
+    border-right: 0
 }
 .editor-realtime-search-span, #editor-clear-filters-button, #editor-search-button {
     width: max-content;
