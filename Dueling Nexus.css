@@ -989,7 +989,7 @@ h6 {/*Small headers.*/
     font: bold 1.1vw sans-serif
 }
 /*ENGINE BUTTONS*/
-.engine-button:not(.game-phase-button), select, button {
+.engine-button:not(.game-phase-button) button {
     -moz-transition-duration: 2s;
     -o-transition-duration: 2s;
     transition-duration: 2s;
@@ -1002,6 +1002,9 @@ h6 {/*Small headers.*/
     -o-transition-duration: .5s;
     transition-duration: .5s;
     transform: translate(.1vw, .5vh);
+}
+select {
+    cursor: pointer
 }
 }
 
@@ -1386,7 +1389,8 @@ select {
     min-height: 0 !important;
 }
 #editor-search-box {
-    grid-area: box
+    grid-area: box;
+    position: relative;
 }
 #editor-search-results {
 	grid-area: results;
@@ -1420,10 +1424,28 @@ select {
 	width: 100%
 }
 .editor-select-checkboxes {
-    width: max-content
+    width: max-content;
+    max-height: 75% !important;
 }
 input {
     text-align: center
+}
+.editor-if-link > div {
+    width: 50%;
+    height: auto;
+    border-bottom: 1px solid #777;
+}
+.editor-if-link > div > p, .editor-filter-link-arrow-button {
+    box-sizing: border-box
+}
+.editor-if-link > div > p {
+    width: 100%;
+    border-top: 1px solid #777;
+}
+#editor-select-link-top-left, #editor-select-link-top, #editor-select-link-top-right {
+    height: calc(100% / 3);
+    width: calc(100% / 3);
+    border-top: 0;
 }
 .editor-realtime-search-span, #editor-clear-filters-button, #editor-search-button {
     width: max-content;
