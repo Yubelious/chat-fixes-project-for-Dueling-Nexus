@@ -997,11 +997,11 @@ h6 {/*Small headers.*/
     border-width: .15vw;
     cursor: pointer;
 }
-.engine-button:active, select:active, button:active {
+.engine-button:active, button:active {
     -moz-transition-duration: .5s;
     -o-transition-duration: .5s;
     transition-duration: .5s;
-    transform: translateY(.5vh);
+    transform: translate(.1vw, .5vh);
 }
 }
 
@@ -1396,7 +1396,9 @@ select {
     margin-top: .15vw;
 }
 #editor-search-text {
-    margin-top: 1vh
+    margin-top: 1vh;
+    z-index: 2;
+    position: relative;
 }
 #editor-search-text, #editor-select-card-type, #editor-multi-select-monster-type, #editor-multi-select-monster-ability, #editor-select-monster-attribute, #editor-select-monster-race, #editor-select-spell-type, #editor-select-trap-type, #editor-multi-select-genre, #editor-select-limit, #editor-select-cardpool, #editor-select-results, #editor-sort-results {
 	height: auto;
@@ -1441,28 +1443,30 @@ input {
     position: relative;
 }
 .editor-search-description {
+    background: radial-gradient(rgba(17, 25, 37, .7) 25%, rgba(0, 0, 0, 0));
     text-align: right;
+    direction: rtl;
     padding: 0;
     max-height: 100%;
-    width: 98%;
-    overflow-x: visible;
-    overflow-y: auto;
+    width: calc(103% / 1.5);
+    overflow: visible;
     scrollbar-width: none;
+    z-index: 2;
     position: absolute;
+    right: 3%;
 }
 .editor-search-description .template-name {
-    background: radial-gradient(rgba(17, 25, 37, .7) 25%, rgba(0, 0, 0, 0));
-    font-size: 1.75vh;
     font-weight: bold;
-    white-space: pre-wrap;
+    white-space: pre-line;
     overflow: visible;
-    max-width: 100%;
-    width: min-content;
-    display: inline-block;
-    position: relative;
-    z-index: 2;
 }
+.editor-search-description .template-name, .editor-search-description .template-if-monster, .editor-search-description .template-if-spell {
+    font-size: 1.75vh;
+    height: max-content;
+    width: max-content;
+    max-width: 94%;
+    float: right;
+}/*
 .editor-search-description .template-if-monster, .editor-search-description .template-if-spell {
-    font-size: 1.5vh
-}
+}*/
 }
