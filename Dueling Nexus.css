@@ -1399,6 +1399,7 @@ select {
     scrollbar-width: thin;
     margin-top: .15vw;
 }
+/*The top of the right-most column*/
 #editor-search-text {
     margin-top: 1vh;
     z-index: 2;
@@ -1408,30 +1409,25 @@ select {
 	height: auto;
     min-width: 0;
 }
+/*The filters in the right-most column*/
 #editor-filters {
     height: 44vh;
+    padding: 2%;
     overflow-y: auto;
     scrollbar-width: none;
 }
-.editor-filter-container {
-    padding: 2%
-}
-#editor-filters span {
-    margin-bottom: 5%
-}
-#editor-filters p {
-    margin: 0;
-}
 #filters-left, #filters-right, #editor-filters span:not(.editor-realtime-search-span), .editor-filter-select, .editor-filter-multiselect-span, .editor-filter-text-box, .editor-filter-multliine-text-box {
-    line-height: 1.5;
-    width: 47%;
+    width: 48%;
     min-width: 0;
-}
-#editor-filters select {
-    font-size: 2vh;
 }
 #filters-right, .editor-filter-select, .editor-filter-multiselect-span, .editor-filter-multliine-text-box, .editor-filter-text-box {
     float: right
+}
+#filters-right span {
+    padding-left: 0 !important
+}
+.editor-filter-label-right {
+    padding-left: 5% !important
 }
 .editor-filter-multiselect {
 	width: 100%
@@ -1443,9 +1439,7 @@ select {
 input {
     text-align: center
 }
-.editor-if-monster {
-    margin-top: 0 !important
-}
+
 .editor-if-link > div {
     color: #777;
     width: auto;
@@ -1474,9 +1468,6 @@ input {
 #editor-select-link-top-left, #editor-select-link-left, #editor-select-link-bottom-left {
     border-left: 0
 }
-.editor-filter-label-right {
-    padding-left: 5% !important
-}
 .editor-realtime-search-span, #editor-clear-filters-button, #editor-search-button {
     width: max-content;
     min-width: 0;
@@ -1484,6 +1475,7 @@ input {
     min-height: 0;
     float: right;
 }
+/*The search results in the right-most column*/
 .editor-search-result {
     cursor: pointer;
     border-right: 0;
@@ -1521,7 +1513,4 @@ input {
 }/*
 .editor-search-description .template-if-monster, .editor-search-description .template-if-spell {
 }*/
-span {
-    background-color: green
-}
 }
