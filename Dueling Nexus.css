@@ -1416,6 +1416,10 @@ select {
     overflow-y: auto;
     scrollbar-width: none;
 }
+#editor-filters span {
+    font-size: 1em;
+    line-height: 1.5;
+}
 #filters-left, #filters-right, #editor-filters span:not(.editor-realtime-search-span), .editor-filter-select, .editor-filter-multiselect-span, .editor-filter-text-box, .editor-filter-multliine-text-box {
     width: 48%;
     min-width: 0;
@@ -1438,35 +1442,6 @@ select {
 }
 input {
     text-align: center
-}
-
-.editor-if-link > div {
-    color: #777;
-    width: auto;
-    height: auto;
-    border-width: 1px 1px 0 1px;
-    border-style: solid;
-    border-collapse: collapse;
-    display: inline-table !important;
-}
-.editor-if-link > div > p, .editor-filter-link-arrow-button {
-    box-sizing: border-box;
-}
-.editor-if-link > div > p {
-    width: 100%;
-    border: 1px solid #777;
-    display: table-row;
-}
-.editor-filter-link-arrow-button {
-    border-top: 0;
-    border-bottom: 0;
-    display: table-cell;
-}
-#editor-select-link-top-right, #editor-select-link-right, #editor-select-link-bottom-right {
-    border-right: 0
-}
-#editor-select-link-top-left, #editor-select-link-left, #editor-select-link-bottom-left {
-    border-left: 0
 }
 .editor-realtime-search-span, #editor-clear-filters-button, #editor-search-button {
     width: max-content;
