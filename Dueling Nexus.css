@@ -1428,9 +1428,12 @@ select {
     float: right
 }
 #filters-right {
+    min-height: 100%;
     display: flex !important;
-    vertical-align: top;
     flex-direction: column;
+}
+#filters-right p {
+    margin-top: 0
 }
 #filters-right span {
     padding-left: 0 !important
@@ -1455,8 +1458,9 @@ input {
     min-height: 0;
     float: right;
 }
-#editor-clear-filters-button, #editor-search-button {
+#filters-right p:last-child {
     align-self: flex-end;
+    margin-top: auto;
 }
 #editor-clear-filters-button {
     margin-bottom: 2%
