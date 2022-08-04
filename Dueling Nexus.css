@@ -19,12 +19,9 @@ div#app, #duel-area {
     margin-bottom: 41px /*Increase this value if your taskbar blocks the interface. Search "41px" and raise all of them to the same value.*/
 }
 h2, h3 {/*This is the main header for each of the tabs.*/
-    font-size: 3.5vh;
-    line-height: 1;
     -moz-user-select: none;
     -o-user-select: none;
     user-select: none;
-    margin: .5vh;
 }
 button img, .fake-button img {
     height: 2vw;
@@ -513,9 +510,6 @@ a, label, #login-area p, #register-area p, #recover-area p {
 div#app {
     left: 0
 }
-article {
-    z-index: 1;
-}
 }
 @media (orientation: landscape) {
 h1, h2, h3 {
@@ -539,23 +533,23 @@ li {
 }
 }
 @media (orientation: portrait) {
-h1, h2, h3 {
+#gamelist-area h1, #gamelist-area h2, #gamelist-area h3 {
     letter-spacing: .2vh
 }
-h1 {
+#gamelist-area h1 {
     font-size: 4vh
 }
-h2 {
+#gamelist-area h2 {
     font-size: 3.5vh;
     margin: 1%;
 }
-h3 {
+#gamelist-area h3 {
     font-size: 3vh
 }
-h4 {
+#gamelist-area h4 {
     font-size: 2.5vh
 }
-li {
+#gamelist-area li {
     font-size: 2vh
 }
 }
@@ -669,7 +663,7 @@ form button {
 }
 }
 
-@-moz-document domain("https://duelingnexus.com/home") {
+@-moz-document url("https://duelingnexus.com/home") {
 /*SECTION 03 HOME*/
 /*This section affects the page that loads when you first login*/
 #navbar-right {
@@ -761,7 +755,7 @@ td, th {
 }
 td[data-v-33d70790] {
     animation: 2.5s GrowFromTop
-}/*
+}
 @-moz-keyframes GrowFromTop {
     0% {
         font-size: 0;
@@ -785,7 +779,7 @@ td[data-v-33d70790] {
     100% {
         font-size: 2vh;
     }
-}*/
+}
 }
 
 @-moz-document url("https://duelingnexus.com/decks") {
@@ -795,8 +789,10 @@ td[data-v-33d70790] {
     overflow-y: auto
 }
 h2[data-v-417e0dbe] {
+    font-size: 3.5vh;
     overflow: visible;
     max-height: 6%;
+    margin: 1%;
 }
 #decks-buttons[data-v-417e0dbe] {
     overflow: visible;
@@ -1427,14 +1423,6 @@ select {
 #filters-right, .editor-filter-select, .editor-filter-multiselect-span, .editor-filter-multliine-text-box, .editor-filter-text-box {
     float: right
 }
-#filters-right {
-    min-height: 100%;
-    display: flex !important;
-    flex-direction: column;
-}
-#filters-right p {
-    margin-top: 0
-}
 #filters-right span {
     padding-left: 0 !important
 }
@@ -1457,13 +1445,6 @@ input {
     height: auto;
     min-height: 0;
     float: right;
-}
-#filters-right p:last-child {
-    align-self: flex-end;
-    margin-top: auto;
-}
-#editor-clear-filters-button {
-    margin-bottom: 2%
 }
 /*The search results in the right-most column*/
 .editor-search-result {
@@ -1503,4 +1484,198 @@ input {
 }/*
 .editor-search-description .template-if-monster, .editor-search-description .template-if-spell {
 }*/
+}
+
+@-moz-document url("https://duelingnexus.com/privacy_policy.html"), url("https://duelingnexus.com/donate") {
+/*SECTION 10 PRIVACY*/
+/*This section affects the Privacy Policy page.*/
+/*Here we have some general clicky thingy rules.*/
+a {
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    padding: 0;
+    text-decoration: underline;
+    opacity: .75;
+}
+a:focus {
+    font-style: italic
+}
+a:hover {
+    opacity: 1
+}
+h1, h2, h3 {
+    font-variant: small-caps;
+    line-height: 1;
+    text-transform: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    margin: .5vh;
+    padding: 0;
+}
+#newsMain {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.news_list {
+    margin: 5vh 2.5vw;
+    height: 85vh;
+    width: auto;
+    max-width: 100%;
+    overflow-y: scroll;
+    position: absolute;
+    top: 0;
+}
+/*This section affects the donate page.*/
+@media (orientation: portrait) {
+div:not(#app), #donate-area {
+    display: none
+}
+}
+@media (orientation: landscape) {
+h1, h2, h3 {
+    letter-spacing: .1vw
+}
+h1 {
+    font-size: 2vw
+}
+h2 {
+    font-size: 1.75vw
+}
+h3 {
+    font-size: 1.5vw
+}
+h4 {
+    font-size: 1.25vw
+}
+li, p {
+    font-size: 1vw
+}
+}
+@media (orientation: portrait) {
+h1, h2, h3 {
+    letter-spacing: .2vh
+}
+h1 {
+    font-size: 4vh
+}
+h2 {
+    font-size: 3.5vh
+}
+h3 {
+    font-size: 3vh
+}
+h4 {
+    font-size: 2.5vh
+}
+li, p {
+    font-size: 1.75vh
+}
+}
+}
+
+@-moz-document url-prefix("https://duelingnexus.com/login"), url-prefix("https://duelingnexus.com/register"), url-prefix("https://duelingnexus.com/recover"), url-prefix("https://duelingnexus.com/home"), url-prefix("https://duelingnexus.com/duel"), url-prefix("https://duelingnexus.com/gamelist"), url-prefix("https://duelingnexus.com/hostgame"), url-prefix("https://duelingnexus.com/decks"), url-prefix("https://duelingnexus.com/profile"), url-prefix("https://duelingnexus.com/leaderboard"), url-prefix("https://duelingnexus.com/game"), url-prefix("https://duelingnexus.com/editor"), url-prefix("https://duelingnexus.com/donate"), url-prefix("https://duelingnexus.com/privacy_policy.html") {
+/*SECTION 14 MINI*/
+/*This section uses a rule that changes various elements so they fit on really small screens.*/
+@media (max-width: 1024px) {
+body {
+    background-attachment: scroll;
+    background-position: right bottom;
+}
+/*Smaller headers*/
+h2, h3 {
+    font-size: 3vh
+}
+h4 {
+    font-size: 2vw
+}
+/*Smaller navbar*/
+#navbar-left {
+    display: none
+}
+#navbar-middle, #navbar-middle button {
+    float: left;
+    vertical-align: top;
+    left: 0;
+}
+/*Smaller login*/
+#register-email, #register-username, #register-password, #register-password2, #recover-email {
+    margin: .5vh 0 1.5vh
+}
+#links-area[data-v-7df22d6c], #links-area[data-v-c3640fe8], #links-area[data-v-80980b4] {
+    bottom: 0
+}
+#links-area a[data-v-c3640fe8] {
+    line-height: 5.5
+}
+/*Smaller profile*/
+#my-profile[data-v-7d3c70a7] {
+    height: 59.5vh
+}
+#my-profile-in, #my-profile-in h2 {
+    height: 2.5vh;
+    padding: 0;
+    margin: 0;
+}
+.avatar-image[data-v-7d3c70a7], .sleeve-image[data-v-7d3c70a7] {
+    max-height: 20vh;
+    border-width: .1vh;
+}
+.avatar-image[data-v-7d3c70a7] {
+    width: 20vh
+}
+button.arrow-button[data-v-7d3c70a7] {
+    font-size: 2vh;
+    height: 20.2vh;
+    width: 4.5vh;
+    margin: 0 .5vh;
+    padding: 0;
+}
+.file-picker-container[data-v-7d3c70a7], .remove-custom-button[data-v-7d3c70a7] {
+    font-size: 1.5vh;
+    line-height: 2;
+    width: 30vh;
+    margin: .5vh auto;
+}
+#my-profile h3:nth-child(3){
+    top: 60vh
+}
+#profile-ranking-table {
+    top: 65vh;
+}
+/*Phase buttons*/
+button#game-dp-button {
+    transform: translate(0,-9vh) scale(1.5)
+}
+button#game-sp-button {
+    transform: translate(0,-6vh) scale(1.5)
+}
+button#game-mp1-button {
+    transform: translate(0,-3vh) scale(1.5)
+}
+button#game-bp-button {
+    transform: translate(0,0vh) scale(1.5)
+}
+button#game-mp2-button {
+    transform: translate(0,3vh) scale(1.5)
+}
+button#game-ep-button {
+    transform: translate(0,6vh) scale(1.5)
+}
+/*Smaller textbox*/
+#game-chat-area .engine-text-box {
+    width: 21.5vw
+}
+/*smaller editor*/
+.engine-button-navbar {
+    font-size: 2vh
+}
+}
 }
