@@ -1427,6 +1427,11 @@ select {
 #filters-right, .editor-filter-select, .editor-filter-multiselect-span, .editor-filter-multliine-text-box, .editor-filter-text-box {
     float: right
 }
+#filters-right {
+    display: flex !important;
+    vertical-align: top;
+    flex-direction: column;
+}
 #filters-right span {
     padding-left: 0 !important
 }
@@ -1449,6 +1454,12 @@ input {
     height: auto;
     min-height: 0;
     float: right;
+}
+#editor-clear-filters-button, #editor-search-button {
+    align-self: flex-end;
+}
+#editor-clear-filters-button {
+    margin-bottom: 2%
 }
 /*The search results in the right-most column*/
 .editor-search-result {
