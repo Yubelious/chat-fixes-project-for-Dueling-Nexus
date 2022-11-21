@@ -28,7 +28,7 @@ button img, .fake-button img, .menu-button img {
     float: right;
 }
 .p-6 {
-    padding: 0
+    padding: 0 2vw
 }
 /*Here we have some general clicky thingy rules.*/
 a {
@@ -37,14 +37,14 @@ a {
     transition: all 1s ease-in-out;
     font-size: 2vh;
     padding: 0;
-    text-decoration: underline;
-    opacity: .75;
+    opacity: .7;
 }
 a:focus {
     font-style: italic
 }
 a:hover {
-    opacity: 1
+    opacity: 1;
+    text-decoration: underline;
 }
 article button, .fake-button[data-v-6f705b54], .file-picker-container img {
     line-height: 1;
@@ -56,5 +56,18 @@ article button, .fake-button[data-v-6f705b54], .file-picker-container img {
 .ml-2 {
     transform: translateY(-2vh);
     position: fixed;
+}
+/*Navbar*/
+.text-2xl {
+    font-size: 3vh;
+    font-variant: small-caps;
+    text-transform: lowercase;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    
+}
+.text-2xl:first-letter {
+    text-transform: capitalize
 }
 }
