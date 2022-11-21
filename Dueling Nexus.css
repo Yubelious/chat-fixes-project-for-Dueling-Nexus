@@ -50,4 +50,8 @@ article button, .fake-button[data-v-6f705b54], .file-picker-container img {
 .fake-button[data-v-6f705b54], .file-picker-container img {  
     font-size: 2vh
 }
+.ml-2 {
+    transform: translateY(-2vh);
+    position: fixed;
+}
 }
