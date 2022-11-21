@@ -8,34 +8,27 @@ html {
 body {
     font-size: 2vh;
     line-height: 1;
-    height: 100vh;
-    margin: 0;
 }
-article {
-    padding: 1%
+.m-6/*login page*/, .flex-col.items-center/*centered containers*/, .my-3/*socials container*/ {
+    margin-bottom: 41px /*Increase this value if your taskbar blocks the interface. Search "41px" and raise all of them to the same value.*/
 }
-.flex-col.items-center, .my-3, .m-6 {
-    margin-bottom: 41px
+.mb-5 {
+    margin-bottom: 0
 }
 h2, h3 {/*This is the main header for each of the tabs.*/
     -moz-user-select: none;
     -o-user-select: none;
     user-select: none;
 }
-button img, .fake-button img, .menu-button img {
-    height: 2vw;
-    width: 2vw;
-    float: right;
-}
-.p-6 {
-    padding: 0 2vw
+.p-6 {/*navbar*/
+    padding: 0
 }
 /*Here we have some general clicky thingy rules.*/
 a {
     -moz-transition: all 1s ease-in-out;
     -o-transition: all 1s ease-in-out;
     transition: all 1s ease-in-out;
-    font-size: 2vh;
+    font-size: 1.75vh;
     padding: 0;
     opacity: .7;
 }
@@ -46,28 +39,67 @@ a:hover {
     opacity: 1;
     text-decoration: underline;
 }
-article button, .fake-button[data-v-6f705b54], .file-picker-container img {
-    line-height: 1;
-    text-align: center;
+li.cursor-pointer img, .menu-button img {
+    height: 2vw;
+    width: 2vw;
 }
-.fake-button[data-v-6f705b54], .file-picker-container img {  
-    font-size: 2vh
+.cursor-pointer, .menu-button {
+    -moz-transition-duration: 1s;
+    -o-transition-duration: 1s;
+    transition-duration: 1s;
+    padding: .5vh;
+    font-size: 2vh;
+    min-height: 0;
+    min-width: 0;
 }
-.ml-2 {
-    transform: translateY(-2vh);
-    position: fixed;
+.cursor-pointer:focus, .menu-button:focus {
+    -moz-transition-duration: 1s;
+    -o-transition-duration: 1s;
+    transition-duration: 1s;
+    font-style: italic;
+}
+.cursor-pointer:hover, .menu-button:hover {
+    -moz-transition-duration: 1s;
+    -o-transition-duration: 1s;
+    transition-duration: 1s;
 }
 /*Navbar*/
+nav {
+    width: 25vw
+}
+nav .flex-col {
+    width: 100%
+}
+.lg\:px-10, nav form, nav .flex-col.text-xs {
+    padding-right: 10%;
+    padding-left: 10%;
+}
 .text-2xl {
-    font-size: 3vh;
+    font-size: 2.5vh;
     font-variant: small-caps;
     text-transform: lowercase;
     -moz-user-select: none;
     -o-user-select: none;
     user-select: none;
+    width: auto;
     
 }
 .text-2xl:first-letter {
     text-transform: capitalize
+}
+.mx-1 {
+    margin-left: 0
+}
+.home-menu-button {
+    width: 250px;
+    position: fixed;
+}
+}
+
+@-moz-document url-prefix("https://duelingnexus.com/login") {
+
+.text-xs > .ml-2 {
+    transform: translateY(-2vh);
+    position: fixed;
 }
 }
