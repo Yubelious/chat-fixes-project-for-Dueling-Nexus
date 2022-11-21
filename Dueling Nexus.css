@@ -27,8 +27,9 @@ button img, .fake-button img, .menu-button img {
     width: 2vw;
     float: right;
 }
-.p6 {
-    }
+.p-6 {
+    padding: 0
+}
 /*Here we have some general clicky thingy rules.*/
 a {
     -moz-transition: all 1s ease-in-out;
