@@ -1,6 +1,31 @@
+@-moz-document url-prefix("https://duelingnexus.com/login"), url-prefix("https://duelingnexus.com/register"), url-prefix("https://duelingnexus.com/recover"), url-prefix("https://duelingnexus.com/home"), url-prefix("https://duelingnexus.com/duel"), url-prefix("https://duelingnexus.com/gamelist"), url-prefix("https://duelingnexus.com/hostgame"), url-prefix("https://duelingnexus.com/hostbotgame"), url-prefix("https://duelingnexus.com/donate"), url-prefix("https://duelingnexus.com/decks"), url-prefix("https://duelingnexus.com/profile"), url-prefix("https://duelingnexus.com/replays"), url-prefix("https://duelingnexus.com/leaderboard"), url-prefix("https://duelingnexus.com/credits"), url-prefix("https://duelingnexus.com/game"), url-prefix("https://duelingnexus.com/editor"), url-prefix("https://duelingnexus.com/privacy_policy.html") {
+/*SECTION 01 ROOT*/
+/*This section uses rules that changes various elements based on screen size.*/
+@media (orientation: landscape) AND (min-width: 1025px)  {
+    :root {
+        --Font: 2vh;
+        --checkboxSize: 3vh;
+    }
+}
+@media (max-width: 1024px) {
+    :root {
+        --Font: ?;
+        --checkboxSize: 3vh;
+    }
+    body {
+        background-attachment: scroll;
+        background-position: right bottom;
+    }
+}
+}
+
 @-moz-document url("https://duelingnexus.com/login"), url("https://duelingnexus.com/register"), url("https://duelingnexus.com/recover"), url("https://duelingnexus.com/home"), url("https://duelingnexus.com/duel"), url("https://duelingnexus.com/gamelist"), url("https://duelingnexus.com/hostgame"), url("https://duelingnexus.com/hostbotgame"), url("https://duelingnexus.com/donate"), url("https://duelingnexus.com/decks"), url("https://duelingnexus.com/profile"), url("https://duelingnexus.com/replays"), url("https://duelingnexus.com/leaderboard"), url("https://duelingnexus.com/credits") {
-/*SECTION 01 NAVGLOBAL*/
+/*SECTION 02 NAVGLOBAL*/
 /*This section is global code that applies to all of the navigation pages. For global code for the game and deckbuilding pages, go to GAMEGLOBAL*/
+:root {
+    --smallFont: calc(var(--Font) * .75);
+    --bigFont: calc(var(--Font) * 1.25);
+}
 html {
     background-position: right bottom;
     background-color: black;
@@ -9,11 +34,11 @@ html {
     user-select: none;
     }
 body {
-    font-size: 2vh;
+    font-size: var(--Font);
     line-height: 1;
 }
 /*Blocking out the layout*/
-#app > div:nth-child(2) .nav-from, #app > nav {/*Sidebar (logged out)*/
+#app > div:nth-child(2) .nav-from, #app > nav, nav .p-10 {/*Sidebar (logged out)*/
     min-width: 25vw;
     max-width: 25vw;
     padding: 0;
@@ -33,11 +58,12 @@ body {
     overflow: auto;
 }
 /*Here we have some general clicky thingy rules.*/
-a.hover\:text-purple-700 {
+a.hover\:text-purple-700  {
     -moz-transition: all 1s ease-in-out;
     -o-transition: all 1s ease-in-out;
     transition: all 1s ease-in-out;
-    font-size: 1.75vh;
+    font-size: var(--smallFont);
+    line-height: 1;
     padding: 0;
     opacity: .7;
 }
@@ -45,7 +71,7 @@ a.hover\:text-purple-700 {
     -moz-transition-duration: 1s;
     -o-transition-duration: 1s;
     transition-duration: 1s;
-    font-size: 2vh;
+    font-size: var(--Font);
     min-height: 0;
     min-width: 0;
 }
@@ -89,6 +115,9 @@ nav .home-menu-button {
     position: fixed;
     top: 2%;
 }
+nav .my-1 {
+    margin: 0 0 1vh 0
+}
 nav .mt-10 {/*Nav button container*/
     margin-top: 1vw
 }
@@ -118,7 +147,7 @@ nav .menu-button, nav li.my-1 {
     border-width: .15vw;
 }
 nav .text-2xl {
-    font-size: 2.5vh;
+    font-size: var(--bigFont);
     font-variant: small-caps;
     text-transform: lowercase;
     -moz-user-select: none;
@@ -131,7 +160,7 @@ nav .text-2xl:first-letter {
 }
 nav ul.my-3/*socials container*/ {
     display: grid;
-    grid-template-areas: "discord facebook youtube bigcartel twitter";
+    grid-template-areas: "discord facebook twitter youtube bigcartel";
     grid-template-columns:  repeat(5, 1fr);
     height: auto;
     margin-bottom: 41px;
@@ -160,12 +189,12 @@ nav ul.my-3 .mx-1:nth-child(4) {
 nav ul.my-3 .mx-1:nth-child(5) {
     grid-area: bigcartel
 }
-nav form, nav .lg\:px-10, nav .text-xs {
-    padding-right: 11%;
-    padding-left: 11%;
+nav form, nav .lg\:px-10, nav form + .text-xs {
+    padding-right: 10%;
+    padding-left: 10%;
 }
 .w-2 {
-    font-size: 2.5vw;
+    font-size: var(--bigFont);
     text-align: center;
     height: 4vw;
     width: 4vw;
@@ -175,9 +204,6 @@ nav form, nav .lg\:px-10, nav .text-xs {
     width: 100%
 }
 /*Extended checkbox hitbox*/
-:root {
-    --checkboxSize: 3vh
-}
 [href="/recover"] + div, input[type="text"] + div {
     color: rgba(255, 255, 255, .75);
     height: var(--checkboxSize);
@@ -191,8 +217,9 @@ nav form, nav .lg\:px-10, nav .text-xs {
     background-size: var(--checkboxSize);
     background-color: transparent;
 }
-[href="/recover"] + div > span, input[type="text"] + div > span.mr-3 {
-    padding-left: calc(var(--checkboxSize) * 1.5)
+ #checkbox + span {
+     font-size: var(--smallFont);
+    padding-left: calc(var(--checkboxSize) * 1.5);
 }
 [href='/recover'] + div > input, input[type="text"] + div > input {/*Remove old checkboxes*/
     all: unset;
@@ -234,7 +261,7 @@ div.flex.items-center.mb-2:nth-of-type(3)::before {
 }
 
 @-moz-document url-prefix("https://duelingnexus.com/login") {
-/*SECTION 02 LOGIN*/
+/*SECTION 03 LOGIN*/
 /*This section applies to the pages you can access without logging in.*/
 .text-xs > .ml-2 {
     transform: translateY(-3.5vh);
@@ -976,105 +1003,6 @@ h4 {
 }
 li, p {
     font-size: 1.75vh
-}
-}
-}
-
-@-moz-document url-prefix("https://duelingnexus.com/login"), url-prefix("https://duelingnexus.com/register"), url-prefix("https://duelingnexus.com/recover"), url-prefix("https://duelingnexus.com/home"), url-prefix("https://duelingnexus.com/duel"), url-prefix("https://duelingnexus.com/gamelist"), url-prefix("https://duelingnexus.com/hostgame"), url-prefix("https://duelingnexus.com/decks"), url-prefix("https://duelingnexus.com/profile"), url-prefix("https://duelingnexus.com/leaderboard"), url-prefix("https://duelingnexus.com/game"), url-prefix("https://duelingnexus.com/editor"), url-prefix("https://duelingnexus.com/donate"), url-prefix("https://duelingnexus.com/privacy_policy.html") {
-/*SECTION 14 MINI*/
-/*This section uses a rule that changes various elements so they fit on really small screens.*/
-@media (max-width: 1024px) {
-body {
-    background-attachment: scroll;
-    background-position: right bottom;
-}
-/*Smaller headers*/
-h2, h3 {
-    font-size: 3vh
-}
-h4 {
-    font-size: 2vw
-}
-/*Smaller navbar*/
-#navbar-left {
-    display: none
-}
-#navbar-middle, #navbar-middle button {
-    float: left;
-    vertical-align: top;
-    left: 0;
-}
-/*Smaller login*/
-#register-email, #register-username, #register-password, #register-password2, #recover-email {
-    margin: .5vh 0 1.5vh
-}
-#links-area[data-v-7df22d6c], #links-area[data-v-c3640fe8], #links-area[data-v-80980b4] {
-    bottom: 0
-}
-#links-area a[data-v-c3640fe8] {
-    line-height: 5.5
-}
-/*Smaller profile*/
-#my-profile[data-v-7d3c70a7] {
-    height: 59.5vh
-}
-#my-profile-in, #my-profile-in h2 {
-    height: 2.5vh;
-    padding: 0;
-    margin: 0;
-}
-.avatar-image[data-v-7d3c70a7], .sleeve-image[data-v-7d3c70a7] {
-    max-height: 20vh;
-    border-width: .1vh;
-}
-.avatar-image[data-v-7d3c70a7] {
-    width: 20vh
-}
-button.arrow-button[data-v-7d3c70a7] {
-    font-size: 2vh;
-    height: 20.2vh;
-    width: 4.5vh;
-    margin: 0 .5vh;
-    padding: 0;
-}
-.file-picker-container[data-v-7d3c70a7], .remove-custom-button[data-v-7d3c70a7] {
-    font-size: 1.5vh;
-    line-height: 2;
-    width: 30vh;
-    margin: .5vh auto;
-}
-#my-profile h3:nth-child(3){
-    top: 60vh
-}
-#profile-ranking-table {
-    top: 65vh;
-}
-/*Phase buttons*/
-button#game-dp-button {
-    transform: translate(0,-9vh) scale(1.5)
-}
-button#game-sp-button {
-    transform: translate(0,-6vh) scale(1.5)
-}
-button#game-mp1-button {
-    transform: translate(0,-3vh) scale(1.5)
-}
-button#game-bp-button {
-    transform: translate(0,0vh) scale(1.5)
-}
-button#game-mp2-button {
-    transform: translate(0,3vh) scale(1.5)
-}
-button#game-ep-button {
-    transform: translate(0,6vh) scale(1.5)
-}
-/*Smaller textbox*/
-#game-chat-area .engine-text-box {
-    width: 21.5vw
-}
-/*smaller editor*/
-.engine-button-navbar {
-    font-size: 2vh
 }
 }
 }
