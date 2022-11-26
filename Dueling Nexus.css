@@ -6,15 +6,26 @@
         --Font: 2vh;
         --checkboxSize: 3vh;
     }
+    #app > div:nth-child(2) .nav-from, #app > nav, nav .p-10 {/*Sidebar (logged out)*/
+        min-width: 25vw;
+        max-width: 25vw;
+    }
 }
 @media (max-width: 1024px) {
     :root {
-        --Font: ?;
-        --checkboxSize: 3vh;
+        --Font: 1.5vw;
+        --checkboxSize: 1.5vw;
     }
     body {
         background-attachment: scroll;
         background-position: right bottom;
+    }
+    #app > div:nth-child(2) .nav-from, #app > nav, nav .p-10 {/*Sidebar (logged out)*/
+        min-width: 100vw;
+    }
+    nav > img {
+        position: fixed;
+        z-index: -1;
     }
 }
 }
@@ -39,9 +50,7 @@ body {
 }
 /*Blocking out the layout*/
 #app > div:nth-child(2) .nav-from, #app > nav, nav .p-10 {/*Sidebar (logged out)*/
-    min-width: 25vw;
-    max-width: 25vw;
-    padding: 0;
+    padding: 0
 }
 #app > div:first-child {/*Sidebar (logged im)*/
     max-width: 25vw
