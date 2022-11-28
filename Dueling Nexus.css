@@ -5,6 +5,7 @@
     :root {
         --Font: 2vh;
         --checkboxSize: 3vh;
+        --bottom: 41px;/*Increase this value if your taskbar blocks the interface.*/
     }
     #app > div:nth-child(2) .nav-from, #app > nav, nav .p-10 {/*Sidebar (logged out)*/
         min-width: 25vw;
@@ -18,10 +19,11 @@
         gap: 1vw
     }
 }
-@media (max-width: 1024px) {
+@media (max-width: 1024px), (orientation: portrait) {
     :root {
         --Font: 1.5vw;
-        --checkboxSize: 2.25vw;
+        --checkboxSize: 3vw;
+        --bottom: 100px;
     }
     body {
         background-attachment: scroll;
@@ -34,13 +36,13 @@
         position: fixed
     }
     nav form, nav .lg\:px-10, nav form + .text-xs {
-        padding-right: 20%;
+        padding-right: 18%;
         padding-bottom: 0;
-        padding-left: 20%;
+        padding-left: 18%;
         z-index: 2;
     }
     nav form, nav .lg\:px-10 {
-        padding-top: 27vh
+        padding-top: 45vw
     }
     nav ul.my-3 {
         gap: 4vw
@@ -74,11 +76,11 @@ body {
     max-width: 25vw
 }
 #app > div:nth-child(3) {/*Pages*/
-    height: calc(100vh - 41px);
+    height: calc(100vh - var(--bottom));
     overflow: auto;
     margin: 0;
     top: 0;
-    bottom: 41px;/*Increase this value if your taskbar blocks the interface. Search "41px" and raise all of them to the same value.*/
+    bottom: var(--bottom);
 }
 #app > div:nth-child(3) .m-6 {
     max-height: 90%;
@@ -185,7 +187,7 @@ nav ul.my-3/*socials container*/ {
     grid-template-areas: "discord facebook twitter youtube bigcartel";
     grid-template-columns:  repeat(5, 1fr);
     height: auto;
-    margin-bottom: 41px;
+    margin-bottom: var(--bottom);
 }
 nav .mx-1 {/*socials*/
     margin: 0;
@@ -303,7 +305,7 @@ div {
     line-height: 1;
 }
 div#app, #duel-area {
-    margin-bottom: 41px /*Increase this value if your taskbar blocks the interface. Search "41px" and raise all of them to the same value.*/
+    margin-bottom: var(--bottom);
 }
 h2, h3 {/*This is the main header for each of the tabs.*/
     font-size: 3.5vh;
@@ -479,7 +481,7 @@ select {
     max-width: 100%;
     padding: 0;
     position: absolute;
-    bottom: 41px;
+    bottom: var(--bottom);
     left: 25vw;
 }
 #game-room-information {
@@ -505,7 +507,7 @@ select {
     height: 4vh;
     width: 21vw;
     position: fixed;
-    bottom: 41px;
+    bottom: var(--bottom);
     left: .6%;
 }
 /*Options tab*/
@@ -818,7 +820,7 @@ select {
 #editor-search-column {
     display: grid;
     grid-template-areas: 'box' 'results' '.';
-    grid-template-rows: max-content auto 41px;
+    grid-template-rows: max-content auto var(--bottom);
     margin-top: 8vh;
     overflow: hidden;
     height: 92vh;
