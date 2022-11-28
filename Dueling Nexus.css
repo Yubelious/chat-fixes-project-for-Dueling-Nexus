@@ -139,7 +139,7 @@ nav .home-menu-button {
 nav .mt-10 {/*Nav button container*/
     margin-top: 1vw
 }
-nav .mt-10 > .my-1 {
+nav .mt-10 > .my-1, nav form > .my-1, nav form > .my-2 {
     margin: 0 0 1vh 0
 }
 nav .mb-5 {/*socials container container*/
