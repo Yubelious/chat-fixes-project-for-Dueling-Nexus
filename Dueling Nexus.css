@@ -28,7 +28,7 @@
         background-position: right bottom;
     }
     #app > div:nth-child(2) .nav-from, #app > nav, nav .p-10 {/*Sidebar (logged out)*/
-        min-width: 100vw;
+        min-width: 100vw
     }
     nav > img {
         position: fixed
@@ -94,7 +94,7 @@ a.hover\:text-purple-700, #checkbox {
     font-size: var(--smallFont);
     line-height: 1.5;
     opacity: .7;
-    margin: 0;
+    margin: auto 0;
     padding: 0;
 }
 .cursor-pointer, .menu-button, .transition-colors {
@@ -102,7 +102,7 @@ a.hover\:text-purple-700, #checkbox {
     min-height: 0;
     min-width: 0;
 }
-a.hover\:text-purple-700:focus, .cursor-pointer:focus, .menu-button:focus, .transition-colors:focus {
+a.hover\:text-purple-700:focus, .menu-button:focus, input:focus::placeholder {
     font-style: italic
 }
 a.hover\:text-purple-700:hover, #checkbox:hover {
@@ -140,7 +140,8 @@ nav .mt-10 {/*Nav button container*/
     margin-top: 1vw
 }
 nav .mt-10 > .my-1, nav form > .my-1, nav form > .my-2 {
-    margin: 0 0 1vh 0
+    margin: 0 0 calc(var(--Font) * .5) 0;
+    padding: calc(var(--Font) * .5);
 }
 nav .mb-5 {/*socials container container*/
     margin-bottom: 0
@@ -277,7 +278,7 @@ div.flex.items-center.mb-2:nth-of-type(3)::before {
 /*SECTION 03 LOGIN*/
 /*This section applies to the pages you can access without logging in.*/
 .text-xs > .ml-2 {
-    transform: translateY(-3.5vh);
+    transform: translateY(calc(var(--checkboxSize) * -1));
     position: fixed;
 }
 }
