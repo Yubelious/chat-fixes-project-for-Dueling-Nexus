@@ -21,7 +21,7 @@
 @media (max-width: 1024px) {
     :root {
         --Font: 1.5vw;
-        --checkboxSize: 1.5vw;
+        --checkboxSize: 2.25vw;
     }
     body {
         background-attachment: scroll;
@@ -85,40 +85,32 @@ body {
     overflow: auto;
 }
 /*Here we have some general clicky thingy rules.*/
-a.hover\:text-purple-700  {
-    -moz-transition: all 1s ease-in-out;
-    -o-transition: all 1s ease-in-out;
-    transition: all 1s ease-in-out;
+a.hover\:text-purple-700, .cursor-pointer, .menu-button, .transition-colors, #checkbox, #checkbox + span, a.hover\:text-purple-700:focus, .cursor-pointer:focus, .menu-button:focus, .transition-colors:focus, a.hover\:text-purple-700:hover, .cursor-pointer:hover, .menu-button:hover, .transition-colors:hover  {
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+a.hover\:text-purple-700, #checkbox {
+    opacity: .7
+}
+a.hover\:text-purple-700 {
     font-size: var(--smallFont);
     line-height: 1;
     padding: 0;
-    opacity: .7;
 }
 .cursor-pointer, .menu-button, .transition-colors {
-    -moz-transition-duration: 1s;
-    -o-transition-duration: 1s;
-    transition-duration: 1s;
     font-size: var(--Font);
     min-height: 0;
     min-width: 0;
 }
 a.hover\:text-purple-700:focus, .cursor-pointer:focus, .menu-button:focus, .transition-colors:focus {
-    -moz-transition: all 1s ease-in-out;
-    -o-transition: all 1s ease-in-out;
-    transition: all 1s ease-in-out;
-    font-style: italic;
+    font-style: italic
+}
+a.hover\:text-purple-700:hover, #checkbox:hover {
+    opacity: .9
 }
 a.hover\:text-purple-700:hover {
-    -moz-transition: all 1s ease-in-out;
-    -o-transition: all 1s ease-in-out;
-    transition: all 1s ease-in-out;
-    opacity: .9;
-    text-decoration: underline;
-}
-.cursor-pointer:hover, .menu-button:hover, .transition-colors:hover {
-    -moz-transition: all 1s ease-in-out;
-    -o-transition: all 1s ease-in-out;
-    transition: all 1s ease-in-out;
+    text-decoration: underline
 }
 .p-3, .p-4, .menu-button, button {
     padding: 1.5vh;
