@@ -15,16 +15,14 @@
         padding-right: 10%;
         padding-left: 10%;
     }
+    Nav .mt-7 {/*Logo*/
+        width: 75%
+    }
     nav ul.my-3 {
         gap: 1vw
     }
 }
 @media (max-width: 1024px), (orientation: portrait) {
-    :root {
-        --Font: 1.75vw;
-        --checkboxSize: 3.25vw;
-        --bottom: 100px;
-    }
     body {
         background-attachment: scroll;
         background-position: right bottom;
@@ -32,20 +30,49 @@
     #app > div:nth-child(2) .nav-from, #app > nav, nav .p-10 {/*Sidebar (logged out)*/
         min-width: 100vw
     }
+    Nav .mt-7 {/*Logo*/
+        width: 65%
+    }
     nav > img {
         position: fixed
     }
     nav form, nav .lg\:px-10, nav form + .text-xs {
-        padding-right: 15%;
         padding-bottom: 0;
-        padding-left: 15%;
         z-index: 2;
-    }
-    nav form, nav .lg\:px-10 {
-        padding-top: 32vw
     }
     nav ul.my-3 {
         gap: 4vw
+    }
+}
+@media (max-width: 1024px) AND (orientation: portrait) {
+    :root {
+        --Font: 1.75vw;
+        --checkboxSize: 3.25vw;
+        --bottom: 59px;
+    }
+    nav form, nav .lg\:px-10 {
+        padding-top: 35vw
+    }
+    nav form, nav .lg\:px-10, nav form + .text-xs {
+        padding-right: 15%;
+        padding-left: 15%;
+    }
+}
+@media (max-width: 1024px) AND (orientation: landscape) {
+    :root {
+        --Font: 1.5vw;
+        --checkboxSize: 2vw;
+        --bottom: 41px;
+    }
+    nav form, nav .lg\:px-10, nav form + .text-xs {
+        padding-right: 20%;
+        padding-left: 20%;
+    }
+    Nav .mt-7 {/*Logo*/
+        width: 33%
+    }
+    nav form, nav .lg\:px-10 {
+        padding-top: 17vw
     }
 }
 }
@@ -129,8 +156,7 @@ nav .flex-col {
     width: 100%
 }
 Nav .mt-7 {/*Logo*/
-    width: 60%;
-    margin: calc(var(--checkboxSize) * 2) 0 0 0;
+    margin: calc(var(--checkboxSize) * 1.5) 0 0 0
 }
 nav span.font-bold {
     margin: 0
@@ -146,8 +172,10 @@ nav .mt-10 {/*Nav button container*/
     margin-top: 1vw
 }
 nav .mt-10 > .my-1, nav form > .my-1, nav form > .my-2 {
-    margin: 0 0 calc(var(--Font) * .5) 0;
-    padding: calc(var(--Font) * .5);
+    margin: 0 0 calc(var(--Font) * .5) 0
+}
+nav .mt-10 > .my-1, nav form > .my-1 {
+    padding: calc(var(--Font) * .5)
 }
 nav .mb-5 {/*socials container container*/
     margin-bottom: 0
@@ -178,10 +206,14 @@ nav .text-2xl {
     font-size: var(--bigFont);
     font-variant: small-caps;
     text-transform: lowercase;
+    line-height: 1;
     -moz-user-select: none;
     -o-user-select: none;
     user-select: none;
     width: auto;
+    padding-top: var(--bigFont);
+    padding-bottom: calc(var(--smallFont) * .5);
+    outline: 1px dotted red;
 }
 nav .text-2xl:first-letter {
     text-transform: capitalize
@@ -191,6 +223,7 @@ nav ul.my-3/*socials container*/ {
     grid-template-areas: "discord facebook twitter youtube bigcartel";
     grid-template-columns:  repeat(5, 1fr);
     height: auto;
+    margin-top: 0;
     margin-bottom: var(--bottom);
 }
 nav .mx-1 {/*socials*/
@@ -281,7 +314,7 @@ div.flex.items-center.mb-2:nth-of-type(3)::before {
 /*SECTION 03 LOGIN*/
 /*This section applies to the pages you can access without logging in.*/
 .text-xs > .ml-2 {
-    transform: translateY(calc(var(--checkboxSize) * -1));
+    transform: translateY(calc(var(--checkboxSize) * -.1));
     position: fixed;
 }
 }
