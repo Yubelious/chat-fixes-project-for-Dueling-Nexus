@@ -87,12 +87,12 @@ body {
     overflow: auto;
 }
 /*Here we have some general clicky thingy rules.*/
-a.hover\:text-purple-700, .cursor-pointer, .menu-button, .transition-colors, #checkbox, #checkbox + span, a.hover\:text-purple-700:focus, .cursor-pointer:focus, .menu-button:focus, .transition-colors:focus, a.hover\:text-purple-700:hover, .cursor-pointer:hover, .menu-button:hover, .transition-colors:hover  {
+a.hover\:text-purple-700, .cursor-pointer, .menu-button, .transition-colors, [href="/recover"] + div, input[type="text"] + div, a.hover\:text-purple-700:focus, .cursor-pointer:focus, .menu-button:focus, .transition-colors:focus, a.hover\:text-purple-700:hover, .cursor-pointer:hover, .menu-button:hover, .transition-colors:hover  {
     -moz-transition: all .5s ease-in-out;
     -o-transition: all .5s ease-in-out;
     transition: all .5s ease-in-out;
 }
-a.hover\:text-purple-700, #checkbox {
+a.hover\:text-purple-700, [href="/recover"] + div, input[type="text"] + div {
     font-size: var(--smallFont);
     line-height: 1.5;
     opacity: .7;
@@ -107,7 +107,7 @@ a.hover\:text-purple-700, #checkbox {
 a.hover\:text-purple-700:focus, .menu-button:focus, input:focus::placeholder {
     font-style: italic
 }
-a.hover\:text-purple-700:hover, #checkbox:hover {
+a.hover\:text-purple-700:hover, [href="/recover"] + div:hover, input[type="text"] + div:hover {
     opacity: .9
 }
 a.hover\:text-purple-700:hover {
@@ -226,14 +226,11 @@ nav ul.my-3 .mx-1:nth-child(5) {
 }
 /*Extended checkbox hitbox*/
 [href="/recover"] + div, input[type="text"] + div {
-    color: rgba(255, 255, 255, .75);
+    color: white;
     height: var(--checkboxSize);
     user-select: none;
     margin: 0;
     position: relative;
-}
-[href="/recover"] + div:hover, input[type="text"] + div:hover {
-    color: rgba(255, 255, 255, .9)
 }
 [href="/recover"] + div > .checkbox:checked, input[type="text"] + div > .checkbox:checked {/*limit image size*/
     background-size: var(--checkboxSize);
