@@ -51,7 +51,7 @@
         --bottom: 59px;
     }
     nav form, nav .lg\:px-10 {
-        padding-top: 35vw
+        padding-top: 32vw
     }
     nav form, nav .lg\:px-10, nav form + .text-xs {
         padding-right: 15%;
@@ -65,14 +65,14 @@
         --bottom: 41px;
     }
     nav form, nav .lg\:px-10, nav form + .text-xs {
-        padding-right: 20%;
-        padding-left: 20%;
+        padding-right: 22%;
+        padding-left: 22%;
     }
     Nav .mt-7 {/*Logo*/
         width: 33%
     }
     nav form, nav .lg\:px-10 {
-        padding-top: 17vw
+        padding-top: 18vw
     }
 }
 }
@@ -142,7 +142,7 @@ a.hover\:text-purple-700:hover {
 }
 .p-3, .p-4, .menu-button, button {
     padding: calc(var(--Font) * .75);
-    border-radius: 1vh;
+    border-radius: .5vw;
 }
 .menu-button img {
     padding: .25vh
@@ -156,7 +156,7 @@ nav .flex-col {
     width: 100%
 }
 Nav .mt-7 {/*Logo*/
-    margin: calc(var(--checkboxSize) * 1.5) 0 0 0
+    margin: calc(var(--checkboxSize) * 2) 0 0 0
 }
 nav span.font-bold {
     margin: 0
