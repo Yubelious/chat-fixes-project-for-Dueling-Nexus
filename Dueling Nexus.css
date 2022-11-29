@@ -114,7 +114,7 @@ a.hover\:text-purple-700:hover {
     text-decoration: underline
 }
 .p-3, .p-4, .menu-button, button {
-    padding: 1.5vh;
+    padding: calc(var(--Font) * .75);
     border-radius: 1vh;
 }
 .menu-button img {
