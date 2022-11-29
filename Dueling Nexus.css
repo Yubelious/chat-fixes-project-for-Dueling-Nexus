@@ -1,28 +1,7 @@
 @-moz-document url-prefix("https://duelingnexus.com/login"), url-prefix("https://duelingnexus.com/register"), url-prefix("https://duelingnexus.com/recover"), url-prefix("https://duelingnexus.com/home"), url-prefix("https://duelingnexus.com/duel"), url-prefix("https://duelingnexus.com/gamelist"), url-prefix("https://duelingnexus.com/hostgame"), url-prefix("https://duelingnexus.com/hostbotgame"), url-prefix("https://duelingnexus.com/donate"), url-prefix("https://duelingnexus.com/decks"), url-prefix("https://duelingnexus.com/profile"), url-prefix("https://duelingnexus.com/replays"), url-prefix("https://duelingnexus.com/leaderboard"), url-prefix("https://duelingnexus.com/credits"), url-prefix("https://duelingnexus.com/editor"), url-prefix("https://duelingnexus.com/privacy_policy.html") {
-/*SECTION 01 ROOT*/
+/*SECTION 01 MEDIAQUERIES*/
 /*This section uses rules that changes various elements based on screen size.*/
-@media (orientation: landscape) AND (min-width: 1025px)  {
-    :root {
-        --Font: 2vh;
-        --checkboxSize: 3vh;
-        --bottom: 41px;/*Increase this value if your taskbar blocks the interface.*/
-    }
-    #app > div:nth-child(2) .nav-from, #app > nav, nav .p-10 {/*Sidebar (logged out)*/
-        min-width: 25vw;
-        max-width: 25vw;
-    }
-    nav form, nav .lg\:px-10, nav form + .text-xs {
-        padding-right: 10%;
-        padding-left: 10%;
-    }
-    Nav .mt-7 {/*Logo*/
-        width: 75%
-    }
-    nav ul.my-3 {
-        gap: 1vw
-    }
-}
-@media (max-width: 1024px), (orientation: portrait) {
+@media (max-width: 1024px) {
     body {
         background-attachment: scroll;
         background-position: right bottom;
@@ -43,38 +22,62 @@
     nav ul.my-3 {
         gap: 4vw
     }
-}
-@media (max-width: 1024px) AND (orientation: portrait) {
-    :root {
-        --Font: 1.75vw;
-        --checkboxSize: 3.25vw;
-        --bottom: 59px;
-    }
-    nav form, nav .lg\:px-10 {
-        padding-top: 32vw
-    }
-    nav form, nav .lg\:px-10, nav form + .text-xs {
-        padding-right: 15%;
-        padding-left: 15%;
-    }
-}
-@media (max-width: 1024px) AND (orientation: landscape) {
-    :root {
-        --Font: 1.5vw;
-        --checkboxSize: 2vw;
-        --bottom: 41px;
-    }
-    nav form, nav .lg\:px-10, nav form + .text-xs {
-        padding-right: 22%;
-        padding-left: 22%;
-    }
-    Nav .mt-7 {/*Logo*/
-        width: 33%
-    }
-    nav form, nav .lg\:px-10 {
-        padding-top: 18vw
+    @media (max-width: 799px) {
+        :root {
+            --Font: 1.75vw;
+            --checkboxSize: 3.25vw;
+            --bottom: 59px;
+        }
+        nav form, nav .lg\:px-10 {
+            padding-top: 32vw
+        }
+        nav form, nav .lg\:px-10, nav form + .text-xs {
+            padding-right: 15%;
+            padding-left: 15%;
+        }
     }
 }
+@media (orientation: landscape) {
+    @media (min-width: 800px) AND (max-width: 1024px) {
+        :root {
+            --Font: 1.5vw;
+            --checkboxSize: 2vw;
+            --bottom: 41px;
+        }
+        nav form, nav .lg\:px-10, nav form + .text-xs {
+            padding-right: 22%;
+            padding-left: 22%;
+        }
+        Nav .mt-7 {
+            width: 33%
+        }
+        nav form, nav .lg\:px-10 {
+            padding-top: 18vw
+        }
+    }
+    @media (min-width: 1025px)  {
+        :root {
+            --Font: 2vh;
+            --checkboxSize: 3vh;
+            --bottom: 41px;
+        }
+        #app > div:nth-child(2) .nav-from, #app > nav, nav .p-10 {/*Sidebar (logged out)*/
+            min-width: 25vw;
+            max-width: 25vw;
+        }
+        nav form, nav .lg\:px-10, nav form + .text-xs {
+            padding-right: 10%;
+            padding-left: 10%;
+        }
+        Nav .mt-7 {
+            width: 75%
+        }
+        nav ul.my-3 {
+            gap: 1vw
+        }
+    }
+}
+
 }
 
 @-moz-document url("https://duelingnexus.com/login"), url("https://duelingnexus.com/register"), url("https://duelingnexus.com/recover"), url("https://duelingnexus.com/home"), url("https://duelingnexus.com/duel"), url("https://duelingnexus.com/gamelist"), url("https://duelingnexus.com/hostgame"), url("https://duelingnexus.com/hostbotgame"), url("https://duelingnexus.com/donate"), url("https://duelingnexus.com/decks"), url("https://duelingnexus.com/profile"), url("https://duelingnexus.com/replays"), url("https://duelingnexus.com/leaderboard"), url("https://duelingnexus.com/credits") {
