@@ -24,12 +24,12 @@
     }
     @media (max-width: 799px) {
         :root {
-            --Font: 1.75vw;
-            --checkboxSize: 3.25vw;
-            --bottom: 59px;
+            --Font: 3vw;
+            --checkboxSize: 6vw;
+            --bottom: 60px;
         }
         nav form, nav .lg\:px-10 {
-            padding-top: 32vw
+            padding-top: 29vw
         }
         nav form, nav .lg\:px-10, nav form + .text-xs {
             padding-right: 15%;
@@ -38,6 +38,11 @@
     }
 }
 @media (orientation: landscape) {
+    @media (max-height: 250px) {
+        *:not(:focus) {
+            display: none
+        }
+    }
     @media (min-width: 800px) AND (max-width: 1024px) {
         :root {
             --Font: 1.5vw;
@@ -159,7 +164,7 @@ nav .flex-col {
     width: 100%
 }
 Nav .mt-7 {/*Logo*/
-    margin: calc(var(--checkboxSize) * 2) 0 0 0
+    margin: calc(var(--checkboxSize) * 1.5) 0 0 0
 }
 nav span.font-bold {
     margin: 0
