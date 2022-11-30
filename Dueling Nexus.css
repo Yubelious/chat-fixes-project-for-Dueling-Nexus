@@ -57,7 +57,8 @@
     }
     @media (max-height: 300px) AND (max-width: 1024px) {/*horizontal mobile with keyboard*/
         nav form {
-            padding-top: 0
+            padding-top: 2%;
+            border: 1px solid red;
         }
         input:not(:focus), a, button, img, span, *:before {
             display: none;
@@ -65,9 +66,7 @@
         }
         input:focus {
             font-size: 15vh;
-            position: absolute;
-            width: 66.666%;
-            top: 33.333%;
+            width: 100%;
         }
     }
     @media (min-width: 1025px)  {/*laptop and desktop*/
