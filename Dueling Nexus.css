@@ -1,4 +1,4 @@
-@-moz-document url-prefix("https://duelingnexus.com/login"), url-prefix("https://duelingnexus.com/register"), url-prefix("https://duelingnexus.com/recover"), url-prefix("https://duelingnexus.com/home"), url-prefix("https://duelingnexus.com/duel"), url-prefix("https://duelingnexus.com/gamelist"), url-prefix("https://duelingnexus.com/hostgame"), url-prefix("https://duelingnexus.com/hostbotgame"), url-prefix("https://duelingnexus.com/donate"), url-prefix("https://duelingnexus.com/decks"), url-prefix("https://duelingnexus.com/profile"), url-prefix("https://duelingnexus.com/replays"), url-prefix("https://duelingnexus.com/leaderboard"), url-prefix("https://duelingnexus.com/credits"), url-prefix("https://duelingnexus.com/editor"), url-prefix("https://duelingnexus.com/privacy_policy.html") {
+@-moz-document url-prefix("https://duelingnexus.com/login"), url-prefix("https://duelingnexus.com/register"), url-prefix("https://duelingnexus.com/recover"), url-prefix("https://duelingnexus.com/home"), url-prefix("https://duelingnexus.com/duel"), url-prefix("https://duelingnexus.com/gamelist"), url-prefix("https://duelingnexus.com/hostgame"), url-prefix("https://duelingnexus.com/hostbotgame"), url-prefix("https://duelingnexus.com/donate"), url-prefix("https://duelingnexus.com/decks"), url-prefix("https://duelingnexus.com/profile"), url-prefix("https://duelingnexus.com/replays"), url-prefix("https://duelingnexus.com/leaderboard"), url-prefix("https://duelingnexus.com/credits"), url-prefix("https://duelingnexus.com/editor") {
 /*SECTION 01 MEDIAQUERIES*/
 /*This section uses rules that changes various elements based on screen size.*/
 @media (max-width: 1024px) {/*small displays*/
@@ -9,7 +9,7 @@
     #app > div:nth-child(2) .nav-from, #app > nav, nav .p-10 {
         min-width: 100vw
     }
-    Nav .mt-7 {/*Logo*/
+    nav > img.my-7, nav img.mt-7 {/*Logo*/
         width: 65%
     }
     nav > img {
@@ -48,7 +48,7 @@
             padding-right: 25%;
             padding-left: 25%;
         }
-        Nav .mt-7 {
+        nav > img.my-7, nav img.mt-7 {
             width: 30%
         }
         nav form, nav .lg\:px-10 {
@@ -82,7 +82,7 @@
             padding-right: 10%;
             padding-left: 10%;
         }
-        Nav .mt-7 {
+        nav > img.my-7, nav img.mt-7 {
             width: 75%
         }
         nav ul.my-3 {
@@ -171,7 +171,7 @@ a.hover\:text-purple-700:hover {
 nav .flex-col {
     width: 100%
 }
-Nav .mt-7 {/*Logo*/
+nav > img.my-7, nav img.mt-7 {
     margin: calc(var(--checkboxSize) * 1.5) 0 0 0
 }
 nav span.font-bold {
@@ -326,12 +326,15 @@ div.flex.items-center.mb-2:nth-of-type(3)::before {
 }
 }
 
-@-moz-document url-prefix("https://duelingnexus.com/login") {
+@-moz-document url-prefix("https://duelingnexus.com/login"), url-prefix("https://duelingnexus.com/recover"), url-prefix("https://duelingnexus.com/register") {
 /*SECTION 03 LOGIN*/
 /*This section applies to the pages you can access without logging in.*/
 .text-xs > .ml-2 {
     transform: translateY(calc(var(--checkboxSize) * -.1));
     position: fixed;
+}
+#recover-submit {
+    margin: 1vw 0 0 0
 }
 }
 
