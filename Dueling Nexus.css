@@ -66,10 +66,8 @@
         input:focus {
             font-size: 15vh;
             position: absolute;
-            top: 33.333vh;
-            right: 33.333vh;
-            bottom: 33.333vh;
-            left: 33.333vh;
+            width: 66.666%;
+            top: 33.333%;
         }
     }
     @media (min-width: 1025px)  {/*laptop and desktop*/
