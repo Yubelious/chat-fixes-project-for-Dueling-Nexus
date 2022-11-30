@@ -57,8 +57,7 @@
     }
     @media (max-height: 300px) AND (max-width: 1024px) {/*horizontal mobile with keyboard*/
         nav form {
-            padding-top: 2%;
-            border: 1px solid red;
+            padding-top: 3%
         }
         input:not(:focus), a, button, img, span, *:before {
             display: none;
