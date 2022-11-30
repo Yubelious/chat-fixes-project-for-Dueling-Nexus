@@ -29,7 +29,7 @@
             --bottom: 60px;
         }
         nav form, nav .lg\:px-10 {
-            padding-top: 38vw
+            padding-top: 35vw
         }
         nav form, nav .lg\:px-10, nav form + .text-xs {
             padding-right: 15%;
@@ -55,12 +55,21 @@
             padding-top: 15vw
         }
     }
-    @media (max-height: 250px) AND (max-width: 1024px) {/*horizontal mobile with keyboard*/
-        input:not(:focus), span {
-            display: none
+    @media (max-height: 300px) AND (max-width: 1024px) {/*horizontal mobile with keyboard*/
+        nav form {
+            padding-top: 0
+        }
+        input:not(:focus), a, button, img, span, *:before {
+            display: none;
+            visibility: hidden;
         }
         input:focus {
-            font-size: 20vh
+            font-size: 15vh;
+            position: absolute;
+            top: 33.333vh;
+            right: 33.333vh;
+            bottom: 33.333vh;
+            left: 33.333vh;
         }
     }
     @media (min-width: 1025px)  {/*laptop and desktop*/
