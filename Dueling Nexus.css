@@ -1,12 +1,12 @@
 @-moz-document url-prefix("https://duelingnexus.com/login"), url-prefix("https://duelingnexus.com/register"), url-prefix("https://duelingnexus.com/recover"), url-prefix("https://duelingnexus.com/home"), url-prefix("https://duelingnexus.com/duel"), url-prefix("https://duelingnexus.com/gamelist"), url-prefix("https://duelingnexus.com/hostgame"), url-prefix("https://duelingnexus.com/hostbotgame"), url-prefix("https://duelingnexus.com/donate"), url-prefix("https://duelingnexus.com/decks"), url-prefix("https://duelingnexus.com/profile"), url-prefix("https://duelingnexus.com/replays"), url-prefix("https://duelingnexus.com/leaderboard"), url-prefix("https://duelingnexus.com/credits"), url-prefix("https://duelingnexus.com/editor"), url-prefix("https://duelingnexus.com/privacy_policy.html") {
 /*SECTION 01 MEDIAQUERIES*/
 /*This section uses rules that changes various elements based on screen size.*/
-@media (max-width: 1024px) {
+@media (max-width: 1024px) {/*small displays*/
     body {
         background-attachment: scroll;
         background-position: right bottom;
     }
-    #app > div:nth-child(2) .nav-from, #app > nav, nav .p-10 {/*Sidebar (logged out)*/
+    #app > div:nth-child(2) .nav-from, #app > nav, nav .p-10 {
         min-width: 100vw
     }
     Nav .mt-7 {/*Logo*/
@@ -22,14 +22,14 @@
     nav ul.my-3 {
         gap: 4vw
     }
-    @media (max-width: 799px) {
+    @media (max-width: 799px) {/*vertical mobile*/
         :root {
             --Font: 3vw;
             --checkboxSize: 6vw;
             --bottom: 60px;
         }
         nav form, nav .lg\:px-10 {
-            padding-top: 29vw
+            padding-top: 38vw
         }
         nav form, nav .lg\:px-10, nav form + .text-xs {
             padding-right: 15%;
@@ -38,29 +38,32 @@
     }
 }
 @media (orientation: landscape) {
-    @media (max-height: 250px) {
-        *:not(:focus) {
-            display: none
-        }
-    }
-    @media (min-width: 800px) AND (max-width: 1024px) {
+    @media (min-width: 500px) AND (max-width: 1024px) {/*small laptops and horizontal mobile*/
         :root {
             --Font: 1.5vw;
             --checkboxSize: 2vw;
             --bottom: 41px;
         }
         nav form, nav .lg\:px-10, nav form + .text-xs {
-            padding-right: 22%;
-            padding-left: 22%;
+            padding-right: 25%;
+            padding-left: 25%;
         }
         Nav .mt-7 {
-            width: 33%
+            width: 30%
         }
         nav form, nav .lg\:px-10 {
-            padding-top: 18vw
+            padding-top: 15vw
         }
     }
-    @media (min-width: 1025px)  {
+    @media (max-height: 250px) AND (max-width: 1024px) {/*horizontal mobile with keyboard*/
+        input:not(:focus), span {
+            display: none
+        }
+        input:focus {
+            font-size: 20vh
+        }
+    }
+    @media (min-width: 1025px)  {/*laptop and desktop*/
         :root {
             --Font: 2vh;
             --checkboxSize: 3vh;
